@@ -3,9 +3,7 @@ import Layout from "../components/layout"
 
 export default () => (
   <Layout>
-    <h1>Hi, i'm Paige!</h1>
-    <p>
-      Welcome to my website!
-    </p>
+    <h1>About me</h1>
+    <p>I like maps and coding!</p>
   </Layout>
 )
