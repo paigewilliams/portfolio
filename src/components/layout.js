@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Sidebar from './header'
+import Sidebar from './sidebar'
 import './layout.css'
 
 const Layout = ({ children }) => (
@@ -18,7 +18,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Sidebar siteTitle={data.site.siteMetadata.title} />
+        <Sidebar siteTitle= {data.site.siteMetadata.title} />
         <div
           style={{
             margin: `0 auto`,
@@ -27,13 +27,15 @@ const Layout = ({ children }) => (
             paddingTop: 0,
           }}
         >
-          {children}
-          <footer>
-            © 2018, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+          
         </div>
+        {children}
       </>
+        
+
     )}
+    
+    
   />
 )
 
