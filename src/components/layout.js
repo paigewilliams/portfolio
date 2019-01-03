@@ -20,7 +20,7 @@ const Sidebar = (props) => (
         flex: `column`
       }}
       >
-      <Link to="/"><h3>Paige Williams</h3></Link>
+      <Link to="/"><h2>Paige Williams</h2></Link>
       <ul style={{ listStyle: `none` }}>
         <ListLink to="/about">About</ListLink>
         <ListLink to="/projects">Projects</ListLink>
