@@ -4,7 +4,7 @@ import { typography } from "../utils/typography"
 
 const ListLink = props => (
   <li style={{  
-    textDecoration: `none`, 
+    textDecoration: `none`, justifyContent: `center`, alignItems: `center`, paddingTop: '0.5rem'
      }}>
     <Link to={props.to}>{props.children}</Link>
   </li>
@@ -22,8 +22,9 @@ const Sidebar = (props) => (
       >
       <Link to="/">Paige Williams</Link>
       <ul style={{ listStyle: `none` }}>
-        <ListLink to="/">Home</ListLink>
-        <ListLink to="/about/">About</ListLink>
+        <ListLink to="/about">About</ListLink>
+        <ListLink to="/projects">Projects</ListLink>
+        <ListLink to="/resume">Resume</ListLink>
         <ListLink to="/contact/">Contact</ListLink>
       </ul>
   </div>
