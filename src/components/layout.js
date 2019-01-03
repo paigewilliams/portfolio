@@ -4,7 +4,7 @@ import { typography } from "../utils/typography"
 
 const ListLink = props => (
   <li style={{  
-    textDecoration: `none`, justifyContent: `center`, alignItems: `center`, paddingTop: '0.5rem'
+    textDecoration: `none`, justifyContent: `center`, alignItems: `center`, paddingTop: '0.5rem', fontSize: `18px`
      }}>
     <Link to={props.to}>{props.children}</Link>
   </li>
@@ -20,7 +20,7 @@ const Sidebar = (props) => (
         flex: `column`
       }}
       >
-      <Link to="/">Paige Williams</Link>
+      <Link to="/"><h3>Paige Williams</h3></Link>
       <ul style={{ listStyle: `none` }}>
         <ListLink to="/about">About</ListLink>
         <ListLink to="/projects">Projects</ListLink>
@@ -33,11 +33,14 @@ const Sidebar = (props) => (
 
 
 export default ({ children }) => (
-  <div style={{ margin: `0 auto`, display: `flex` }}>
+  <div style={{ margin: `0 auto`, display: `flex`, marginLeft: `0.5rem` }}>
     <Sidebar/>
     
     <div>
-    {children}
+    <div style={{ marginLeft: `3rem` }}>
+      {children}
+    </div>
+    
   </div>
   </div>
   
