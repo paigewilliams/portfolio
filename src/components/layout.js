@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import { typography } from "../utils/typography"
 
 const ListLink = props => (
   <li style={{  
@@ -16,7 +15,7 @@ const Sidebar = (props) => (
         maxWidth: 960,
         padding: '0.5rem',
         marginBottom: '25px',
-        backgroundColor: `tomato`,
+        backgroundColor: `#FDA67E`,
         flex: `column`
       }}
       >
