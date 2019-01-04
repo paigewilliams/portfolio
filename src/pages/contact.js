@@ -5,7 +5,7 @@ export default () => (
   <Layout>
     <h1>Email pls</h1>
     <p>
-      <a href="mailto:me@example.com">me@example.com</a>
+      <styledLink to="mailto:me@example.com"> me@example.com</styledLink>
     </p>
   </Layout>
 )
