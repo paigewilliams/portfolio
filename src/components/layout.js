@@ -2,18 +2,17 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-const ListLink = props => (
-  <li activeStyle={{  
-    textDecoration: "none", color: "white", justifyContent: `center`, alignItems: `center`, paddingTop: '0.5rem'
-     }}>
-    <Link to={props.to}>{props.children}</Link>
-  </li>
-)
-
-// const Header = styled.h2`
-//   text-decoration: none;
-//   color: white;
-// `
+const ListLink = styled(Link)`
+text-decoration: none;
+color: white;
+justify-content: center;
+align-items: center;
+padding-top: 0.5rem
+`
+const StyledLink = styled(Link)`
+color: white;
+text-decoration: none;
+`; 
 
 const Sidebar = (props) => (
   <div
@@ -25,19 +24,15 @@ const Sidebar = (props) => (
         flex: `column`
       }}
       >
-      <Link to="/"activeStyle={{
-            color: "white", textDecoration: "none"
-          }}><h2>Paige Williams</h2></Link>
+      <StyledLink to="/"><h2>Paige Williams</h2></StyledLink>
       <ul style={{ listStyle: `none` }}>
-        <ListLink to="/about">About</ListLink>
-        <ListLink to="/projects">Projects</ListLink>
-        <ListLink to="/resume">Resume</ListLink>
-        <ListLink to="/contact/">Contact</ListLink>
+        <li><ListLink to="/about">About</ListLink></li>
+        <li><ListLink to="/projects">Projects</ListLink></li>
+        <li><ListLink to="/resume">Resume</ListLink></li>
+        <li><ListLink to="/contact/">Contact</ListLink></li>
       </ul>
   </div>
   );
-
-
 
 export default ({ children }) => (
   <div style={{ margin: `0 auto`, display: `flex`, marginLeft: `0.5rem` }}>
