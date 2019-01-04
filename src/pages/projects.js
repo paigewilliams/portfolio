@@ -7,7 +7,6 @@ const ProjectLink = styled(Link)`
   text-decoration: none;
   color: #2B2B2B;  
 `
-
 export default ({ data }) => {
   return (
   <Layout>
