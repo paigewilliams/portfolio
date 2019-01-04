@@ -6,7 +6,7 @@ const typography = new Typography({
   baseFontSize: "18px", 
   baseLineHeight: 1.666,
   headerFontFamily: ['lustria', 'serif'],
-  bodyFontFamily: ['open-sans', 'sans-serif'],
+  bodyFontFamily: ['lustria', 'serif'],
   
 })
 
