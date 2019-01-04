@@ -35,7 +35,7 @@ const Sidebar = (props) => (
   );
 
 export default ({ children }) => (
-  <div style={{ margin: `0 auto`, display: `flex`, marginLeft: `0.5rem` }}>
+  <div style={{ margin: `0.5rem`, display: `flex`, marginLeft: `0.5rem` }}>
     <Sidebar/>
     
     <div>
