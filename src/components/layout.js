@@ -5,21 +5,14 @@ import { Link } from "gatsby"
 const ListLink = styled(Link)`
   text-decoration: none;
   color: white;
-  justify-content: center;
-  align-items: center;
   padding-top: 0.5rem;
   letter-spacing: 0.15rem;
-
-  @media (max-width: 1100px) {
-    flex-direction: row;
-  }
   
 `
 const StyledLink = styled(Link)`
   color: #221F20;
   text-decoration: none;
-  padding-left: 7px;
-  padding-right: 7px;
+  margin-left: 1.666rem
 `; 
 
 const Sidebar = styled.div`
@@ -36,6 +29,8 @@ const Sidebar = styled.div`
   padding-left: env(safe-area-inset-left);
   background-color: #F8C3B2;
   flex-grow: 1;
+  padding-right: 3rem;
+  padding-left: 1rem;
 
   @media (max-width: 1100px) {
     position: fixed;
@@ -65,9 +60,7 @@ const Sidebar = styled.div`
     padding-bottom: var(--safe-area-inset-bottom);
     flex-direction: row;
   }
-  @media print {
-    display: none !important;
-  }
+
 `
 
 const InnerSidebar = styled.div`
@@ -76,12 +69,13 @@ const InnerSidebar = styled.div`
   height: 100%;
   max-width: 40rem;
   max-height: 15rem;
-  align-items: center;
+  vertical-align: baseline;
   justify-content: space-around;
   flex-grow: 1;
 
   @media (max-width: 1100px) {
     flex-direction: row;
+    align-items: center;
   }
   
 `
@@ -97,7 +91,7 @@ const Inner = styled.div`
   );
   float: left; 
   margin: 3rem auto;
-  max-width: 600;
+  max-width: 1000px;
   overflow-y: auto;
   padding-left: 20%;
 `
@@ -108,14 +102,14 @@ const Layout = styled.div`
   marginLeft: 0.5rem; 
   flex-direction: row;
   overflow: auto;
-
+  max-width: 600;
 `
 export default ({ children }) => (
   <Layout>
     <Sidebar>
       <InnerSidebar>
-        <StyledLink to="/"><h2>Paige Williams</h2></StyledLink>
-        <ul style={{ listStyle: `none` }}>
+        <StyledLink to="/"><h2>P___W</h2></StyledLink>
+        <ul style={{ listStyle: `none`, marginLeft: `none` }}>
           <li><ListLink to="/about">About</ListLink></li>
           <li><ListLink to="/projects">Projects</ListLink></li>
           <li><ListLink to="/resume">Resume</ListLink></li>
