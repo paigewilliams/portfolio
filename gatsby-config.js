@@ -6,20 +6,15 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography.js`,
-      },
-    },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `src`,
+        path: `${__dirname}/src/`,
       },
     },
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -27,6 +22,12 @@ module.exports = {
           `limelight`,
           `source sans pro\:300,400,400i,700` 
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography.js`,
       },
     },
     `gatsby-transformer-sharp`,

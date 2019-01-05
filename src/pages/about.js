@@ -7,3 +7,4 @@ export default () => (
     <p>I like coding and maps!</p>
   </Layout>
 )
+
