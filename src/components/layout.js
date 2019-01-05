@@ -41,7 +41,6 @@ const Sidebar = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1;
-  padding-left: env(safe-area-inset-left);
   background-color: #F8C3B2;
   flex-grow: 1;
   padding-right: 3rem;
@@ -59,12 +58,6 @@ const Sidebar = styled.div`
     padding-right: var(--responsive-padding);
     padding-bottom: var(--safe-area-inset-bottom);
   
-  // @media (max-width: 1300px) {
-  //   padding-left: var(--responsive-padding);
-  //   padding-right: var(--responsive-padding);
-  //   padding-bottom: var(--safe-area-inset-bottom);
-  //   flex-direction: row;
-  // }
 
 `
 
