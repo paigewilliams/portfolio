@@ -7,6 +7,11 @@ const ListLink = styled(Link)`
   color: white;
   padding-top: 0.5rem;
   letter-spacing: 0.15rem;
+  @media (max-width: 1000px) {
+    display: inherit;
+    margin-left: 20px;
+    
+  } 
   
 `
 const StyledLink = styled(Link)`
@@ -14,6 +19,16 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   margin-left: 1.666rem
 `; 
+
+const PageList = styled.ul`
+  list-style: none; 
+  margin-left: none;
+  display: block;
+  @media (max-width: 1000px) {
+    display: inherit;
+    margin-left: 30px;
+  } 
+`
 
 const Sidebar = styled.div`
   position: fixed;
@@ -32,7 +47,7 @@ const Sidebar = styled.div`
   padding-right: 3rem;
   padding-left: 1rem;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1000px) {
     position: fixed;
     top: auto;
     left: 0;
@@ -43,23 +58,13 @@ const Sidebar = styled.div`
     padding-left: var(--responsive-padding);
     padding-right: var(--responsive-padding);
     padding-bottom: var(--safe-area-inset-bottom);
-    @supports (padding: max(0px)) {
-      padding-left: max(var(--responsive-padding), env(safe-area-inset-left));
-      padding-right: max(var(--responsive-padding), env(safe-area-inset-right));
-    }
-    @supports (
-      (-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))
-    ) {
-      background-color: #F8C3B2;
-      flex-direction: row;
-    }
-  }
-  @media (max-width: 700px) {
-    padding-left: var(--responsive-padding);
-    padding-right: var(--responsive-padding);
-    padding-bottom: var(--safe-area-inset-bottom);
-    flex-direction: row;
-  }
+  
+  // @media (max-width: 1300px) {
+  //   padding-left: var(--responsive-padding);
+  //   padding-right: var(--responsive-padding);
+  //   padding-bottom: var(--safe-area-inset-bottom);
+  //   flex-direction: row;
+  // }
 
 `
 
@@ -69,13 +74,14 @@ const InnerSidebar = styled.div`
   height: 100%;
   max-width: 40rem;
   max-height: 15rem;
-  vertical-align: baseline;
+  // vertical-align: baseline;
   justify-content: space-around;
   flex-grow: 1;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1000px) {
     flex-direction: row;
     align-items: center;
+    // display: inline;
   }
   
 `
@@ -109,12 +115,12 @@ export default ({ children }) => (
     <Sidebar>
       <InnerSidebar>
         <StyledLink to="/"><h2>P___W</h2></StyledLink>
-        <ul style={{ listStyle: `none`, marginLeft: `none` }}>
+        <PageList>
           <li><ListLink to="/about">About</ListLink></li>
           <li><ListLink to="/projects">Projects</ListLink></li>
           <li><ListLink to="/resume">Resume</ListLink></li>
           <li><ListLink to="/contact/">Contact</ListLink></li>
-        </ul>
+        </PageList>
       </InnerSidebar>
       </Sidebar>
     <Inner>
