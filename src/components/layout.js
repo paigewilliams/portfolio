@@ -10,14 +10,15 @@ const ListLink = styled(Link)`
   @media (max-width: 1000px) {
     display: inherit;
     margin-left: 20px;
-    
   } 
   
 `
 const StyledLink = styled(Link)`
   color: #221F20;
   text-decoration: none;
+  
   margin-left: 1.666rem
+ 
 `; 
 
 const PageList = styled.ul`
@@ -67,8 +68,7 @@ const InnerSidebar = styled.div`
   height: 100%;
   max-width: 40rem;
   max-height: 15rem;
-  // vertical-align: baseline;
-  justify-content: space-around;
+  // justify-content: space-around;
   flex-grow: 1;
 
   @media (max-width: 1000px) {
@@ -80,7 +80,7 @@ const InnerSidebar = styled.div`
 `
 const Inner = styled.div`
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: left;
   flex-grow: 1;
   padding-top: calc(var(--responsive-padding) + var(--safe-area-inset-top));
@@ -90,15 +90,16 @@ const Inner = styled.div`
   );
   float: left; 
   margin: 3rem auto;
-  max-width: 1000px;
+  // max-width: 1000px;
   overflow-y: auto;
   padding-left: 20%;
+  max-width: 600;
 `
 
 const Layout = styled.div`
   margin: 0.5rem; 
   display: flex; 
-  marginLeft: 0.5rem; 
+  margin-left: 0.5rem; 
   flex-direction: row;
   overflow: auto;
   max-width: 600;
