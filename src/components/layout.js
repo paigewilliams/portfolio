@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { TypographyStyle, GoogleFont } from 'react-typography'
+
 
 const ListLink = styled(Link)`
   text-decoration: none;
@@ -16,7 +18,6 @@ const ListLink = styled(Link)`
 const StyledLink = styled(Link)`
   color: #221F20;
   text-decoration: none;
-  
   margin-left: 1.666rem
  
 `; 
