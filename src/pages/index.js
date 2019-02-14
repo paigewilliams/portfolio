@@ -7,8 +7,7 @@ const Body = styled.div`
   display: flex;
   flex-direction: row;
   @media (max-width: 1000px) {
-    flex-direction: column;
-    
+    flex-direction: column; 
   } 
 `;
 
@@ -21,16 +20,24 @@ const Text = styled.div`
   } 
 `;
 
+const Test = styled.h1`
+  font-family: 'Lustria', serif;
+`;
+
+const BodyTest = styled.p`
+  font-family: 'Montserrat', sans-serif;
+`;
+
 export default () => (
   <Layout>
       <Body>
         <Text>
-      <h1>Hi, I'm Paige.</h1>
+      <Test>Hi, I'm Paige.</Test>
       <h4> I am a front-end web developer and cartographer in Portland, OR.</h4>
-      <p>Currently: I am a student at Epicodus, learning Ruby, JavaScript and React.</p>
+      <BodyTest>Currently: I am a student at Epicodus, learning Ruby, JavaScript and React.</BodyTest>
       <p>I am looking for work with a company that prioritizes growth and creativity. </p>
       </Text>
       <Image /> 
     </Body>   
   </Layout>
-)
+);

@@ -1,27 +1,27 @@
-import Typography from "typography"
-import 'typeface-lustria';
-import 'typeface-open-sans';
-import altonTheme from "typography-theme-alton"
+// import Typography from "typography"
+// import 'typeface-lustria';
+// import 'typeface-open-sans';
+// import altonTheme from "typography-theme-alton"
 
-altonTheme.googleFonts = [
-    {
-      name: 'lustria', 
+// altonTheme.googleFonts = [
+//     {
+//       name: 'lustria', 
       
 
-    }
-]
+//     }
+// ]
 
 
 
-const typography = new Typography(
-  // { 
-//   baseFontSize: "18px", 
-//   baseLineHeight: 1.666,
-//   headerFontFamily: ['lustria', 'serif'],
-//   bodyFontFamily: ['lustria', 'serif']
+// const typography = new Typography(
+//   // { 
+// //   baseFontSize: "18px", 
+// //   baseLineHeight: 1.666,
+// //   headerFontFamily: ['lustria', 'serif'],
+// //   bodyFontFamily: ['lustria', 'serif']
  
-// }
-{altonTheme}
-);
+// // }
+// {altonTheme}
+// );
 
-export default typography
+// export default typography
