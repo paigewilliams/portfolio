@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { StaticQuery, graphql } from "gatsby"
+import { Link } from 'gatsby'
 
 
 const OuterSidebar = styled.div`
@@ -44,27 +44,20 @@ const InnerSidebar = styled.div`
 
 `
 
- const Sidebar = ({siteTitle}) => (
-   <StaticQuery 
-    query={graphql`
-      query siteLinksQuery {
-        allSitePage (skip: 5){
-          edges {
-            node {
-              id
-            }
-          }
-        }
-      }
-    `}
-  render={data => (
+ const Sidebar = ({pageLinks, siteTitle}) => (
     <OuterSidebar>
     <InnerSidebar>
       <h1>{siteTitle}</h1>
+      {
+        pageLinks.map(link =>
+          <li key={link.name}>
+          <Link to={link.link}>{link.name}</Link>
+          </li>)
+      }
     </InnerSidebar>
   </OuterSidebar>
-  )}
-  />
+
+  
  )
 
  export default Sidebar
