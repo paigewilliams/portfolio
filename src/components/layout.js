@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { Link, StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import { GlobalStyle } from '../theme/globalStyle'
-import { SidebarFunction } from "./sidebar"
+import { Sidebar } from "./sidebar"
 import Helmet from 'react-helmet'
 import PropTypes from "prop-types"
 
@@ -23,14 +23,14 @@ const Inner = styled.div`
   padding-right: 10%;
   max-width: 600;
 `
-const Layout = styled.div`
-  margin: 0.5rem; 
-  display: flex; 
-  margin-left: 0.5rem; 
-  flex-direction: row;
-  overflow: auto;
-  max-width: 600;
-`
+// const LayoutStyle = styled.div`
+//   margin: 0.5rem; 
+//   display: flex; 
+//   margin-left: 0.5rem; 
+//   flex-direction: row;
+//   overflow: auto;
+//   max-width: 600;
+// `
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -49,28 +49,11 @@ const Layout = ({ children }) => (
         title={data.site.siteMetadata.title}>
         <html lang="en" />
         </Helmet>
-       <SidebarFunction />
+       
        <Inner>{children}</Inner>
-       </>
+      </>
     )}
     />
 )
-
-Layout.propTypes = {
-  children: propTypes.node.isRequired
-}
-
 export default Layout
 
-
-// export default ({ children }) => (
-//   <div>
-//   <GlobalStyle />
-//   <Layout>
-//     <SidebarFunction />
-//     <Inner>
-//       {children}
-//     </Inner>
-//   </Layout>
-//   </div>
-// )

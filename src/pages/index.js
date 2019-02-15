@@ -41,4 +41,4 @@ const Index = () => (
   </Layout>
 );
 
-export defualt Index
+export default Index

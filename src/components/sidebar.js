@@ -72,7 +72,8 @@ const ListLink = styled(Link)`
   } 
 `
 
- const SidebarFunction = () => (
+ const Sidebar = () => (
+   <>
     <SidebarStyle>
       <InnerSidebar>
       <StyledLink to="/"><h2>P___W</h2></StyledLink>
@@ -84,6 +85,7 @@ const ListLink = styled(Link)`
           </PageList>
       </InnerSidebar>
     </SidebarStyle>
+    </>
  )
 
-export default SidebarFunction
+export default Sidebar
