@@ -14,7 +14,19 @@ View the live site [here](https://vigilant-kirch-6f65f0.netlify.com/contact/)
 
 ![alt text](https://github.com/paigewilliams/portfolio/blob/feb14/src/assets/PortfolioComponentTree.jpg)
 
+## 💭 Next steps 
 
+[ ] Create global styles
+ 
+[ ] Refactor code into more modular components
+
+[ ] Add images of projects
+
+[ ] Add interactivity to resume page
+
+[ ] Add lots of content
+
+[ ] Create contact form component
 
 ## 🚀 Quick start
 
