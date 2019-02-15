@@ -66,7 +66,7 @@ const ListLink = styled(Link)`
  const Sidebar = ({pageLinks, siteTitle}) => (
     <OuterSidebar>
     <InnerSidebar>
-      {/* <h1>{siteTitle}</h1> */}
+      <h1><Link to="/">{siteTitle}</Link></h1>
       <PageList>{
         pageLinks.map(link =>
           <li key={link.name}>
