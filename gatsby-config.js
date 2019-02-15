@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Paige Williams`,
+    title: `P__W.`,
     pageLinks: [
       {
         name:'about',

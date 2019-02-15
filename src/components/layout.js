@@ -23,6 +23,15 @@ const Inner = styled.div`
   padding-right: 10%;
   max-width: 600;
 `
+
+const Body = styled.div`
+  margin: 0.5rem; 
+   display: flex; 
+   margin-left: 0.5rem; 
+   flex-direction: row;
+   overflow: auto;
+   max-width: 600;
+`
 // const LayoutStyle = styled.div`
 //   margin: 0.5rem; 
 //   display: flex; 
@@ -53,8 +62,12 @@ const Layout = ({ children }) => (
         title={data.site.siteMetadata.title}>
         <html lang="en" />
         </Helmet>
+        <Body>
        <Sidebar pageLinks={data.site.siteMetadata.pageLinks} siteTitle={data.site.siteMetadata.title} />
-       <Inner>{children}</Inner>
+       <Inner>
+        {children}
+       </Inner>
+       </Body>
       </>
     )}
     />

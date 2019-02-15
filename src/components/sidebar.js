@@ -13,7 +13,7 @@ const OuterSidebar = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // z-index: 1;
+  z-index: 1;
   background-color: #FDD9C8;
   flex-grow: 1;
   padding-right: 1rem;
