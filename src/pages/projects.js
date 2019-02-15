@@ -12,7 +12,6 @@ export default ({ data }) => {
   <Layout>
     <div>
       <h1>Featured Projects</h1>
-      {/* <h4>{data.allMarkdownRemark.totalCount} Projects</h4> */}
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
           <ProjectLink to={node.fields.slug}>
@@ -37,6 +36,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            
           }
           fields {
             slug
