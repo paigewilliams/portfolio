@@ -14,26 +14,28 @@ const Body = styled.div`
 const Text = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 20em;
+  margin-right: 2em;
   @media (max-width: 1000px) {
     flex-direction: column;
   } 
 `;
 
-const Test = styled.h1`
-  font-family: 'Lustria', serif;
+const Header = styled.h1`
+  font-size: 40px;
 `;
 
-const BodyTest = styled.p`
-  font-family: 'Montserrat', sans-serif;
+const SubHeader = styled.h3`
+  font-size: 20px;
 `;
 
 const Index = () => (
   <Layout>
       <Body>
         <Text>
-      <Test>Hi, I'm Paige.</Test>
-      <h4> I am a front-end web developer and cartographer in Portland, OR.</h4>
-      <BodyTest>Currently: I am a student at Epicodus, learning Ruby, JavaScript and React.</BodyTest>
+      <Header>Hi, I'm Paige.</Header>
+      <SubHeader> I am a front-end web developer and cartographer in Portland, OR.</SubHeader>
+      <p>Currently: I am a student at Epicodus, learning Ruby, JavaScript and React.</p>
       <p>I am looking for work with a company that prioritizes growth and creativity. </p>
       </Text>
       <Image /> 
