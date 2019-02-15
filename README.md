@@ -10,9 +10,9 @@
 
 View the live site [here](https://vigilant-kirch-6f65f0.netlify.com/contact/)
 
-## 💅Component tree
+## 🌳Component tree
 
-![alt text]()
+![alt text](https://github.com/paigewilliams/portfolio/blob/feb14/src/assets/PortfolioComponentTree.jpg)
 
 
 
