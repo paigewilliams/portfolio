@@ -16,6 +16,7 @@ const Text = styled.div`
   flex-direction: column;
   @media (max-width: 1000px) {
     flex-direction: column;
+
     
   } 
 `;
