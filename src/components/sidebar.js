@@ -25,10 +25,27 @@ const OuterSidebar = styled.div`
     background-color: #F8C3B2;
     flex-direction: row;
 `
+const InnerSidebar = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 40rem;
+  max-height: 15rem;
+  // justify-content: space-around;
+  flex-grow: 1;
+  @media (max-width: 1000px) {
+    flex-direction: row;
+    align-items: center;
+    justift-content: center;
+    height: 6rem;  
+  }
+`
 
  const Sidebar = ({siteTitle}) => (
   <OuterSidebar>
-    <h1>{siteTitle}</h1>
+    <InnerSidebar>
+      <h1>{siteTitle}</h1>
+    </InnerSidebar>
   </OuterSidebar>
  )
 
