@@ -1,6 +1,24 @@
 module.exports = {
   siteMetadata: {
     title: `Paige Williams`,
+    pageLinks: [
+      {
+        name:'about',
+        link:'/about'
+      }, 
+      {
+        name:'projects',
+        link:'/projects'
+      },
+      {
+        name:'resume',
+        link:'/resume'
+      }, 
+      {
+        name:'contact',
+        link:'/contact'
+      }
+    ],
     description: `My portfolio built with the Gatsby starter.`,
     author: `@gatsbyjs`,
   },

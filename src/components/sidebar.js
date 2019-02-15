@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import { StaticQuery, graphql } from "gatsby"
+
 
 const OuterSidebar = styled.div`
   position: fixed;
@@ -39,15 +41,30 @@ const InnerSidebar = styled.div`
     justift-content: center;
     height: 6rem;  
   }
-  
+
 `
 
  const Sidebar = ({siteTitle}) => (
-  <OuterSidebar>
+   <StaticQuery 
+    query={graphql`
+      query siteLinksQuery {
+        allSitePage (skip: 5){
+          edges {
+            node {
+              id
+            }
+          }
+        }
+      }
+    `}
+  render={data => (
+    <OuterSidebar>
     <InnerSidebar>
       <h1>{siteTitle}</h1>
     </InnerSidebar>
   </OuterSidebar>
+  )}
+  />
  )
 
  export default Sidebar
