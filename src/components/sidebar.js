@@ -13,10 +13,10 @@ const OuterSidebar = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  // z-index: 1;
   background-color: #F8C3B2;
   flex-grow: 1;
-  padding-right: 3rem;
+  padding-right: 1rem;
   padding-left: 1rem;
   @media (max-width: 1000px) {
     position: fixed;
@@ -33,7 +33,6 @@ const InnerSidebar = styled.div`
   height: 100%;
   max-width: 40rem;
   max-height: 15rem;
-  // justify-content: space-around;
   flex-grow: 1;
   @media (max-width: 1000px) {
     flex-direction: row;
@@ -56,7 +55,8 @@ const ListLink = styled(Link)`
   text-decoration: none;
   color: white;
   padding-top: 0.5rem;
-  letter-spacing: 0.15rem;
+  letter-spacing: 0.25rem;
+  line-height: 3rem;
   @media (max-width: 1000px) {
     display: inherit;
     margin-left: 20px;
@@ -66,7 +66,7 @@ const ListLink = styled(Link)`
  const Sidebar = ({pageLinks, siteTitle}) => (
     <OuterSidebar>
     <InnerSidebar>
-      <h1>{siteTitle}</h1>
+      {/* <h1>{siteTitle}</h1> */}
       <PageList>{
         pageLinks.map(link =>
           <li key={link.name}>
