@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 import { GlobalStyle } from '../theme/globalStyle'
-import { Sidebar } from "./sidebar"
+import Sidebar from "./sidebar"
 import Helmet from 'react-helmet'
 import PropTypes from "prop-types"
 
@@ -49,7 +49,7 @@ const Layout = ({ children }) => (
         title={data.site.siteMetadata.title}>
         <html lang="en" />
         </Helmet>
-       
+       <Sidebar siteTitle={data.site.siteMetadata.title} />
        <Inner>{children}</Inner>
       </>
     )}
