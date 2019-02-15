@@ -27,7 +27,7 @@ const BodyTest = styled.p`
   font-family: 'Montserrat', sans-serif;
 `;
 
-export default () => (
+const Index = () => (
   <Layout>
       <Body>
         <Text>
@@ -40,3 +40,5 @@ export default () => (
     </Body>   
   </Layout>
 );
+
+export defualt Index
