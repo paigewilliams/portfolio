@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { TypographyStyle, GoogleFont } from 'react-typography'
+import { GlobalStyle } from '../theme/globalStyle'
 
 
 const ListLink = styled(Link)`
@@ -103,6 +103,8 @@ const Layout = styled.div`
   max-width: 600;
 `
 export default ({ children }) => (
+  <div>
+  <GlobalStyle />
   <Layout>
     <Sidebar>
       <InnerSidebar>
@@ -119,5 +121,5 @@ export default ({ children }) => (
       {children}
     </Inner>
   </Layout>
-  
+  </div>
 )
