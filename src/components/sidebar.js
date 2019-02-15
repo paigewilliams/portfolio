@@ -14,7 +14,7 @@ const OuterSidebar = styled.div`
   justify-content: center;
   align-items: center;
   // z-index: 1;
-  background-color: #F8C3B2;
+  background-color: #FDC9B1;
   flex-grow: 1;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -24,7 +24,7 @@ const OuterSidebar = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #F8C3B2;
+    background-color: #FDC9B1;
     flex-direction: row;
 `
 const InnerSidebar = styled.div`
