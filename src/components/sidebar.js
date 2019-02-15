@@ -39,6 +39,7 @@ const InnerSidebar = styled.div`
     justift-content: center;
     height: 6rem;  
   }
+  
 `
 
  const Sidebar = ({siteTitle}) => (
