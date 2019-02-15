@@ -14,7 +14,7 @@ const OuterSidebar = styled.div`
   justify-content: center;
   align-items: center;
   // z-index: 1;
-  background-color: #FDC9B1;
+  background-color: #FDD9C8;
   flex-grow: 1;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -24,7 +24,7 @@ const OuterSidebar = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #FDC9B1;
+    background-color: #FDD9C8;
     flex-direction: row;
 `
 const InnerSidebar = styled.div`
@@ -53,10 +53,13 @@ const PageList = styled.ul`
 `
 const ListLink = styled(Link)`
   text-decoration: none;
-  color: white;
+  color: #B9572B;
   padding-top: 0.5rem;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.15rem;
   line-height: 3rem;
+  :hover {
+    color: #DA7A4F;
+  }
   @media (max-width: 1000px) {
     display: inherit;
     margin-left: 20px;

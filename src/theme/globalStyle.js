@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components"
 export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Lustria', serif;
+   
   };
 
   p {
@@ -15,6 +16,6 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: white;
+    color: #B9572B;
   };
 `
