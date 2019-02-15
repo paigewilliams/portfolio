@@ -9,7 +9,7 @@ const Image = () => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "images/self.png" }) {
+         file(relativePath: { eq: "images/self.png" }) {
           childImageSharp {
             fixed(
               width: 500
@@ -20,7 +20,7 @@ const Image = () => (
         }
       }
     `}
-    render={data => <Img fixed={data.placeholderImage.childImageSharp.fixed} />}
+    render={data => <Img fixed={data.file.childImageSharp.fixed} />}
   />
 )
 export default Image
