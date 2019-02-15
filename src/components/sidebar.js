@@ -41,19 +41,38 @@ const InnerSidebar = styled.div`
     justift-content: center;
     height: 6rem;  
   }
-
+`
+const PageList = styled.ul`
+  list-style: none; 
+  margin-left: none;
+  display: block;
+  @media (max-width: 1000px) {
+    display: inherit;
+    // margin-left: 30px;
+    justify-content: space-evenly;
+  } 
+`
+const ListLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+  padding-top: 0.5rem;
+  letter-spacing: 0.15rem;
+  @media (max-width: 1000px) {
+    display: inherit;
+    margin-left: 20px;
+  } 
 `
 
  const Sidebar = ({pageLinks, siteTitle}) => (
     <OuterSidebar>
     <InnerSidebar>
       <h1>{siteTitle}</h1>
-      {
+      <PageList>{
         pageLinks.map(link =>
           <li key={link.name}>
-          <Link to={link.link}>{link.name}</Link>
+          <ListLink to={link.link}>{link.name}</ListLink>
           </li>)
-      }
+      }</PageList>
     </InnerSidebar>
   </OuterSidebar>
 
