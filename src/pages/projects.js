@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
+import Img from 'gatsby-image'
 
 const ProjectLink = styled(Link)`
   text-decoration: none;
@@ -15,7 +16,8 @@ export default ({ data }) => {
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
           <ProjectLink to={node.fields.slug}>
-            <h3>{node.frontmatter.title}{" "}</h3>
+            <h3>{node.frontmatter.title}</h3>
+            <Img fixed={node.frontmatter.img.childImageSharp.fixed}/>
             <p>{node.excerpt}</p>
           </ProjectLink> 
          </div> 
@@ -36,7 +38,13 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
-           
+            img {
+              childImageSharp {
+                fixed(width: 500) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
           fields {
             slug

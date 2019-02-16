@@ -8,16 +8,15 @@ const Image = () => (
       query {
          file(relativePath: { eq: "images/self.png" }) {
           childImageSharp {
-            fixed(
-              width: 500
-              ) {
+            fixed(width: 500) {
               ...GatsbyImageSharpFixed
             }
           }
         }
       }
     `}
-    render={data => <Img fixed={data.file.childImageSharp.fixed} />}
+    render={data => 
+    <Img fixed={data.file.childImageSharp.fixed} />}
   />
 )
 export default Image
