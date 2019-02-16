@@ -15,7 +15,7 @@ const ProjectsBody = styled.div`
   justify-content: flex-start;
 `
 const ProjectText = styled.div`
-  width: 40%;
+  
 `
 
 export default ({ data }) => {
