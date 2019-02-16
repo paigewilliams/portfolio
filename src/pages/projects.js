@@ -36,17 +36,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
-            img {
-              childImageSharp {
-                sqip(numberOfPrimitives: 24, blur: 0, width: 256) {
-                  dataURI
-                  svg
-                }
-                sizes(maxWidth: 600) {
-                  ...GatsbyImageSharpSizes_withWebp_noBase64
-                }
-              }
-            }
+           
           }
           fields {
             slug
