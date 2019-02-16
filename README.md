@@ -1,14 +1,13 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
   Paige Williams Portfolio
 </h1>
 
 View the live site [here](https://vigilant-kirch-6f65f0.netlify.com/contact/)
+
+## Description 
+
+This is my porfolio built with Gatsby and deployed with Netlify. 
 
 ## 🌳Component tree
 
@@ -16,11 +15,11 @@ View the live site [here](https://vigilant-kirch-6f65f0.netlify.com/contact/)
 
 ## 💭 Next steps 
 
-[ ] Create global styles
+[x] Create global styles
  
-[ ] Refactor code into more modular components
+[x] Refactor code into more modular components
 
-[ ] Add images of projects
+[x] Add images of projects
 
 [ ] Add interactivity to resume page
 
