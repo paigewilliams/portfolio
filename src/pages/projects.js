@@ -8,19 +8,32 @@ const ProjectLink = styled(Link)`
   text-decoration: none;
   color: #2B2B2B;  
 `
+
+const ProjectsBody = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+`
+const ProjectText = styled.div`
+  width: 40%;
+`
+
 export default ({ data }) => {
   return (
   <Layout>
     <div>
       <h1>Featured Projects</h1>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
+        <ProjectsBody key={node.id}>
           <ProjectLink to={node.fields.slug}>
-            <h3>{node.frontmatter.title}</h3>
+            <ProjectText>
+              <h3>{node.frontmatter.title}</h3>
+              <p>{node.excerpt}</p>
+            </ProjectText>
             <Img fixed={node.frontmatter.img.childImageSharp.fixed}/>
-            <p>{node.excerpt}</p>
           </ProjectLink> 
-         </div> 
+          
+         </ProjectsBody> 
       ))}
     </div>
     
@@ -40,7 +53,7 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
             img {
               childImageSharp {
-                fixed(width: 500) {
+                fixed(width: 400) {
                   ...GatsbyImageSharpFixed
                 }
               }
