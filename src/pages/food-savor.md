@@ -1,7 +1,7 @@
 ---
 title: "Food Savor"
 date: "2017-08-10"
-image: "./src/images/food-savor.png"
+img: "/images/food-savor.png"
 ---
 
 For the final project of our JavaScript course, a small group and I created an Angular app to find recipes that use expiring ingredients. The purpose of the app is to eliminate food waste. The user can search by different diet and health preferences, as well as create an account and save favorite recipes. The user can also add notes to their favorite recipe.
