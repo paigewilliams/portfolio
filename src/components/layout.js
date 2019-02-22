@@ -17,6 +17,7 @@ const Inner = styled.div`
   margin: 1rem auto;
   padding-left: 20%;
   padding-right: 20%;
+  max-width: 50em;
 `
 const Layout = ({ children }) => (
   <StaticQuery

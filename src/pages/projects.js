@@ -9,30 +9,32 @@ const ProjectLink = styled(Link)`
   color: #2B2B2B;  
 `
 const ProjectBody = styled.div`
-  flex-direction: row;
+  break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+  margin: 0px 0px 2em;
 `
-const Test = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 10em;
-  margin-right: 2em;
+const Columns = styled.div`
+  column-count: 2;
+  column-gap: 1em
 `
+
 
 export default ({ data }) => {
   console.log(data)
   return (
   <Layout>
+    <Columns>
       {data.allFile.edges.map(({ node }) => (
         <ProjectBody>
         <ProjectLink to={node.childMarkdownRemark.fields.slug} key={node.id}> 
-        <Test>
         <h3>{node.childMarkdownRemark.frontmatter.title}</h3>
         <p>{node.childMarkdownRemark.excerpt}</p>
-        </Test>
         <Img fixed={node.childMarkdownRemark.frontmatter.img.childImageSharp.fixed}/>
         </ProjectLink>
         </ProjectBody> 
       ))}
+      </Columns>
   </Layout>
   )
 }
