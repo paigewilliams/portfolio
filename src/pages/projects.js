@@ -30,7 +30,7 @@ export default ({ data }) => {
               <h3>{node.childMarkdownRemark.frontmatter.title}</h3>
               <p>{node.childMarkdownRemark.excerpt}</p>
             </ProjectText>
-            {/* <Img fixed={node.frontmatter.img.childImageSharp.fixed}/> */}
+            <Img fixed={node.childMarkdownRemark.frontmatter.img.childImageSharp.fixed}/>
           </ProjectLink> 
          </ProjectsBody> 
       ))}
@@ -41,30 +41,33 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allFile(filter: {relativeDirectory: {regex: "/(pages)/(projects)/"}}) {
-        edges {
-          node {
-            id
-            relativeDirectory
-            childMarkdownRemark {
-              frontmatter {
-                title
-                date(formatString: "DD MMMM, YYYY")
-                img {
-                  childImageSharp {
-                    fixed(width: 400){
-                      ...GatsbyImageSharpFixed
-                    }
+    allFile(
+      filter: {internal: {mediaType: {eq: "text/markdown"}}, 
+        relativeDirectory: {regex: "/(pages)/(projects)/"}} 
+    ) {
+      edges {
+        node {
+          id
+          relativeDirectory
+          childMarkdownRemark {
+            frontmatter {
+              title
+              date
+              img {
+                childImageSharp {
+                  fixed(width: 400){
+                    ...GatsbyImageSharpFixed
                   }
                 }
               }
-              fields {
-                slug
-              }
-              excerpt
             }
+            fields {
+              slug
+            }
+            excerpt
           }
-        } 
-      }
+        }
+      }     
+    }
   }
 `
