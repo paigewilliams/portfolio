@@ -11,30 +11,35 @@ const ProjectLink = styled(Link)`
 
 const ProjectsBody = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  max-width: 20em;
+  @media (max-width: 1000px) {
+  flex-direction: column;
+  } 
 `
-const ProjectText = styled.div`
-  display: flex;
+
+const ProjectWhole = styled.div`
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
 `
+
 
 export default ({ data }) => {
   console.log(data)
   return (
   <Layout>
-    <div>
       {data.allFile.edges.map(({ node }) => (
-        <ProjectsBody key={node.id}>
+        <ProjectWhole>
           <ProjectLink to={node.childMarkdownRemark.fields.slug}>
-            <ProjectText>
+          <ProjectsBody key={node.id}>
               <h3>{node.childMarkdownRemark.frontmatter.title}</h3>
               <p>{node.childMarkdownRemark.excerpt}</p>
-            </ProjectText>
-            <Img fixed={node.childMarkdownRemark.frontmatter.img.childImageSharp.fixed}/>
+          </ProjectsBody> 
+          <Img fixed={node.childMarkdownRemark.frontmatter.img.childImageSharp.fixed}/>
           </ProjectLink> 
-         </ProjectsBody> 
+        </ProjectWhole>
       ))}
-    </div>
   </Layout>
   )
 }
