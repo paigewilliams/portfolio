@@ -35,6 +35,7 @@ const Index = () => (
           <SubHeader> I am a front-end web developer and cartographer in Portland, OR.</SubHeader>
           <p>Currently: I am a student at Epicodus, learning Ruby, JavaScript and React.</p>
           <p>I am looking for work with a company that prioritizes growth and creativity. </p>
+          <p>Tech I like to work with: React/Redux, GraphQL, D3</p>
       </Text>
       <Image /> 
     </Body>   

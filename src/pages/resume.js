@@ -1,9 +1,19 @@
 import React from "react"
 import Layout from "../components/layout"
+import styled from "styled-components"
+
+const Header = styled.h1`
+  font-size: 40px;
+  line-height: 1.16667;
+  padding: 5px 0;
+  padding-bottom: 40px;
+`;
 
 export default () => (
   <Layout>
-    <h1>Paige Williams</h1>
+    <Header>Skills</Header>
+
+    {/* <h1>Paige Williams</h1>
     <h4>I am a front-end developer with a passionate for using tech and maps to serve people and the planet. I love efficient and well-designed code.</h4>
     <h4>paw145@humboldt.edu</h4>
     <h3>Skills</h3>
@@ -51,6 +61,6 @@ export default () => (
     <h3>Leadership</h3>
     <h5>Resistance GIS Conference, co-Organizer</h5>
     <p>May 2017</p>
-    <p>Organized the first Resistance GIS conference at Portland State University, where my specific roles were coordinating food donations and event management.</p>
+    <p>Organized the first Resistance GIS conference at Portland State University, where my specific roles were coordinating food donations and event management.</p> */}
   </Layout>
 )
