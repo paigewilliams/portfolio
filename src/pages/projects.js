@@ -11,7 +11,6 @@ const Columns = styled.div`
     column-count: 1;
   } 
 `
-
 const ProjectLink = styled(Link)`
   text-decoration: none;
   color: #2B2B2B;  
@@ -25,27 +24,8 @@ const ProjectBody = styled.div`
     opacity: 0.3;
   }
 
-  :hover HoverBody {
-    opacity: 1;
-  }
-`
-const HoverBody = styled.div`
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
 `
 
-const HoverText = styled.div`
-  background-color: #4CAF50;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
-`
 const Image = styled(Img)`
   width: 100%;
   height: 100%;
@@ -53,6 +33,7 @@ const Image = styled(Img)`
     color: #DA7A4F;
   }
 `
+
 
 export default ({ data }) => {
   console.log(data)
@@ -67,11 +48,6 @@ export default ({ data }) => {
         sizes={
           node.childMarkdownRemark.frontmatter.img.childImageSharp.sizes
         }/>
-        <HoverBody>
-          <HoverText>
-            <p>hello</p>
-          </HoverText>
-        </HoverBody>
         </ProjectLink>
         </ProjectBody> 
       ))}
