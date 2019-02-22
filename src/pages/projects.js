@@ -8,37 +8,28 @@ const ProjectLink = styled(Link)`
   text-decoration: none;
   color: #2B2B2B;  
 `
-
-const ProjectsBody = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 20em;
-  @media (max-width: 1000px) {
-  flex-direction: column;
-  } 
+const ProjectBody = styled.div`
+  display: grid;
+  grid-template-columns: 300px 600px;
+  grid-template-rows: auto auto;
+  justify-items: start;
 `
-
-const ProjectWhole = styled.div`
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: space-between;
-`
-
-
 export default ({ data }) => {
   console.log(data)
   return (
   <Layout>
       {data.allFile.edges.map(({ node }) => (
-        <ProjectWhole>
-          <ProjectLink to={node.childMarkdownRemark.fields.slug}>
-          <ProjectsBody key={node.id}>
-              <h3>{node.childMarkdownRemark.frontmatter.title}</h3>
-              <p>{node.childMarkdownRemark.excerpt}</p>
-          </ProjectsBody> 
-          <Img fixed={node.childMarkdownRemark.frontmatter.img.childImageSharp.fixed}/>
-          </ProjectLink> 
-        </ProjectWhole>
+        <ProjectBody>
+        <ProjectLink to={node.childMarkdownRemark.fields.slug} key={node.id}>
+       
+        <h3>{node.childMarkdownRemark.frontmatter.title}</h3>
+        <p>{node.childMarkdownRemark.excerpt}</p>
+    
+        
+        <Img fixed={node.childMarkdownRemark.frontmatter.img.childImageSharp.fixed}/>
+    >
+        </ProjectLink>
+        </ProjectBody> 
       ))}
   </Layout>
   )
