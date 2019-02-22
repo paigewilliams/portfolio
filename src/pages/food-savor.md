@@ -1,6 +1,7 @@
 ---
 title: "Food Savor"
 date: "2017-08-10"
+type: "project"
 img: ./projects/food-savor.png
 ---
 

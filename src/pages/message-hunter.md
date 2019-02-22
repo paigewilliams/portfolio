@@ -1,6 +1,7 @@
 ---
 title: "Message Hunter"
 date: "2017-08-10"
+type: "project"
 img: ./projects/messenger-hunt.png
 ---
 
