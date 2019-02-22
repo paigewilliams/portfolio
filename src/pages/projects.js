@@ -9,10 +9,8 @@ const ProjectLink = styled(Link)`
   color: #2B2B2B;  
 `
 const ProjectBody = styled.div`
-  display: grid;
-  grid-template-columns: 300px 600px;
-  grid-template-rows: auto auto;
-  justify-items: start;
+  display: flex;
+  flex-direction: row;
 `
 export default ({ data }) => {
   console.log(data)
@@ -20,14 +18,10 @@ export default ({ data }) => {
   <Layout>
       {data.allFile.edges.map(({ node }) => (
         <ProjectBody>
-        <ProjectLink to={node.childMarkdownRemark.fields.slug} key={node.id}>
-       
+        <ProjectLink to={node.childMarkdownRemark.fields.slug} key={node.id}> 
         <h3>{node.childMarkdownRemark.frontmatter.title}</h3>
         <p>{node.childMarkdownRemark.excerpt}</p>
-    
-        
         <Img fixed={node.childMarkdownRemark.frontmatter.img.childImageSharp.fixed}/>
-    >
         </ProjectLink>
         </ProjectBody> 
       ))}

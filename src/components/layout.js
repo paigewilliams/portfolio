@@ -32,14 +32,6 @@ const Body = styled.div`
    overflow: auto;
    max-width: 600;
 `
-// const LayoutStyle = styled.div`
-//   margin: 0.5rem; 
-//   display: flex; 
-//   margin-left: 0.5rem; 
-//   flex-direction: row;
-//   overflow: auto;
-//   max-width: 600;
-// `
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
