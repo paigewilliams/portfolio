@@ -47,7 +47,7 @@ export default ({ data }) => {
         sizes={
           node.childMarkdownRemark.frontmatter.img.childImageSharp.sizes
         }/>
-        <h4>{node.childMarkdownRemark.frontmatter.title}</h4>
+        <h2>{node.childMarkdownRemark.frontmatter.title}</h2>
         <p>{node.childMarkdownRemark.frontmatter.tech}</p>
         </ProjectLink>
         </ProjectBody> 
