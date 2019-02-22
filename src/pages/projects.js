@@ -15,17 +15,17 @@ const ProjectsBody = styled.div`
   justify-content: flex-start;
 `
 const ProjectText = styled.div`
-  
+  display: flex;
 `
 
 export default ({ data }) => {
   return (
   <Layout>
     <div>
-      <h1>Featured Projects</h1>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <ProjectsBody key={node.id}>
           <ProjectLink to={node.fields.slug}>
+          
             <ProjectText>
               <h3>{node.frontmatter.title}</h3>
               <p>{node.excerpt}</p>
