@@ -9,17 +9,15 @@ import PropTypes from "prop-types"
 const Inner = styled.div`
   flex-direction: column;
   justify-content: center;
-  align-items: left;
-  flex-grow: 1;
   padding-top: calc(var(--responsive-padding) + var(--safe-area-inset-top));
   padding-right: calc(var(--responsive-padding) + var(--safe-area-inset-right));
   padding-bottom: calc(
     var(--responsive-padding) + var(--safe-area-inset-bottom)
   );
-  margin: 3rem auto;
-  overflow-y: auto;
+  margin: 1rem auto;
+
   padding-left: 20%;
-  padding-right: 10%;
+  padding-right: 20%;
 `
 const Layout = ({ children }) => (
   <StaticQuery
