@@ -13,10 +13,34 @@ const ProjectBody = styled.div`
   display: inline-block;
   width: 100%;
   margin: 0px 0px 2em;
+  :hover Img {
+    opacity: 0.3;
+  }
+
+  :hover HoverBody {
+    opacity: 1;
+  }
 `
 const Columns = styled.div`
   column-count: 2;
-  column-gap: 1em
+  column-gap: 1em;
+`
+const HoverBody = styled.div`
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+`
+
+const HoverText = styled.div`
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
 `
 
 
@@ -28,9 +52,10 @@ export default ({ data }) => {
       {data.allFile.edges.map(({ node }) => (
         <ProjectBody>
         <ProjectLink to={node.childMarkdownRemark.fields.slug} key={node.id}> 
-        <h3>{node.childMarkdownRemark.frontmatter.title}</h3>
-        <p>{node.childMarkdownRemark.excerpt}</p>
         <Img fixed={node.childMarkdownRemark.frontmatter.img.childImageSharp.fixed}/>
+        <HoverBody>
+          <HoverText>{node.childMarkdownRemark.frontmatter.tech}</HoverText>
+        </HoverBody>
         </ProjectLink>
         </ProjectBody> 
       ))}

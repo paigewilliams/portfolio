@@ -3,6 +3,7 @@ title: "Message Hunter"
 date: "2017-08-10"
 type: "project"
 img: ./messenger-hunt.png
+tech: "Ruby on Rails / JavaScript / Google Maps / Postgres" 
 ---
 
 For the final project of our Ruby and Rails course, four of us created a scavenger hunt app using the Google Maps API.
