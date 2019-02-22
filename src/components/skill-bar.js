@@ -2,15 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
+  column-count: 2;
+  column-gap: 1em;
+  @media (max-width: 1000px) {
+    column-count: 1;
+  }
 `
 const Bars = styled.ul`
   margin: 0 0 30px 0;
   padding: 0;
   width: calc(100% - 50px);
   li {
+    font-size: 8px;
     display: block;
     position: relative;
     background-color: #888;
@@ -21,9 +24,8 @@ const Bars = styled.ul`
       width: 0 !important;
     }
     p {
-      padding: 10px;
+      padding: 6px;
       margin: 0;
-      font-weight: bold;
     }
     span {
       position: absolute;
@@ -34,7 +36,7 @@ const Bars = styled.ul`
       text-align: right;
       font-weight: normal;
       color: #fff;
-      font-size: 11px;
+      font-size: 8px;
     }
   }
 `
@@ -64,7 +66,7 @@ class SkillBar extends React.Component {
             <li
               key={skill.type}
               style={{ width: `${skill.level}%`, backgroundColor: `#224F78` }}>
-              <p>{skill.type}<span>{skill.level}</span></p>
+              <p>{skill.skill}<span>{skill.level}</span></p>
             </li>
           )}
         </Bars>
