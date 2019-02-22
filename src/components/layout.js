@@ -16,21 +16,10 @@ const Inner = styled.div`
   padding-bottom: calc(
     var(--responsive-padding) + var(--safe-area-inset-bottom)
   );
-  float: left; 
   margin: 3rem auto;
   overflow-y: auto;
   padding-left: 20%;
   padding-right: 10%;
-  max-width: 600;
-`
-
-const Body = styled.div`
-  margin: 0.5rem; 
-   display: flex; 
-   margin-left: 0.5rem; 
-   flex-direction: row;
-   overflow: auto;
-   max-width: 600;
 `
 const Layout = ({ children }) => (
   <StaticQuery
@@ -54,12 +43,10 @@ const Layout = ({ children }) => (
         title={data.site.siteMetadata.title}>
         <html lang="en" />
         </Helmet>
-        <Body>
        <Sidebar pageLinks={data.site.siteMetadata.pageLinks} siteTitle={data.site.siteMetadata.title} />
        <Inner>
         {children}
        </Inner>
-       </Body>
       </>
     )}
     />
