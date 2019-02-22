@@ -23,20 +23,19 @@ const ProjectBody = styled.div`
   :hover Img {
     opacity: 0.3;
   }
-
 `
-
 const Image = styled(Img)`
   width: 100%;
   height: 100%;
-  :hover {
-    color: #DA7A4F;
-  }
+ 
+`
+const TestImage = styled.div`
+  background-image: ${props => `url(${props.url})`};
+  width: 100px;
+  height: 100px; 
 `
 
-
 export default ({ data }) => {
-  console.log(data)
   return (
   <Layout>
     <Columns>
@@ -48,6 +47,8 @@ export default ({ data }) => {
         sizes={
           node.childMarkdownRemark.frontmatter.img.childImageSharp.sizes
         }/>
+        <h4>{node.childMarkdownRemark.frontmatter.title}</h4>
+        <p>{node.childMarkdownRemark.frontmatter.tech}</p>
         </ProjectLink>
         </ProjectBody> 
       ))}
@@ -70,6 +71,7 @@ export const query = graphql`
             frontmatter {
               title
               date
+              tech
               img {
                 childImageSharp {
                   sizes(maxWidth: 600){
