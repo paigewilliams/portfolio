@@ -1,6 +1,7 @@
 ---
 title: "Mock Bikeshare"
 date: "2017-08-21"
+type: "project"
 img: ./projects/bike-share.png
 ---
 

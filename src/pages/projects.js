@@ -25,18 +25,15 @@ export default ({ data }) => {
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <ProjectsBody key={node.id}>
           <ProjectLink to={node.fields.slug}>
-          
             <ProjectText>
               <h3>{node.frontmatter.title}</h3>
               <p>{node.excerpt}</p>
             </ProjectText>
             <Img fixed={node.frontmatter.img.childImageSharp.fixed}/>
           </ProjectLink> 
-          
          </ProjectsBody> 
       ))}
     </div>
-    
   </Layout>
   )
 }
