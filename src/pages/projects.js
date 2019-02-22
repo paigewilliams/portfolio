@@ -49,9 +49,13 @@ export const query = graphql`
             childMarkdownRemark {
               frontmatter {
                 title
-                date
+                date(formatString: "DD MMMM, YYYY")
                 img {
-                  id
+                  childImageSharp {
+                    fixed(width: 400){
+                      ...GatsbyImageSharpFixed
+                    }
+                  }
                 }
               }
               fields {
