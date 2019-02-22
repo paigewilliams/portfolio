@@ -52,7 +52,11 @@ export default ({ data }) => {
       {data.allFile.edges.map(({ node }) => (
         <ProjectBody>
         <ProjectLink to={node.childMarkdownRemark.fields.slug} key={node.id}> 
-        <Img fixed={node.childMarkdownRemark.frontmatter.img.childImageSharp.fixed}/>
+        <Img 
+        fadeIn={false}
+        sizes={
+          node.childMarkdownRemark.frontmatter.img.childImageSharp.sizes
+        }/>
         <HoverBody>
           <HoverText>{node.childMarkdownRemark.frontmatter.tech}</HoverText>
         </HoverBody>
@@ -80,8 +84,8 @@ export const query = graphql`
               date
               img {
                 childImageSharp {
-                  fixed(width: 400){
-                    ...GatsbyImageSharpFixed
+                  sizes(maxWidth: 600){
+                    ...GatsbyImageSharpSizes_withWebp_noBase64
                   }
                 }
               }
