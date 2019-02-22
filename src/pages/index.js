@@ -16,9 +16,7 @@ const Text = styled.div`
   flex-direction: column;
   max-width: 20em;
   margin-right: 2em;
-  @media (max-width: 1000px) {
-    flex-direction: column;
-  } 
+  
 `;
 
 const Header = styled.h1`

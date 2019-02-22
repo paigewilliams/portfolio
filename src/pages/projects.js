@@ -4,6 +4,14 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import Img from 'gatsby-image'
 
+const Columns = styled.div`
+  column-count: 2;
+  column-gap: 1em;
+  @media (max-width: 1000px) {
+    column-count: 1;
+  } 
+`
+
 const ProjectLink = styled(Link)`
   text-decoration: none;
   color: #2B2B2B;  
@@ -20,10 +28,6 @@ const ProjectBody = styled.div`
   :hover HoverBody {
     opacity: 1;
   }
-`
-const Columns = styled.div`
-  column-count: 2;
-  column-gap: 1em;
 `
 const HoverBody = styled.div`
   transition: .5s ease;
@@ -42,7 +46,13 @@ const HoverText = styled.div`
   font-size: 16px;
   padding: 16px 32px;
 `
-
+const Image = styled(Img)`
+  width: 100%;
+  height: 100%;
+  :hover {
+    color: #DA7A4F;
+  }
+`
 
 export default ({ data }) => {
   console.log(data)
@@ -52,13 +62,15 @@ export default ({ data }) => {
       {data.allFile.edges.map(({ node }) => (
         <ProjectBody>
         <ProjectLink to={node.childMarkdownRemark.fields.slug} key={node.id}> 
-        <Img 
+        <Image 
         fadeIn={false}
         sizes={
           node.childMarkdownRemark.frontmatter.img.childImageSharp.sizes
         }/>
         <HoverBody>
-          <HoverText>{node.childMarkdownRemark.frontmatter.tech}</HoverText>
+          <HoverText>
+            <p>hello</p>
+          </HoverText>
         </HoverBody>
         </ProjectLink>
         </ProjectBody> 
