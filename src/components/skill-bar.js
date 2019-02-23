@@ -2,16 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Bars = styled.ul`
-  margin: 0 0 30px 0;
   padding: 0;
+  margin-top: 0;
   li {
     width: calc(100%-20px);
     color: #fff;
-    font-size: 14px;
+    font-size: 1rem;
     display: block;
     position: relative;
     background-color: #888;
-    margin: 10px 0;
+    margin-bottom: 10px;
     border-radius: 2px;
     p {
       font-family: 'Montserrat', serif;
@@ -38,7 +38,7 @@ class SkillBar extends React.Component {
   render(){
     const { collapsed } = this.state;
     const { skills } = this.props;
-    console.log(collapsed);
+  
     return(
       <div>
         <Bars collapsed={collapsed}>

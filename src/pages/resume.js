@@ -2,13 +2,26 @@ import React from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import SkillBar from "../components/skill-bar"
-// import SkillBar from "react-skillbars"
+
 const Header = styled.h1`
   font-size: 40px;
   line-height: 1.16667;
-  padding: 5px 0;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
+  top: auto;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  
 `;
+
+const Inner = styled.span`
+  border-bottom: 3px solid black;
+  :after { 
+    transform: scaleX(0);
+    transition: .25s linear;
+  }
+  
+`
 
 const skillsLeft = [
   {type: 'JavaScript', level: 75},
@@ -25,20 +38,24 @@ const skillsRight = [
   {type: 'ArcMap 10.x', level: 80},
   {type: 'Illustrator', level: 65},
   {type: 'Git', level: 85},
-  {type: 'PostgresSQL', level: 20},
-  {type: 'Firebase', level: 40}
+  {type: 'PostgresSQL', level: 30},
+  {type: 'Firebase', level: 35}
 ]
 
 const Test = styled.div`
   column-count: 2;
+ 
+  @media (max-width: 1000px) {
+    column-count: 1;
+  }
 `
 
 export default () => (
   <Layout>
-    <Header>Skills</Header>
+    <Header><Inner>Skills</Inner></Header>
       <Test>
         <SkillBar skills={skillsLeft}  />
-        <SkillBar skills={skillsRight} height={15} />
+        <SkillBar skills={skillsRight} />
       </Test>
     
     {/* <h1>Paige Williams</h1>
