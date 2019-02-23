@@ -20,9 +20,7 @@ const Bars = styled.ul`
     color: #fff;
     margin: 10px 0;
     transition: width 300ms ease-in-out;
-    .collapsed & {
-      width: 0 !important;
-    }
+    width: ${props => props.collapsed ? 0 : 100};
     p {
       padding: 6px;
       margin: 0;
@@ -61,7 +59,7 @@ class SkillBar extends React.Component {
     console.log(skills);
     return(
       <Container>
-        <Bars>
+        <Bars collapsed>
         {skills.map((skill) => 
             <li
               key={skill.type}
