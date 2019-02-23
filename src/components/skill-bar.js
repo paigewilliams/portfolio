@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  column-count: 2;
-  column-gap: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: 
   @media (max-width: 1000px) {
     column-count: 1;
   }
@@ -11,29 +12,19 @@ const Container = styled.div`
 const Bars = styled.ul`
   margin: 0 0 30px 0;
   padding: 0;
-  width: calc(100% - 50px);
+  transition: width 300ms ease-in-out;
+  width: ${props => props.collapsed ? '100' : '0'}
   li {
-    font-size: 8px;
+    color: #fff;
+    font-size: 14px;
     display: block;
     position: relative;
     background-color: #888;
     margin: 10px 0;
-    transition: width 300ms ease-in-out;
-    color: ${props => props.collapsed ? 'red' : 'black'};
+   
     p {
-      padding: 6px;
+      padding: 5px;
       margin: 0;
-    }
-    span {
-      position: absolute;
-      right: 10px;
-      display: inline-block;
-      width: 30px;
-      top: 11px;
-      text-align: right;
-      font-weight: normal;
-      color: #fff;
-      font-size: 8px;
     }
   }
 `
@@ -49,7 +40,7 @@ class SkillBar extends React.Component {
   componentDidMount(){
     setTimeout(() => {
       this.setState({collapsed: true})
-    }, 5000);
+    }, 1000);
   }
 
   render(){
@@ -63,7 +54,7 @@ class SkillBar extends React.Component {
             <li
               key={skill.skill}
               style={{ width: `${skill.level}%`, backgroundColor: `#224F78` }}>
-              <p>{skill.skill}<span>{skill.level}</span></p>
+              <p>{skill.skill}</p>
             </li>
           )}
         </Bars>
