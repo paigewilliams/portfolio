@@ -17,10 +17,9 @@ const Bars = styled.ul`
     display: block;
     position: relative;
     background-color: #888;
-    color: #fff;
     margin: 10px 0;
     transition: width 300ms ease-in-out;
-    width: ${props => props.collapsed ? 0 : 100};
+    color: ${props => props.collapsed ? 'red' : 'black'};
     p {
       padding: 6px;
       margin: 0;
@@ -43,26 +42,26 @@ class SkillBar extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      collapsed: true
+      collapsed: false
     };
   }
 
-  // componentDidMount(){
-  //   setTimeout(() => {
-  //     this.setState({collapsed: false})
-  //   }, 1000);
-  // }
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState({collapsed: true})
+    }, 5000);
+  }
 
   render(){
     const { collapsed } = this.state;
     const { skills } = this.props;
-    console.log(skills);
+    console.log(collapsed);
     return(
       <Container>
-        <Bars collapsed>
+        <Bars collapsed={collapsed}>
         {skills.map((skill) => 
             <li
-              key={skill.type}
+              key={skill.skill}
               style={{ width: `${skill.level}%`, backgroundColor: `#224F78` }}>
               <p>{skill.skill}<span>{skill.level}</span></p>
             </li>
