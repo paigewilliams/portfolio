@@ -1,7 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
-import SkillBar from "../components/skill-bar"
+// import SkillBar from "../components/skill-bar"
+import SkillBar from "react-skillbars"
 const Header = styled.h1`
   font-size: 40px;
   line-height: 1.16667;

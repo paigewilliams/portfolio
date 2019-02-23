@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: 
+  column-count: 2
   @media (max-width: 1000px) {
     column-count: 1;
   }
@@ -12,9 +10,9 @@ const Container = styled.div`
 const Bars = styled.ul`
   margin: 0 0 30px 0;
   padding: 0;
-  transition: width 300ms ease-in-out;
-  width: ${props => props.collapsed ? '100' : '0'}
+ 
   li {
+    // width: ${props => props.collapsed ? '200%' : '0'}
     color: #fff;
     font-size: 14px;
     display: block;
