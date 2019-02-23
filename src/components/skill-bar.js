@@ -12,8 +12,9 @@ const Bars = styled.ul`
     position: relative;
     background-color: #888;
     margin: 10px 0;
-    border-radius: 5px;
+    border-radius: 2px;
     p {
+      font-family: 'Montserrat', serif;
       padding: 5px;
       margin: 0;
     }
@@ -44,7 +45,7 @@ class SkillBar extends React.Component {
         {skills.map((skill) => 
             <li
               key={skill.skill}
-              style={{ width: `${skill.level}%`, backgroundColor: `#224F78` }}>
+              style={{ width: `${skill.level}%`, backgroundColor: `#DA7A4F` }}>
               <p>{skill.type}</p>
             </li>
           )}
