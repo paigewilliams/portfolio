@@ -11,21 +11,35 @@ This is my porfolio built with Gatsby and deployed with Netlify.
 
 ## 🌳Component tree
 
-![alt text](https://github.com/paigewilliams/portfolio/blob/feb14/src/assets/PortfolioComponentTree.jpg)
+![alt text](https://github.com/paigewilliams/portfolio/blob/master/src/images/component-tree.jpg)
 
 ## 💭 Next steps 
 
-[x] Create global styles
+- [x] Create global styles
  
-[x] Refactor code into more modular components
+- [x] Refactor code into more modular components
 
-[x] Add images of projects
+- [x] Add images of projects
 
-[ ] Add interactivity to resume page
+- [x] Create skill bars 
 
-[ ] Add lots of content
+- [ ] Add interactivity to skill bars
 
-[ ] Create contact form component
+- [ ] Add content to About and Contact page
+
+- [ ] Organize projects by date
+
+- [ ] Animate links with CSS
+
+- [ ] Increase responsiveness
+
+- [ ] Link to blogposts
+
+- [ ] Link to Social (twitter, linkedIn, github, code pen)
+
+- [ ] Design personal logo
+
+- [ ] Convert resume text to markdown
 
 
 ## 🚀 Quick start
