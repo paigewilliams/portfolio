@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
   };
 
   p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     line-height: 22px;
     font-size: 16px;
   };
@@ -15,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
   li {
     font-size: 16px;
   }
+  
 
   a {
     text-decoration: none;

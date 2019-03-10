@@ -46,10 +46,6 @@ const Header = styled.h1`
   margin-top: 0;
 `;
 
-const SubHeader = styled.h3`
-  font-size: 20px;
-`;
-
 const BodyText = styled.div`
   margin-top: 10rem;
  @media (max-width: 1000px){
