@@ -37,7 +37,6 @@ const ListLink = styled(Link)`
   color: #B9572B;
   position: relative;
   z-index: 5;
-  // display: inline-block;
   :after {
     background: none repeat scroll 0 0 transparent;
     bottom: 7%;
@@ -55,10 +54,26 @@ const ListLink = styled(Link)`
     width: 100%; 
     left: 0; 
   }
-
   @media (max-width: 600px) {
     color: white;
     font-size: 40px;
+    :after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 8%;
+      content: "";
+      display: block;
+      height: 10px;
+      left: 50%;
+      position: absolute;
+      background: #B9572B;
+      z-index: -1;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+    :hover:after {
+      width: 100%; 
+      left: 0; 
+    }
   }
 
 `
@@ -98,7 +113,6 @@ const LinkLi = styled.li`
     width: 100%;
     height: 100%;
   }
- 
 `  
 const BurgerMenu = styled.div`
   display: none;
@@ -120,15 +134,16 @@ const TopLine = styled.span`
   height: 1px;
   border-radius: 2px;
   background-color: black;
+  transform: ${props => props.toggle ? 'rotate(-45deg)' : 'none'};
 `
 const BottomLine = styled.span`
   position: relative;
   display: block;
   width: 21px;
   height: 1px;
-  margin-top: 6px;
   background-color: black;
   border-radius: 2px;
+  transform: ${props => props.toggle ? 'rotate(45deg)' : 'none'};
 `
 
  class Sidebar extends React.Component {
@@ -165,8 +180,8 @@ const BottomLine = styled.span`
           }</PageList>
           </Nav>
           <BurgerMenu onClick={this.handleSideMenuToggle}>
-            <TopLine></TopLine>
-            <BottomLine></BottomLine>
+            <TopLine toggle={this.state.showSideMenu}></TopLine>
+            <BottomLine toggle={this.state.showSideMenu}></BottomLine>
           </BurgerMenu>
         </LogoDiv>
       </InnerSidebar>
