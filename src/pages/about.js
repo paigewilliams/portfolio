@@ -40,8 +40,8 @@ const Text = styled.div`
 const Lists = styled.div`
   display: flex;
   flex-direction: column;
-  // justify-content: flex-start;
-  margin-right: 6.5rem;
+  justify-content: flex-start;
+  margin-right: 10rem;
   max-width: 25rem;
   margin-top: 5rem;
   @media (max-width: 800px){
@@ -69,7 +69,7 @@ export default () => (
     </Text> 
     
     <Lists>
-    <h3>When I am not coding I am likely:</h3>
+    <h3>When I am not coding I am:</h3>
     <Dashed>
       <li>Listening to podcasts</li>
       <li>Hiking in Forest Park</li>

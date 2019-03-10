@@ -16,7 +16,7 @@ text-decoration: none;
     height: 10px;
     left: 50%;
     position: absolute;
-    background: #B1A13D;
+    background: #E7C7B8;
     z-index: -1;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
