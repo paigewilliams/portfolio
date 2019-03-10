@@ -56,13 +56,7 @@ const ListLink = styled(Link)`
 `
 const LogoDiv = styled.div`
   display: flex;
-  @media (max-width: 600px) {
-    flex: 1;
-    margin-right: 0;
-  }
-  @media (max-width: 1024px){
-    flex: 0 0 calc(50% - 1rem);
-  }
+  flex-direction: row;
 `
 const Nav = styled.nav`
   @media (max-width: 600px) {

@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: #B9572B;
+   color: black;
   };
 
  
