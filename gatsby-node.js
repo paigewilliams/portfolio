@@ -28,15 +28,16 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   `
-).then(result => {
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/components/project-page.js`),
-      context: {
-        slug: node.fields.slug,
-      },
-    })
-  })
-  })
+)
+// .then(result => {
+  // result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  //   createPage({
+  //     path: node.fields.slug,
+  //     component: path.resolve(`./src/components/project-page.js`),
+  //     context: {
+  //       slug: node.fields.slug,
+  //     },
+  //   })
+  // })
+  // })
 }

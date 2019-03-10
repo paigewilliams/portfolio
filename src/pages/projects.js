@@ -41,7 +41,6 @@ export default ({ data }) => {
     <Columns>
       {data.allFile.edges.map(({ node }) => (
         <ProjectBody>
-        <ProjectLink to={node.childMarkdownRemark.fields.slug} key={node.id}> 
         <Image 
         fadeIn={false}
         sizes={
@@ -49,7 +48,7 @@ export default ({ data }) => {
         }/>
         <h2>{node.childMarkdownRemark.frontmatter.title}</h2>
         <p>{node.childMarkdownRemark.frontmatter.tech}</p>
-        </ProjectLink>
+      
         </ProjectBody> 
       ))}
       </Columns>
@@ -80,9 +79,7 @@ export const query = graphql`
                 }
               }
             }
-            fields {
-              slug
-            }
+
             excerpt
           }
         }
