@@ -13,7 +13,7 @@ const InnerSidebar = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  max-width: 1140px;
+  max-width: 1300px;
   position: relative;
   margin: 0 auto;
 `
@@ -21,7 +21,7 @@ const PageList = styled.ul`
   list-style: none; 
   margin: 0;
   padding: 0;
-  @media(max-width: 600px){
+  @media(max-width: 800px){
     margin-top: 2rem;
     display: flex;
     align-items: center;
@@ -54,7 +54,7 @@ const ListLink = styled(Link)`
     width: 100%; 
     left: 0; 
   }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     color: white;
     font-size: 40px;
     :after {
@@ -82,7 +82,7 @@ const LogoDiv = styled.div`
   flex-direction: row;
 `
 const Nav = styled.nav`
-  @media (max-width: 600px){
+  @media (max-width: 800px){
     z-index: 6;
     background-color: #E7C7B8;
     display: flex;
@@ -94,7 +94,7 @@ const Nav = styled.nav`
     height: 100%;
     display: ${props => props.showMenu ? 'block' : 'none'};
   }
-  @media (min-width: 600px) {
+  @media (min-width: 800px) {
     display: block;
   }
   
@@ -104,7 +104,7 @@ const LinkLi = styled.li`
   position: relative;
   margin-left: 3.8rem;
 
-  @media (max-width: 600px){
+  @media (max-width: 800px){
     margin-left: 0;
     display: flex;
     align-items: center;
@@ -123,7 +123,7 @@ const BurgerMenu = styled.div`
   height: 48px;
   position: relative;
   z-index: 8;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     display: flex;
   }
 `
@@ -156,7 +156,7 @@ const BottomLine = styled.span`
   }
 
   handleSideMenuToggle() {
-    if (window.innerWidth <= 600){
+    if (window.innerWidth <= 800){
       this.setState({ showSideMenu: !this.state.showSideMenu});
     }
   }

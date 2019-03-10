@@ -7,7 +7,7 @@ const Body = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  @media (max-width: 1000px) {
+  @media (max-width: 800px) {
     flex-direction: column; 
   } 
 `;
@@ -32,7 +32,11 @@ const Text = styled.div`
   animation-duration: 1s;
   animation-fill-mode: both;
   -webkit-animation-duration: 1s;
-  -webkit-animation-fill-mode: both
+  -webkit-animation-fill-mode: both;
+  @media (max-width: 800px){
+    padding-right: 1rem;
+    width: 100%;
+  }
 `;
 
 const Header = styled.h1`
@@ -48,6 +52,9 @@ const SubHeader = styled.h3`
 
 const BodyText = styled.div`
   margin-top: 10rem;
+ @media (max-width: 1000px){
+   margin-top: 1rem;
+ } 
 `
 
 const Index = () => (
