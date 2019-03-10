@@ -16,7 +16,7 @@ to {
 const Body = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   animation: ${fadeInUp};
   animation-duration: 1s;
   animation-fill-mode: both;
@@ -30,8 +30,8 @@ const Body = styled.div`
 const Text = styled.div`
   display: flex;
   flex-direction: column;
-  padding-right: 8.3rem;
   max-width: 32rem;
+  padding-right: 11rem;
   @media (max-width: 800px){
     padding-right: 1rem;
     width: 100%;
@@ -41,7 +41,6 @@ const Lists = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-right: 10rem;
   max-width: 25rem;
   margin-top: 5rem;
   @media (max-width: 800px){
