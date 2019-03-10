@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Image from "../components/image"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 const Body = styled.div`
   display: flex;
@@ -11,12 +11,27 @@ const Body = styled.div`
   } 
 `;
 
+const fadeInUp = keyframes`
+from {
+  transform: translate3d(0,25px,0)
+}
+
+to {
+  transform: translate3d(0,0,0);
+  opacity: 1
+}
+`
+
 const Text = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 20em;
   margin-right: 2em;
-  
+  animation: ${fadeInUp};
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both
 `;
 
 const Header = styled.h1`

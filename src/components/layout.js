@@ -17,7 +17,14 @@ const Inner = styled.div`
   margin: 1rem auto;
   padding-left: 20%;
   padding-right: 20%;
-  max-width: 50em;
+ 
+`
+const Container = styled.div`
+  // max-width: 1140px;
+  // padding: 0 1.5rem;
+  // position: relative;
+  // margin: 0 auto;
+
 `
 const Layout = ({ children }) => (
   <StaticQuery
@@ -40,11 +47,13 @@ const Layout = ({ children }) => (
       <Helmet
         title={data.site.siteMetadata.title}>
         <html lang="en" />
-        </Helmet>
-       <Sidebar pageLinks={data.site.siteMetadata.pageLinks} siteTitle={data.site.siteMetadata.title} />
-       <Inner>
+      </Helmet>
+      <Container>
+        <Sidebar pageLinks={data.site.siteMetadata.pageLinks} siteTitle={data.site.siteMetadata.title} />
+        <Inner>
         {children}
-       </Inner>
+        </Inner>
+      </Container>
       </>
     )}
     />

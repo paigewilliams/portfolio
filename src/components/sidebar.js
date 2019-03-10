@@ -2,80 +2,87 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from 'gatsby'
 
-
 const OuterSidebar = styled.div`
-  position: fixed;
-  flex-shrink: 0;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  background-color: #FDD9C8;
-  flex-grow: 1;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  @media (max-width: 1000px) {
-    position: fixed;
-    top: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #FDD9C8;
-    flex-direction: row;
+  margin-bottom: 2rem;
+  padding: 1rem 0 0;
+  width: 100%;
 `
 const InnerSidebar = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height: 100%;
-  max-width: 40rem;
-  max-height: 15rem;
-  flex-grow: 1;
-  @media (max-width: 1000px) {
-    flex-direction: row;
-    align-items: center;
-    justift-content: center;
-    height: 6rem;  
-  }
+  max-width: 1140px;
+  padding: 0 1rem;
+  position: relative;
+  margin: 0 auto;
 `
 const PageList = styled.ul`
   list-style: none; 
-  margin-left: none;
-  display: block;
-  @media (max-width: 1000px) {
-    display: inherit;
-    // margin-left: 30px;
-    justify-content: space-evenly;
-  } 
+  margin: 0;
+  padding: 0;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+
 `
 const ListLink = styled(Link)`
   text-decoration: none;
   color: #B9572B;
-  padding-top: 0.5rem;
+  position: relative;
+  z-index: 0;
+  display: inline-block
   letter-spacing: 0.15rem;
-  line-height: 3rem;
   :hover {
     color: #DA7A4F;
   }
-  @media (max-width: 1000px) {
-    display: inherit;
-    margin-left: 20px;
-  } 
+
 `
+const LogoDiv = styled.div`
+  display: flex;
+  margin-right: ${props => props.links ? '3rem' : '0'};
+  flex: 0 0 calc(50% - 1.5rem);
+  @media (max-width: 600px) {
+    flex: 1;
+    margin-right: 0;
+
+  }
+  @media (max-width: 1024px){
+    margin-right: 2rem;
+    flex: 0 0 calc(50% - 1rem);
+  }
+`
+const Nav = styled.nav`
+  @media (max-width: 600px) {
+    display: none;
+  }
+`
+const LinkLi = styled.li`
+  display: inline-block;
+  position: relative;
+  margin-right: 1.5rem;
+
+`  
+
 
  const Sidebar = ({pageLinks, siteTitle}) => (
-    <OuterSidebar>
+  <OuterSidebar>
     <InnerSidebar>
-      <h1><Link to="/">{siteTitle}</Link></h1>
-      <PageList>{
-        pageLinks.map(link =>
-          <li key={link.name}>
-          <ListLink to={link.link}>{link.name}</ListLink>
-          </li>)
-      }</PageList>
+      <LogoDiv>
+        <h1><Link to="/">{siteTitle}</Link></h1>
+      </LogoDiv>
+      <LogoDiv links>
+        <Nav>
+          <PageList>{
+          pageLinks.map(link =>
+            <LinkLi key={link.name}>
+            <ListLink to={link.link}>{link.name}</ListLink>
+            </LinkLi>)
+        }</PageList>
+        </Nav>
+      </LogoDiv>
     </InnerSidebar>
   </OuterSidebar>
 

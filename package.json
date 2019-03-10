@@ -31,18 +31,7 @@
     "react-typography": "^0.16.18",
     "styled-components": "^4.1.3",
     "typeface-lustria": "0.0.54",
-    "typeface-open-sans": "0.0.54",
-    "typography": "^0.16.18",
-    "typography-theme-alton": "^0.16.18",
-    "typography-theme-de-young": "^0.16.18",
-    "typography-theme-kirkham": "^0.16.18",
-    "typography-theme-lawton": "^0.16.18",
-    "typography-theme-lincoln": "^0.16.18",
-    "typography-theme-moraga": "^0.16.18",
-    "typography-theme-stardust": "^0.16.18",
-    "typography-theme-stow-lake": "^0.16.18",
-    "typography-theme-sutro": "^0.16.18",
-    "typography-theme-zacklive": "^1.0.2"
+    "typography": "^0.16.18"
   },
   "keywords": [
     "gatsby"
