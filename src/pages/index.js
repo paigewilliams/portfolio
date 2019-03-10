@@ -52,23 +52,21 @@ const BodyText = styled.div`
 
 const Index = () => (
   <Layout>
-      <Body>
-        <Text>
-          <Header>Hi, I'm Paige. 
-            I am a front-end
-            web developer
-            and cartographer 
-            in Portland, OR.</Header>
-            <BodyText>
-            <p>I am a student at Epicodus, learning Ruby, JavaScript and React.
-          I am looking for work with a company that prioritizes growth and creativity. 
-          I like working with React/Redux, GraphQL, and D3.</p>
-
-            </BodyText>
-
-          
+    <Body>
+      <Text>
+        <Header>
+          Hi, I'm Paige. 
+          I am a front-end
+          web developer
+          and cartographer 
+          in Portland, OR.
+          </Header>
+          <BodyText>
+          <p>I am a student at Epicodus, learning Ruby, JavaScript and React. I am currently looking for work with a company that prioritizes growth and creativity. 
+          I like working with React/Redux, GraphQL, and Mapbox.</p>
+          </BodyText>
       </Text>
-      <Image /> 
+    <Image /> 
     </Body>   
   </Layout>
 );

@@ -27,7 +27,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Lustria', 'Montserrat:400,500']
+          families: ['Lustria','Open Sans','Montserrat:400,500']
         }
       }
     },

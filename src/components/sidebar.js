@@ -29,12 +29,14 @@ const PageList = styled.ul`
 
 `
 const ListLink = styled(Link)`
+  font-family: 'Open Sans', sans-serif;
+  // text-transform: uppercase;
   text-decoration: none;
   color: #B9572B;
   position: relative;
   z-index: 5;
   display: inline-block
-  letter-spacing: 0.15rem;
+  
   :after {
     background: none repeat scroll 0 0 transparent;
     bottom: 7%;
@@ -67,6 +69,8 @@ const LinkLi = styled.li`
   display: inline-block;
   position: relative;
   margin-left: 3.8rem;
+  letter-spacing: 3px;
+  // font-weight: bold;
 `  
 const BurgerMenu = styled.div`
   display: none;

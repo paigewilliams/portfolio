@@ -2,7 +2,7 @@
 title: "Message Hunter"
 date: "2017-08-10"
 type: "project"
-img: ./messenger-hunt.png
+img: ./messagehunterscreen.png
 tech: "Ruby on Rails / JavaScript / Google Maps / Postgres" 
 ---
 

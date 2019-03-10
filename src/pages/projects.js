@@ -10,10 +10,8 @@ const ProjectLink = styled(Link)`
 `
 const ProjectBody = styled.div`
   display: flex;
-  // grid-template-columns: 2;
-  flex-direction: row;
   // justify-content: space-between;
-  
+  border-bottom: 1px solid #B2B2B2;
   @media (max-width: 1000px) {
     column-count: 1;
   } 
@@ -23,6 +21,7 @@ const ProjectBody = styled.div`
   // margin: 0px 0px 2em;
 `
 const Image = styled(Img)`
+  margin-bottom: 3rem;
   width: 50%;
   height: 50%;
 `
@@ -31,6 +30,12 @@ const Text = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   margin-left: 9rem;
+  max-width: 25rem;
+`
+const Line = styled.span`
+  display: block;
+  width: 100%;
+  border-top: 1px solid black;
 `
 export default ({ data }) => {
   return (
