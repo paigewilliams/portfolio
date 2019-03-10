@@ -25,13 +25,13 @@ This is my porfolio built with Gatsby and deployed with Netlify.
 
 - [ ] Add interactivity to skill bars
 
-- [ ] Add content to About and Contact page
+- [x] Add content to About and Contact page
 
 - [ ] Organize projects by date
 
 - [ ] Animate links with CSS
 
-- [ ] Increase responsiveness
+- [x] Increase responsiveness
 
 - [ ] Link to blogposts
 
