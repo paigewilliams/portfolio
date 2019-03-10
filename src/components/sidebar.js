@@ -29,13 +29,13 @@ const PageList = styled.ul`
 
 `
 const ListLink = styled(Link)`
-  font-family: 'Open Sans', sans-serif;
+  // font-family: 'Open Sans', sans-serif;
   // text-transform: uppercase;
   text-decoration: none;
   color: #B9572B;
   position: relative;
   z-index: 5;
-  display: inline-block
+  display: inline-block;
   
   :after {
     background: none repeat scroll 0 0 transparent;
@@ -61,15 +61,17 @@ const LogoDiv = styled.div`
   flex-direction: row;
 `
 const Nav = styled.nav`
-  @media (max-width: 600px) {
-    display: none;
+  display: ${props => props.showMenu ? 'block' : 'none'};
+  @media (min-width: 600px) {
+    display: block;
   }
+  
 `
 const LinkLi = styled.li`
   display: inline-block;
   position: relative;
   margin-left: 3.8rem;
-  letter-spacing: 3px;
+  // letter-spacing: 3px;
   // font-weight: bold;
 `  
 const BurgerMenu = styled.div`
@@ -103,30 +105,54 @@ const BottomLine = styled.span`
   border-radius: 2px;
 `
 
- const Sidebar = ({pageLinks, siteTitle}) => (
-  <OuterSidebar>
-    <InnerSidebar>
-      <LogoDiv>
-        <h1><Link to="/">{siteTitle}</Link></h1>
-      </LogoDiv>
-      <LogoDiv links>
-        <Nav>
-          <PageList>{
-          pageLinks.map(link =>
-            <LinkLi key={link.name}>
-            <ListLink to={link.link}>{link.name}</ListLink>
-            </LinkLi>)
-        }</PageList>
-        </Nav>
-        <BurgerMenu>
-          <TopLine></TopLine>
-          <BottomLine></BottomLine>
-        </BurgerMenu>
-      </LogoDiv>
-    </InnerSidebar>
-  </OuterSidebar>
+ class Sidebar extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      showSideMenu: false
+    }
+    this.handleSideMenuToggle = this.handleSideMenuToggle.bind(this);
+  }
+
+  handleSideMenuToggle() {
+    if (window.innerWidth <= 600){
+      this.setState({ showSideMenu: !this.state.showSideMenu});
+    }
+  }
+  
+  
+  render(){
+    const {pageLinks, siteTitle} = this.props;
+    return (
+      <OuterSidebar>
+      <InnerSidebar>
+        <LogoDiv>
+          <h1><Link to="/">{siteTitle}</Link></h1>
+        </LogoDiv>
+        <LogoDiv links>
+          <Nav showMenu={this.state.showSideMenu}>
+            <PageList>{
+            pageLinks.map(link =>
+              <LinkLi key={link.name}>
+              <ListLink to={link.link}>{link.name}</ListLink>
+              </LinkLi>)
+          }</PageList>
+          </Nav>
+          <BurgerMenu onClick={this.handleSideMenuToggle}>
+            <TopLine></TopLine>
+            <BottomLine></BottomLine>
+          </BurgerMenu>
+        </LogoDiv>
+      </InnerSidebar>
+    </OuterSidebar>
+    )
+  }
+
+ }
+
+ 
 
   
- )
+ 
 
  export default Sidebar
