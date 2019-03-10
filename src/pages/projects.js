@@ -4,55 +4,52 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import Img from 'gatsby-image'
 
-const Columns = styled.div`
-  column-count: 2;
-  column-gap: 1em;
-  @media (max-width: 1000px) {
-    column-count: 1;
-  } 
-`
 const ProjectLink = styled(Link)`
   text-decoration: none;
   color: #2B2B2B;  
 `
 const ProjectBody = styled.div`
-  break-inside: avoid;
-  display: inline-block;
-  width: 100%;
-  margin: 0px 0px 2em;
-  :hover Img {
-    opacity: 0.3;
-  }
+  display: flex;
+  // grid-template-columns: 2;
+  flex-direction: row;
+  // justify-content: space-between;
+  
+  @media (max-width: 1000px) {
+    column-count: 1;
+  } 
+  // break-inside: avoid;
+  // display: inline-block;
+  // width: 100%;
+  // margin: 0px 0px 2em;
 `
 const Image = styled(Img)`
-  width: 100%;
-  height: 100%;
- 
+  width: 50%;
+  height: 50%;
 `
-const TestImage = styled.div`
-  background-image: ${props => `url(${props.url})`};
-  width: 100px;
-  height: 100px; 
+const Text = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 9rem;
 `
-
 export default ({ data }) => {
   return (
-  <Layout>
-    <Columns>
+    <Layout>
       {data.allFile.edges.map(({ node }) => (
         <ProjectBody>
-        <Image 
-        fadeIn={false}
-        sizes={
-          node.childMarkdownRemark.frontmatter.img.childImageSharp.sizes
-        }/>
-        <h2>{node.childMarkdownRemark.frontmatter.title}</h2>
-        <p>{node.childMarkdownRemark.frontmatter.tech}</p>
-      
+          <Image 
+          fadeIn={false}
+          sizes={
+            node.childMarkdownRemark.frontmatter.img.childImageSharp.sizes
+          }/>
+          <Text>
+            <h2>{node.childMarkdownRemark.frontmatter.title}</h2>
+            <p>{node.childMarkdownRemark.frontmatter.tech}</p>
+            <div dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html }} />
+          </Text>
         </ProjectBody> 
       ))}
-      </Columns>
-  </Layout>
+    </Layout>
   )
 }
 
@@ -79,8 +76,7 @@ export const query = graphql`
                 }
               }
             }
-
-            excerpt
+            html
           }
         }
       }     
