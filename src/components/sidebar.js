@@ -4,8 +4,9 @@ import { Link } from 'gatsby'
 
 const OuterSidebar = styled.div`
   margin-bottom: 2rem;
-  padding: 1rem 0 0;
+  // padding: 1rem 0 0;
   width: 100%;
+  
 `
 const InnerSidebar = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ const InnerSidebar = styled.div`
   align-items: center;
   height: 100%;
   max-width: 1140px;
-  padding: 0 1rem;
+  padding-right: 1rem;
   position: relative;
   margin: 0 auto;
 `
@@ -32,17 +33,31 @@ const ListLink = styled(Link)`
   text-decoration: none;
   color: #B9572B;
   position: relative;
-  z-index: 0;
+  z-index: 5;
   display: inline-block
   letter-spacing: 0.15rem;
-  :hover {
-    color: #DA7A4F;
+  :after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 7%;
+    content: "";
+    display: block;
+    height: 10px;
+    left: 50%;
+    position: absolute;
+    background: #E7C7B8;
+    z-index: -1;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  :hover:after {
+    width: 100%; 
+    left: 0; 
   }
 
 `
 const LogoDiv = styled.div`
   display: flex;
-  margin-right: ${props => props.links ? '3rem' : '0'};
+  margin-right: ${props => props.links ? '-1rem' : '0'};
   flex: 0 0 calc(50% - 1.5rem);
   @media (max-width: 600px) {
     flex: 1;
@@ -62,10 +77,38 @@ const Nav = styled.nav`
 const LinkLi = styled.li`
   display: inline-block;
   position: relative;
-  margin-right: 1.5rem;
-
+  margin-right: 2.7rem;
 `  
-
+const BurgerMenu = styled.div`
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  width: 48px;
+  height: 48px;
+  position: relative;
+  z-index: 1;
+  @media (max-width: 600px) {
+    display: flex;
+  }
+`
+const TopLine = styled.span`
+  position: relative;
+  display: block;
+  width: 21px;
+  height: 1px;
+  border-radius: 2px;
+  background-color: black;
+`
+const BottomLine = styled.span`
+  position: relative;
+  display: block;
+  width: 21px;
+  height: 1px;
+  margin-top: 6px;
+  background-color: black;
+  border-radius: 2px;
+`
 
  const Sidebar = ({pageLinks, siteTitle}) => (
   <OuterSidebar>
@@ -82,6 +125,10 @@ const LinkLi = styled.li`
             </LinkLi>)
         }</PageList>
         </Nav>
+        <BurgerMenu>
+          <TopLine></TopLine>
+          <BottomLine></BottomLine>
+        </BurgerMenu>
       </LogoDiv>
     </InnerSidebar>
   </OuterSidebar>

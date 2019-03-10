@@ -25,8 +25,7 @@ to {
 const Text = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 20em;
-  margin-right: 2em;
+  padding-right: 2rem;
   animation: ${fadeInUp};
   animation-duration: 1s;
   animation-fill-mode: both;

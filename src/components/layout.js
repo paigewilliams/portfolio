@@ -8,22 +8,15 @@ import PropTypes from "prop-types"
 
 const Inner = styled.div`
   flex-direction: column;
-  justify-content: center;
-  // padding-top: calc(var(--responsive-padding) + var(--safe-area-inset-top));
-  // padding-right: calc(var(--responsive-padding) + var(--safe-area-inset-right));
-  // padding-bottom: calc(
-  //   var(--responsive-padding) + var(--safe-area-inset-bottom)
-  // );
-  margin: 1rem auto;
-  padding-left: 20%;
-  padding-right: 20%;
+  // justify-content: center;
+  // margin: 1rem auto;
  
 `
 const Container = styled.div`
-  // max-width: 1140px;
-  // padding: 0 1.5rem;
-  // position: relative;
-  // margin: 0 auto;
+  max-width: 1140px;
+  padding: 0 1.5rem;
+  position: relative;
+  margin: 0 auto;
 
 `
 const Layout = ({ children }) => (
