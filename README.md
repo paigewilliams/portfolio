@@ -3,7 +3,7 @@
   Paige Williams Portfolio
 </h1>
 
-View the live site [here](https://vigilant-kirch-6f65f0.netlify.com/contact/)
+View the live site [here](https://vigilant-kirch-6f65f0.netlify.com/)
 
 ## Description 
 
