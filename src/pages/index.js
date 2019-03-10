@@ -6,6 +6,7 @@ import styled, { keyframes } from "styled-components"
 const Body = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   @media (max-width: 1000px) {
     flex-direction: column; 
   } 
@@ -25,7 +26,8 @@ to {
 const Text = styled.div`
   display: flex;
   flex-direction: column;
-  padding-right: 2rem;
+  padding-right: 8.3rem;
+  max-width: 32rem;
   animation: ${fadeInUp};
   animation-duration: 1s;
   animation-fill-mode: both;
@@ -34,22 +36,37 @@ const Text = styled.div`
 `;
 
 const Header = styled.h1`
-  font-size: 40px;
+  font-size: 32px;
+  margin-bottom: -0.5rem;
+  line-height: 40px;
+  margin-top: 0;
 `;
 
 const SubHeader = styled.h3`
   font-size: 20px;
 `;
 
+const BodyText = styled.div`
+  margin-top: 10rem;
+`
+
 const Index = () => (
   <Layout>
       <Body>
         <Text>
-          <Header>Hi, I'm Paige.</Header>
-          <SubHeader> I am a front-end web developer and cartographer in Portland, OR.</SubHeader>
-          <p>Currently: I am a student at Epicodus, learning Ruby, JavaScript and React.</p>
-          <p>I am looking for work with a company that prioritizes growth and creativity. </p>
-          <p>Tech I like to work with: React/Redux, GraphQL, D3</p>
+          <Header>Hi, I'm Paige. 
+            I am a front-end
+            web developer
+            and cartographer 
+            in Portland, OR.</Header>
+            <BodyText>
+            <p>I am a student at Epicodus, learning Ruby, JavaScript and React.
+          I am looking for work with a company that prioritizes growth and creativity. 
+          I like working with React/Redux, GraphQL, and D3.</p>
+
+            </BodyText>
+
+          
       </Text>
       <Image /> 
     </Body>   

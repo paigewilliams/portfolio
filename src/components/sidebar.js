@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link } from 'gatsby'
 
 const OuterSidebar = styled.div`
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
   // padding: 1rem 0 0;
   width: 100%;
   
@@ -14,7 +14,6 @@ const InnerSidebar = styled.div`
   align-items: center;
   height: 100%;
   max-width: 1140px;
-  padding-right: 1rem;
   position: relative;
   margin: 0 auto;
 `
@@ -57,15 +56,11 @@ const ListLink = styled(Link)`
 `
 const LogoDiv = styled.div`
   display: flex;
-  margin-right: ${props => props.links ? '-1rem' : '0'};
-  flex: 0 0 calc(50% - 1.5rem);
   @media (max-width: 600px) {
     flex: 1;
     margin-right: 0;
-
   }
   @media (max-width: 1024px){
-    margin-right: 2rem;
     flex: 0 0 calc(50% - 1rem);
   }
 `
@@ -77,7 +72,7 @@ const Nav = styled.nav`
 const LinkLi = styled.li`
   display: inline-block;
   position: relative;
-  margin-right: 2.7rem;
+  margin-left: 3.8rem;
 `  
 const BurgerMenu = styled.div`
   display: none;

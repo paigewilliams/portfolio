@@ -3,9 +3,9 @@ import Layout from "../components/layout"
 
 export default () => (
   <Layout>
-    <h1>Email pls</h1>
-    <p>
-      <styledLink to="mailto:me@example.com"> me@example.com</styledLink>
-    </p>
+    <h1>Email</h1>
+    <h1>Github</h1>
+    <h1>LinkedIn</h1>
+    <h1>Twitter</h1>
   </Layout>
 )

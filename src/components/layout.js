@@ -14,7 +14,7 @@ const Inner = styled.div`
 `
 const Container = styled.div`
   max-width: 1140px;
-  padding: 0 1.5rem;
+  padding: 0 6rem;
   position: relative;
   margin: 0 auto;
 
