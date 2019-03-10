@@ -21,22 +21,23 @@ const PageList = styled.ul`
   list-style: none; 
   margin: 0;
   padding: 0;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
-
+  @media(max-width: 600px){
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+  
 `
 const ListLink = styled(Link)`
-  // font-family: 'Open Sans', sans-serif;
-  // text-transform: uppercase;
   text-decoration: none;
   color: #B9572B;
   position: relative;
   z-index: 5;
-  display: inline-block;
-  
+  // display: inline-block;
   :after {
     background: none repeat scroll 0 0 transparent;
     bottom: 7%;
@@ -55,13 +56,29 @@ const ListLink = styled(Link)`
     left: 0; 
   }
 
+  @media (max-width: 600px) {
+    color: white;
+    font-size: 40px;
+  }
+
 `
 const LogoDiv = styled.div`
   display: flex;
   flex-direction: row;
 `
 const Nav = styled.nav`
-  display: ${props => props.showMenu ? 'block' : 'none'};
+  @media (max-width: 600px){
+    z-index: 6;
+    background-color: #E7C7B8;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    display: ${props => props.showMenu ? 'block' : 'none'};
+  }
   @media (min-width: 600px) {
     display: block;
   }
@@ -71,8 +88,17 @@ const LinkLi = styled.li`
   display: inline-block;
   position: relative;
   margin-left: 3.8rem;
-  // letter-spacing: 3px;
-  // font-weight: bold;
+
+  @media (max-width: 600px){
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+ 
 `  
 const BurgerMenu = styled.div`
   display: none;
@@ -82,7 +108,7 @@ const BurgerMenu = styled.div`
   width: 48px;
   height: 48px;
   position: relative;
-  z-index: 1;
+  z-index: 8;
   @media (max-width: 600px) {
     display: flex;
   }
