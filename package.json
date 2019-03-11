@@ -31,7 +31,8 @@
     "react-typography": "^0.16.18",
     "styled-components": "^4.1.3",
     "typeface-lustria": "0.0.54",
-    "typography": "^0.16.18"
+    "typography": "^0.16.18",
+    "victory": "^32.0.0"
   },
   "keywords": [
     "gatsby"

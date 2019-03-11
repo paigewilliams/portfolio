@@ -1,11 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
-import SkillBar from "../components/skill-bar"
-
+// import SkillBar from "../components/skill-bar"
+import VictoryChartData from './../components/victory-bar';
 const Header = styled.h1`
-  font-size: 40px;
-  line-height: 1.16667;
   padding-bottom: 60px;
   top: auto;
   height: 2px;
@@ -14,9 +12,7 @@ const Header = styled.h1`
   letter-spacing: 0.10rem;
   line-height: 3rem;
 `
-const Inner = styled.span`
-  border-bottom: 3px solid black;
-`
+
 const ExpEdu = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
@@ -27,39 +23,30 @@ const skillsLeft = [
   {type: 'React/Redux', level: 75},
   {type: 'Ruby', level: 75},
   {type: 'HTML/CSS', level: 85},
-  {type: 'GraphQL', level: 25},
-  {type: 'Jasmine & Karma', level: 50}
-]
-
-const skillsRight = [
-  {type: 'Git', level: 85},
   {type: 'ArcMap 10.x', level: 80},
+  {type: 'Jasmine & Karma', level: 50},
+  {type: 'Git', level: 85},
+  {type: 'GraphQL', level: 25},
   {type: 'Illustrator', level: 65},
   {type: 'Node.js', level: 30},
   {type: 'PostgresSQL', level: 30},
   {type: 'Firebase', level: 35}
 ]
 
-const Test = styled.div`
-  column-count: 2;
-  @media (max-width: 1000px) {
-    column-count: 1;
-  }
-`
-
 export default () => (
   <Layout>
-    <Header><Inner>Skills</Inner></Header>
-      <Test>
-        <SkillBar skills={skillsLeft}  />
-        <SkillBar skills={skillsRight} />
-      </Test>
-      <Header><Inner>Open Source Contributions</Inner></Header>
+    <Header>Skills</Header>
+      <div>
+        <VictoryChartData 
+        data={skillsLeft}
+         />
+      </div>
+      <Header>Open Source Contributions</Header>
       <h3>Hack Oregon - Cartography and Data Visualization on team Sandox</h3>
       <p>Feb 2019 - August 2019</p>
       <ExpEdu>
         <div>
-        <Header><Inner>Experience</Inner></Header>
+        <Header>Experience</Header>
       <h3>Wine Assistant and Floor Supervisor - Pastaworks</h3>
       <p>March 2017 - January 2019</p>
       <ul>
@@ -85,7 +72,7 @@ export default () => (
       </ul>
         </div>
      <div>
-     <Header><Inner>Education</Inner></Header> 
+     <Header>Education</Header> 
       <h3>Certificate in Web Development - Epicodus</h3>
       <p>Anticipated 2019</p>
       <ul>
