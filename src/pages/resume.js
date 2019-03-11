@@ -21,13 +21,29 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
 `
-const RowOne =styled.div`
+const RowOne  = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   @media (max-width: 800px) {
     flex-direction: column; 
   } 
+`
+const SkillsSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-right: 8.3rem;
+  max-width: 50rem;
+`
+const OpenSourceSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 25rem;
+  @media (max-width: 800px){
+    margin-right: 0;
+    margin-top: 1rem;
+  }
 `
 const skillsLeft = [
   {type: 'JavaScript', level: 95},
@@ -48,24 +64,19 @@ export default () => (
   <Layout>
     <Body>
       <RowOne>
-        <div>
-        <Header>Skills</Header>
-      <div>
-        <VictoryChartData 
-        data={skillsLeft}
-         />
-      </div>
-        </div>
-      <div>
-      <Header>Open Source Contributions</Header>
-      <h3>Hack Oregon - Cartography and Data Visualization on team Sandox</h3>
-      <p>Feb 2019 - August 2019</p>
-      </div>
-   
+        <SkillsSection>
+          <Header>Skills</Header>
+          <VictoryChartData 
+          data={skillsLeft}/>
+        </SkillsSection>
+      <OpenSourceSection>
+        <Header>Open Source Contributions</Header>
+        <h3>Hack Oregon - Cartography and Data Visualization on team Sandox</h3>
+        <p>Feb 2019 - August 2019</p>
+      </OpenSourceSection>
       </RowOne>
-
       <ExpEdu>
-        <div>
+        <SkillsSection>
         <Header>Experience</Header>
       <h3>Wine Assistant and Floor Supervisor - Pastaworks</h3>
       <p>March 2017 - January 2019</p>
@@ -90,8 +101,8 @@ export default () => (
           Build and maintain the active transportation plan projects database
         </li>
       </ul>
-        </div>
-     <div>
+        </SkillsSection>
+     <OpenSourceSection>
      <Header>Education</Header> 
       <h3>Certificate in Web Development - Epicodus</h3>
       <p>Anticipated 2019</p>
@@ -103,7 +114,7 @@ export default () => (
       <h3>B. A. Environmental Studies with a minor in Geospatial Studies, Cum Laude - Humboldt State University</h3>
       <p>September 2012 - May 2016</p>
   
-     </div>
+     </OpenSourceSection>
       
       </ExpEdu>
       
