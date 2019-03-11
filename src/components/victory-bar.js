@@ -19,9 +19,8 @@ class VictoryChartData extends React.Component {
     return (
       <Container>
       <VictoryChart
-      
       domainPadding={20}
-      padding={{ left: 90, right: 20, bottom: 30 }}      
+      padding={{ left: 110, right: 20, bottom: 30 }}      
       style={{parent:{maxWidth: "100%"}}}
       >
       <VictoryAxis
@@ -37,7 +36,7 @@ class VictoryChartData extends React.Component {
       <VictoryBar 
       barWidth={10}
       style={{
-        data: { fill: "#c43a31" }
+        data: { fill: "#E7C7B8" }
       }}
       data={this.props.data}
       x="type"

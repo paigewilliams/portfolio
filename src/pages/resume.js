@@ -12,11 +12,22 @@ const Header = styled.h1`
   letter-spacing: 0.10rem;
   line-height: 3rem;
 `
-
 const ExpEdu = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   grid-column-gap: 20px;
+`
+const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+const RowOne =styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @media (max-width: 800px) {
+    flex-direction: column; 
+  } 
 `
 const skillsLeft = [
   {type: 'JavaScript', level: 95},
@@ -35,15 +46,24 @@ const skillsLeft = [
 
 export default () => (
   <Layout>
-    <Header>Skills</Header>
+    <Body>
+      <RowOne>
+        <div>
+        <Header>Skills</Header>
       <div>
         <VictoryChartData 
         data={skillsLeft}
          />
       </div>
+        </div>
+      <div>
       <Header>Open Source Contributions</Header>
       <h3>Hack Oregon - Cartography and Data Visualization on team Sandox</h3>
       <p>Feb 2019 - August 2019</p>
+      </div>
+   
+      </RowOne>
+
       <ExpEdu>
         <div>
         <Header>Experience</Header>
@@ -87,21 +107,6 @@ export default () => (
       
       </ExpEdu>
       
-    {/* <h1>Paige Williams</h1>
-    <h4>I am a front-end developer with a passionate for using tech and maps to serve people and the planet. I love efficient and well-designed code.</h4>
-    <h4>paw145@humboldt.edu</h4>
-  
-    
-    <h3>Education</h3>
-    <h5>Bachelor of Arts, Humboldt State University</h5>
-    <p>May 2016</p>
-    <p>Environmental Studies with a minor in Geospatial Studies</p>
-    <p>G.P.A: 3.7, Cum Laude</p>
-    <h5>Certificate in Web Development, Epicodus</h5>
-    <p>Anticipated April 2019</p>
-    <h3>Leadership</h3>
-    <h5>Resistance GIS Conference, co-Organizer</h5>
-    <p>May 2017</p>
-    <p>Organized the first Resistance GIS conference at Portland State University, where my specific roles were coordinating food donations and event management.</p> */}
+      </Body>
   </Layout>
 )
