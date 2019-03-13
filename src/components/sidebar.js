@@ -32,48 +32,7 @@ const PageList = styled.ul`
 
 `
 const ListLink = styled(Link)`
-  text-decoration: none;
-  color: #B9572B;
-  position: relative;
-  z-index: 5;
-  :after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: 7%;
-    content: "";
-    display: block;
-    height: 10px;
-    left: 50%;
-    position: absolute;
-    background: #E7C7B8;
-    z-index: -1;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-  }
-  :hover:after {
-    width: 100%;
-    left: 0;
-  }
-  @media (max-width: 800px) {
-    color: white;
-    font-size: 40px;
-    :after {
-      background: none repeat scroll 0 0 transparent;
-      bottom: 8%;
-      content: "";
-      display: block;
-      height: 10px;
-      left: 50%;
-      position: absolute;
-      background: #B9572B;
-      z-index: -1;
-      transition: width 0.3s ease 0s, left 0.3s ease 0s;
-      width: 0;
-    }
-    :hover:after {
-      width: 100%;
-      left: 0;
-    }
-  }
+
 
 `
 const LogoDiv = styled.div`
@@ -102,6 +61,54 @@ const LinkLi = styled.li`
   display: inline-block;
   position: relative;
   margin-left: 3.8rem;
+  text-decoration: none;
+  position: relative;
+  z-index: 5;
+  :after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 7%;
+    content: "";
+    display: block;
+    height: 10px;
+    left: 50%;
+    position: absolute;
+    background: #E7C7B8;
+    z-index: -1;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  :hover:after {
+    width: 100%;
+    left: 0;
+  }
+  @media (max-width: 800px) {
+    color: white;
+    font-size: 40px;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    // :after {
+    //   background: none repeat scroll 0 0 transparent;
+    //   bottom: 8%;
+    //   content: "";
+    //   display: block;
+    //   height: 10px;
+    //   left: 50%;
+    //   position: absolute;
+    //   background: #B9572B;
+    //   z-index: -1;
+    //   transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    //   width: 0;
+    // }
+    // :hover:after {
+    //   width: 100%;
+    //   left: 0;
+    // }
+  }
 
   @media (max-width: 800px){
     margin-left: 0;
@@ -160,7 +167,6 @@ const BottomLine = styled.span`
     }
   }
 
-
   render(){
     const {pageLinks, siteTitle} = this.props;
     return (
@@ -176,8 +182,10 @@ const BottomLine = styled.span`
               <LinkLi key={link.name}>
               <ListLink to={link.link}>{link.name}</ListLink>
               </LinkLi>)
-          }</PageList>
-        <p><a href="mailto:paige@paigewilliams.dev">Contact</a></p>
+          }
+          <LinkLi><a href="mailto:paige@paigewilliams.dev">contact</a></LinkLi>
+        </PageList>
+
           </Nav>
           <BurgerMenu onClick={this.handleSideMenuToggle}>
             <TopLine toggle={this.state.showSideMenu}></TopLine>
