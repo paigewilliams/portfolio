@@ -186,8 +186,7 @@ const BottomLine = styled.span`
           }
           <LinkLi><a href="mailto:paige@paigewilliams.dev">contact</a></LinkLi>
           <LinkLi>
-
-            <a href="https://github.com/paigewilliams/resume/blob/master/PaigeWilliamsResume.pdf">resume</a>
+            <Link to="/static/PaigeWilliamsResume-3a221333ddefa5b8a0ed1b20d6ddd08f.pdf">resume</Link>
           </LinkLi>
         </PageList>
 
