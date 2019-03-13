@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 import { GlobalStyle } from '../theme/globalStyle'
 import Sidebar from "./sidebar"
+import Footer from "./footer"
 import Helmet from 'react-helmet'
 import PropTypes from "prop-types"
 
@@ -44,11 +45,11 @@ const Layout = ({ children }) => (
       </Helmet>
       <Container>
         <Sidebar pageLinks={data.site.siteMetadata.pageLinks} siteTitle={data.site.siteMetadata.title}
-
            />
         <Inner>
         {children}
         </Inner>
+        <Footer />
       </Container>
       </>
     )}
