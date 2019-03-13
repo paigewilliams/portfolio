@@ -10,7 +10,7 @@ const Inner = styled.div`
   flex-direction: column;
   // justify-content: center;
   // margin: 1rem auto;
- 
+
 `
 const Container = styled.div`
   max-width: 1140px;
@@ -22,18 +22,19 @@ const Container = styled.div`
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-            pageLinks {
-              name
-              link
-            }
-          }
+    query pageTitle{
+      site {
+      siteMetadata {
+        title
+        pageLinks {
+          name
+          link
         }
       }
-    `}
+    }
+    }
+
+      `}
     render={data => (
       <>
       <GlobalStyle />
@@ -42,7 +43,9 @@ const Layout = ({ children }) => (
         <html lang="en" />
       </Helmet>
       <Container>
-        <Sidebar pageLinks={data.site.siteMetadata.pageLinks} siteTitle={data.site.siteMetadata.title} />
+        <Sidebar pageLinks={data.site.siteMetadata.pageLinks} siteTitle={data.site.siteMetadata.title}
+
+           />
         <Inner>
         {children}
         </Inner>
@@ -52,4 +55,3 @@ const Layout = ({ children }) => (
     />
 )
 export default Layout
-

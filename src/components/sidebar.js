@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 const OuterSidebar = styled.div`
   margin-bottom: 6rem;
@@ -168,7 +168,8 @@ const BottomLine = styled.span`
   }
 
   render(){
-    const {pageLinks, siteTitle} = this.props;
+    const {pageLinks, siteTitle, resume} = this.props;
+    console.log(resume);
     return (
       <OuterSidebar>
       <InnerSidebar>
@@ -184,6 +185,10 @@ const BottomLine = styled.span`
               </LinkLi>)
           }
           <LinkLi><a href="mailto:paige@paigewilliams.dev">contact</a></LinkLi>
+          <LinkLi>
+
+            <a href="https://github.com/paigewilliams/resume/blob/master/PaigeWilliamsResume.pdf">resume</a>
+          </LinkLi>
         </PageList>
 
           </Nav>
@@ -196,8 +201,8 @@ const BottomLine = styled.span`
     </OuterSidebar>
     )
   }
-
  }
+
 
 
 
