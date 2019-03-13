@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 
 const OuterSidebar = styled.div`
   margin-bottom: 6rem;
-  // padding: 1rem 0 0;
   width: 100%;
   
 `

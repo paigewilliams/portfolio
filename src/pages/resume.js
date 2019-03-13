@@ -4,49 +4,51 @@ import styled from "styled-components"
 import VictoryChartData from './../components/victory-bar';
 
 const Header = styled.h1`
-  padding-bottom: 1rem;
-  top: auto;
-  height: 2px;
-  width: 100%;
-  border-radius: 2px;
-  letter-spacing: 0.10rem;
-  line-height: 3rem;
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.06rem;
+  line-height: 2rem;
 `
 const RowTwo = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  @media (max-width: 800px) {
-    flex-direction: column; 
-  } 
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  // @media (max-width: 800px) {
+  //   flex-direction: column; 
+  // } 
 ` 
 const Body = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-const RowOne  = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 50% 30%;
+  grid-column-gap: 13%;
+  grid-row-gap: 4rem;
   @media (max-width: 800px) {
-    flex-direction: column; 
+  grid-template-columns: 100%;
+  grid-row-gap: 2rem;
   } 
 `
+const RowOne  = styled.div`
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  // @media (max-width: 800px) {
+  //   flex-direction: column; 
+  // } 
+`
 const SkillsSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-right: 8.3rem;
-  max-width: 80rem;
+  // display: flex;
+  // flex-direction: column;
+  // padding-right: 8.3rem;
+  // max-width: 80rem;
 `
 const OpenSourceSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  max-width: 25rem;
-  @media (max-width: 800px){
-    margin-right: 0;
-    margin-top: 1rem;
-  }
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-start;
+  // max-width: 25rem;
+  // @media (max-width: 800px){
+  //   margin-right: 0;
+  //   margin-top: 1rem;
+  // }
 `
 const skillsLeft = [
   {type: 'JavaScript', level: 95},
@@ -68,12 +70,7 @@ export default () => (
     <Body>
       <RowOne>
         <SkillsSection>
-          <Header>Skills</Header>
-          <VictoryChartData 
-          data={skillsLeft}/>
-        </SkillsSection>
-      <OpenSourceSection>
-      <Header>Education</Header> 
+        <Header>Education</Header> 
       <h3>Certificate in Web Development - Epicodus</h3>
       <p>Anticipated 2019</p>
       <ul>
@@ -83,12 +80,10 @@ export default () => (
       </ul>
       <h3>B. A. Environmental Studies with a minor in Geospatial Studies, Cum Laude - Humboldt State University</h3>
       <p>September 2012 - May 2016</p>
-        
-      </OpenSourceSection>
-      </RowOne>
-      <RowTwo>
-      <SkillsSection>
-        <Header>Experience</Header>
+          
+        </SkillsSection>
+      <OpenSourceSection>
+      <Header>Experience</Header>
       <h3>Wine Assistant and Floor Supervisor - Pastaworks</h3>
       <p>March 2017 - January 2019</p>
       <ul>
@@ -112,18 +107,25 @@ export default () => (
           Build and maintain the active transportation plan projects database
         </li>
       </ul>
-        </SkillsSection>
-     <OpenSourceSection>
-     <Header>Open Source Contributions</Header>
+      <Header>Open Source</Header>
         <h3>Hack Oregon - Cartography and Data Visualization on team Sandox</h3>
         <p>Feb 2019 - August 2019</p>
-  
+   
+      </OpenSourceSection>
+      </RowOne>
+      <RowTwo>
+      <SkillsSection>
+      <Header>Skills</Header>
+          <VictoryChartData 
+          data={skillsLeft}/>
+        
+        </SkillsSection>
+
+     <OpenSourceSection>
+     
      </OpenSourceSection>
       </RowTwo>
-       
-      
-     
-      
+
       </Body>
   </Layout>
 )

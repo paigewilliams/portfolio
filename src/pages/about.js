@@ -14,35 +14,32 @@ to {
 `
 
 const Body = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  animation: ${fadeInUp};
-  animation-duration: 1s;
-  animation-fill-mode: both;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
+  display: grid;
+  grid-template-rows: 47% 50%;
+  grid-template-columns: 50% 30%;
+  grid-column-gap: 13%;
   @media (max-width: 800px) {
-    flex-direction: column; 
+   grid-template-columns: 100%;
+   grid-row-gap: 2rem;
   } 
 `;
 
 const Text = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 32rem;
-  padding-right: 11rem;
+  // display: flex;
+  // flex-direction: column;
+  // max-width: 32rem;
+  // padding-right: 11rem;
   @media (max-width: 800px){
     padding-right: 1rem;
     width: 100%;
   }
 `;
 const Lists = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  max-width: 25rem;
-  margin-top: 5rem;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-start;
+  // max-width: 25rem;
+  // margin-top: 5rem;
   @media (max-width: 800px){
     margin-right: 0;
     margin-top: 1rem;

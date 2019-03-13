@@ -5,8 +5,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding-right: 8.3rem;
-  max-width: 32rem;
+  max-width: 50rem;
 `
 
 class VictoryChartData extends React.Component {
