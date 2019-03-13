@@ -50,6 +50,14 @@ const OpenSourceSection = styled.div`
   //   margin-top: 1rem;
   // }
 `
+
+const UL = styled.ul`
+  margin: 0;
+  line-height: 24px;
+  li:before {
+    content: "-  ";
+  }
+`
 const skillsLeft = [
   {type: 'JavaScript', level: 95},
   {type: 'React/Redux', level: 75},
@@ -73,11 +81,11 @@ export default () => (
         <Header>Education</Header> 
       <h3>Certificate in Web Development - Epicodus</h3>
       <p>Anticipated 2019</p>
-      <ul>
+      <UL>
         <li>
         Learned Ruby, JavaScript and React through pair-programming. The environment was similar to an office where we work for 40+ hours a week and solve problems as a team. 
         </li>
-      </ul>
+      </UL>
       <h3>B. A. Environmental Studies with a minor in Geospatial Studies, Cum Laude - Humboldt State University</h3>
       <p>September 2012 - May 2016</p>
           
@@ -86,17 +94,17 @@ export default () => (
       <Header>Experience</Header>
       <h3>Wine Assistant and Floor Supervisor - Pastaworks</h3>
       <p>March 2017 - January 2019</p>
-      <ul>
+      <UL>
         <li>
           Create maps for the monthly wine club that follow design guidelines
         </li>
         <li>
           Assign daily tasks and prioritize customer service and productivity
         </li>
-      </ul>
+      </UL>
       <h3>Regional Planning Intern - Metro</h3>
       <p>September 2016 - March 2017</p>
-      <ul>
+      <UL>
         <li>
           Assist the Regional Planning department with GIS and carographic applications
         </li>
@@ -106,7 +114,7 @@ export default () => (
         <li>
           Build and maintain the active transportation plan projects database
         </li>
-      </ul>
+      </UL>
       <Header>Open Source</Header>
         <h3>Hack Oregon - Cartography and Data Visualization on team Sandox</h3>
         <p>Feb 2019 - August 2019</p>

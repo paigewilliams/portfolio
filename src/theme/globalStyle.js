@@ -13,7 +13,14 @@ export const GlobalStyle = createGlobalStyle`
   };
 
   li {
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
+  }
+
+  ul {
+    list-style-type: none;
+    list-style-position: inside;
+    padding-left: 0;
   }
   
 

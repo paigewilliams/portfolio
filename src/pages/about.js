@@ -18,6 +18,11 @@ const Body = styled.div`
   grid-template-rows: 47% 50%;
   grid-template-columns: 50% 30%;
   grid-column-gap: 13%;
+  animation: ${fadeInUp};
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
   @media (max-width: 800px) {
    grid-template-columns: 100%;
    grid-row-gap: 2rem;
@@ -25,21 +30,12 @@ const Body = styled.div`
 `;
 
 const Text = styled.div`
-  // display: flex;
-  // flex-direction: column;
-  // max-width: 32rem;
-  // padding-right: 11rem;
   @media (max-width: 800px){
     padding-right: 1rem;
     width: 100%;
   }
 `;
 const Lists = styled.div`
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-start;
-  // max-width: 25rem;
-  // margin-top: 5rem;
   @media (max-width: 800px){
     margin-right: 0;
     margin-top: 1rem;
@@ -49,7 +45,6 @@ const Dashed = styled.ul`
   list-style-type: none;
   margin: 0;
   line-height: 24px;
-  text-indent: -2rem;
   li:before {
     content: "-  ";
   }
@@ -61,9 +56,8 @@ export default () => (
      <Text>
      <h1>About</h1>
       <p>I am passionate about using technology to serve people and the planet. I have a degree in Environmental Studies from Humboldt State University and a minor in Geographic Information Studies (GIS).</p> 
-        <p>I became interested in GIS because I saw maps as a way to convey environmental injustice. As I became more involved in the field and wanted to create more powerful visualizations, I needed to build web maps. I decided to take up coding enroll in Epicodus, a coding bootcamp in Portland, OR. After coding for 40+ hours a week for six months I am <em>somewhat</em> well versed in Ruby, JavaScript, and React.</p>
+      <p>I became interested in GIS because I saw maps as a way to convey environmental injustice. As I became more involved in the field and wanted to create more powerful visualizations, I needed to build web maps. I decided to take up coding enroll in Epicodus, a coding bootcamp in Portland, OR. After coding for 40+ hours a week for six months I am <em>somewhat</em> well versed in Ruby, JavaScript, and React.</p>
     </Text> 
-    
     <Lists>
     <h3>When I am not coding I am:</h3>
     <Dashed>
@@ -79,7 +73,6 @@ export default () => (
       <li>Still Processing</li>
     </Dashed>
     </Lists>
-    
     </Body>
   </Layout>
 )
