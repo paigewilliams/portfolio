@@ -6,43 +6,37 @@ import Img from 'gatsby-image'
 
 const ProjectLink = styled(Link)`
   text-decoration: none;
-  color: #2B2B2B;  
+  color: #2B2B2B;
 `
 const ProjectBody = styled.div`
-  display: flex;
-  // justify-content: space-between;
-  border-bottom: 1px solid #B2B2B2;
+display: grid;
+grid-template-columns: 50% 30%;
+grid-column-gap: 13%;
+margin-bottom: 3rem;
   @media (max-width: 1000px) {
     column-count: 1;
-  } 
-  // break-inside: avoid;
-  // display: inline-block;
-  // width: 100%;
-  // margin: 0px 0px 2em;
+  }
 `
 const Image = styled(Img)`
   margin-bottom: 3rem;
-  width: 50%;
-  height: 50%;
+  // width: 50%;
+  // height: 50%;
 `
 const Text = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-left: 9rem;
-  max-width: 25rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
 `
 const Line = styled.span`
   display: block;
-  width: 100%;
-  border-top: 1px solid black;
+  width: 200%;
+  border-top: 1px solid #B2B2B2;
 `
 export default ({ data }) => {
   return (
     <Layout>
       {data.allFile.edges.map(({ node }) => (
         <ProjectBody>
-          <Image 
+          <Image
           fadeIn={false}
           sizes={
             node.childMarkdownRemark.frontmatter.img.childImageSharp.sizes
@@ -52,7 +46,12 @@ export default ({ data }) => {
             <p>{node.childMarkdownRemark.frontmatter.tech}</p>
             <div dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html }} />
           </Text>
-        </ProjectBody> 
+          <Line></Line>
+        </ProjectBody>
+
+
+
+
       ))}
     </Layout>
   )
@@ -61,8 +60,8 @@ export default ({ data }) => {
 export const query = graphql`
   query {
     allFile(
-      filter: {internal: {mediaType: {eq: "text/markdown"}}, 
-        relativeDirectory: {regex: "/(pages)/(projects)/"}} 
+      filter: {internal: {mediaType: {eq: "text/markdown"}},
+        relativeDirectory: {regex: "/(pages)/(projects)/"}}
     ) {
       edges {
         node {
@@ -84,7 +83,7 @@ export const query = graphql`
             html
           }
         }
-      }     
+      }
     }
   }
 `

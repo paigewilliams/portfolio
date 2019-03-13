@@ -5,7 +5,7 @@ module.exports = {
       {
         name:'about',
         link:'/about'
-      }, 
+      },
       {
         name:'projects',
         link:'/projects'
@@ -13,11 +13,8 @@ module.exports = {
       {
         name:'resume',
         link:'/resume'
-      }, 
-      {
-        name:'contact',
-        link:'/contact'
-      }
+      },
+      
     ],
     description: `My portfolio built with the Gatsby starter.`,
     author: `@gatsbyjs`,

@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 const OuterSidebar = styled.div`
   margin-bottom: 6rem;
   width: 100%;
-  
+
 `
 const InnerSidebar = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const InnerSidebar = styled.div`
   margin: 0 auto;
 `
 const PageList = styled.ul`
-  list-style: none; 
+  list-style: none;
   margin: 0;
   padding: 0;
   @media(max-width: 800px){
@@ -29,7 +29,7 @@ const PageList = styled.ul`
     width: 100%;
     height: 100%;
   }
-  
+
 `
 const ListLink = styled(Link)`
   text-decoration: none;
@@ -50,8 +50,8 @@ const ListLink = styled(Link)`
     width: 0;
   }
   :hover:after {
-    width: 100%; 
-    left: 0; 
+    width: 100%;
+    left: 0;
   }
   @media (max-width: 800px) {
     color: white;
@@ -70,8 +70,8 @@ const ListLink = styled(Link)`
       width: 0;
     }
     :hover:after {
-      width: 100%; 
-      left: 0; 
+      width: 100%;
+      left: 0;
     }
   }
 
@@ -96,7 +96,7 @@ const Nav = styled.nav`
   @media (min-width: 800px) {
     display: block;
   }
-  
+
 `
 const LinkLi = styled.li`
   display: inline-block;
@@ -112,7 +112,7 @@ const LinkLi = styled.li`
     width: 100%;
     height: 100%;
   }
-`  
+`
 const BurgerMenu = styled.div`
   display: none;
   justify-content: center;
@@ -159,8 +159,8 @@ const BottomLine = styled.span`
       this.setState({ showSideMenu: !this.state.showSideMenu});
     }
   }
-  
-  
+
+
   render(){
     const {pageLinks, siteTitle} = this.props;
     return (
@@ -177,6 +177,7 @@ const BottomLine = styled.span`
               <ListLink to={link.link}>{link.name}</ListLink>
               </LinkLi>)
           }</PageList>
+        <p><a href="mailto:paige@paigewilliams.dev">Contact</a></p>
           </Nav>
           <BurgerMenu onClick={this.handleSideMenuToggle}>
             <TopLine toggle={this.state.showSideMenu}></TopLine>
@@ -190,9 +191,9 @@ const BottomLine = styled.span`
 
  }
 
- 
 
-  
- 
+
+
+
 
  export default Sidebar
