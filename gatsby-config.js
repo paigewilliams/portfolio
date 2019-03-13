@@ -27,7 +27,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Lustria','Open Sans','Montserrat:400,500']
+          families: ['IBM Plex Serif','IBM Plex Sans:100,400',]
         }
       }
     },

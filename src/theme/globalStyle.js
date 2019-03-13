@@ -2,18 +2,18 @@ import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Lustria', serif;
+    font-family: 'IBM Plex Serif', serif;
     margin: 0;
   };
 
   p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     line-height: 22px;
     font-size: 16px;
   };
 
   li {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 16px;
   }
 
