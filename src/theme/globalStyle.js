@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'IBM Plex Serif', serif;
     margin: 0;
+
   };
 
   p {
@@ -22,12 +23,12 @@ export const GlobalStyle = createGlobalStyle`
     list-style-position: inside;
     padding-left: 0;
   }
-  
+
 
   a {
     text-decoration: none;
    color: black;
   };
 
- 
+
 `
