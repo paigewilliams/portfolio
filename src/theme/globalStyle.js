@@ -4,7 +4,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'IBM Plex Serif', serif;
     margin: 0;
-
+    color: #383839;
   };
 
   p {
