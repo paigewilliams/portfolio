@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/pdf`,
   siteMetadata: {
     title: `P__W.`,
     pageLinks: [
@@ -9,15 +10,10 @@ module.exports = {
       {
         name:'projects',
         link:'/projects'
-      },
-      {
-        name:'resume',
-        link:'/resume'
-      },
-      
+      }     
     ],
     description: `My portfolio built with the Gatsby starter.`,
-    author: `@gatsbyjs`,
+    author: `@paigewilliams`,
   },
   plugins: [
     {

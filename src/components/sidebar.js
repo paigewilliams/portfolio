@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Link, graphql } from 'gatsby'
+import { Link, withPrefix } from 'gatsby'
 
 const OuterSidebar = styled.div`
   margin-bottom: 6rem;
@@ -169,7 +169,7 @@ const BottomLine = styled.span`
           }
           <LinkLi><a href="mailto:paige@paigewilliams.dev">contact</a></LinkLi>
           <LinkLi>
-            <Link to="/static/PaigeWilliamsResume-3a221333ddefa5b8a0ed1b20d6ddd08f.pdf">resume</Link>
+            <Link to={withPrefix('/public/PaigeWilliamsResume.pdf')}>resume</Link>
           </LinkLi>
         </PageList>
 
