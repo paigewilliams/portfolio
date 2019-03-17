@@ -169,7 +169,7 @@ const BottomLine = styled.span`
           }
           <LinkLi><a href="mailto:paige@paigewilliams.dev">contact</a></LinkLi>
           <LinkLi>
-            <Link to={withPrefix('/public/PaigeWilliamsResume.pdf')}>resume</Link>
+            <Link to={withPrefix('/paigewilliamsresume.pdf')}>resume</Link>
           </LinkLi>
         </PageList>
 
