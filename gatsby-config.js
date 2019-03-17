@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/pdf`,
+  pathPrefix: `/paigewilliamsresume`,
   siteMetadata: {
     title: `P__W.`,
     pageLinks: [
