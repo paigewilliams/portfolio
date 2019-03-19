@@ -30,7 +30,7 @@ const Icon = styled.svg`
   height: 24px;
   width: 24px;
   :hover {
-    fill: #C7AEBB;
+    fill: #A1C7B6;
   }
 `
 const A = styled.a`
