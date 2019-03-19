@@ -4,10 +4,6 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import Img from 'gatsby-image'
 
-const ProjectLink = styled(Link)`
-  text-decoration: none;
-  color: #2B2B2B;
-`
 const ProjectBody = styled.div`
   display: grid;
   grid-template-columns: 50% 30%;
@@ -35,7 +31,12 @@ const Line = styled.span`
 const Points = styled.p`
   color: #7c7c7e;
   font-size: 14px;
-  
+`
+const CodeLink = styled.a`
+  color: #7c7c7e;
+  :hover {
+    color: #A1C7B6;
+  }
 `
 export default ({ data }) => {
   return (
@@ -51,7 +52,7 @@ export default ({ data }) => {
             <h2>{node.childMarkdownRemark.frontmatter.title}</h2>
             <Points>{node.childMarkdownRemark.frontmatter.tech}</Points>
             <div dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html }} />
-            <Points><a href={node.childMarkdownRemark.frontmatter.github}>View code</a>  /  <a href={node.childMarkdownRemark.frontmatter.aPointsp}>View app</a></Points>
+            <Points><CodeLink href={node.childMarkdownRemark.frontmatter.github}>View code</CodeLink>  /  <CodeLink href={node.childMarkdownRemark.frontmatter.app}>View app</CodeLink></Points>
           </Text>
           <Line></Line>
         </ProjectBody>
