@@ -9,18 +9,19 @@ const ProjectLink = styled(Link)`
   color: #2B2B2B;
 `
 const ProjectBody = styled.div`
-display: grid;
-grid-template-columns: 50% 30%;
-grid-column-gap: 13%;
-margin-bottom: 3rem;
-  @media (max-width: 1000px) {
-    column-count: 1;
+  display: grid;
+  grid-template-columns: 50% 30%;
+  grid-column-gap: 13%;
+  margin-bottom: 3rem;
+  @media (max-width: 1200px) {
+    grid-template-columns: 100%;
   }
 `
 const Image = styled(Img)`
   margin-bottom: 3rem;
-  // width: 50%;
-  // height: 50%;
+  @media (max-width: 1200px){
+    margin-bottom: 0rem;
+  }
 `
 const Text = styled.div`
   margin-bottom: 3rem;
@@ -30,6 +31,11 @@ const Line = styled.span`
   display: block;
   width: 200%;
   border-top: 1px solid #B2B2B2;
+`
+const Points = styled.p`
+  color: #7c7c7e;
+  font-size: 14px;
+  
 `
 export default ({ data }) => {
   return (
@@ -43,8 +49,9 @@ export default ({ data }) => {
           }/>
           <Text>
             <h2>{node.childMarkdownRemark.frontmatter.title}</h2>
-            <p>{node.childMarkdownRemark.frontmatter.tech}</p>
+            <Points>{node.childMarkdownRemark.frontmatter.tech}</Points>
             <div dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html }} />
+            <Points><a href={node.childMarkdownRemark.frontmatter.github}>View code</a>  /  <a href={node.childMarkdownRemark.frontmatter.aPointsp}>View app</a></Points>
           </Text>
           <Line></Line>
         </ProjectBody>
@@ -72,6 +79,8 @@ export const query = graphql`
               title
               date
               tech
+              github
+              app
               img {
                 childImageSharp {
                   sizes(maxWidth: 600){
