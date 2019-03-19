@@ -17,7 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     {
-      allMarkdownRemark {
+      allMarkdownRemark( filter: {fileAbsolutePath: {regex: "/(pages)/(blog)/"}}) {
         edges {
           node {
             fields {
@@ -29,15 +29,15 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `
 )
-// .then(result => {
-  // result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-  //   createPage({
-  //     path: node.fields.slug,
-  //     component: path.resolve(`./src/components/project-page.js`),
-  //     context: {
-  //       slug: node.fields.slug,
-  //     },
-  //   })
-  // })
-  // })
+.then(result => {
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve(`./src/components/blog-template.js`),
+      context: {
+        slug: node.fields.slug,
+      },
+    })
+  })
+  })
 }
