@@ -3,6 +3,8 @@ title: "Food Savor"
 date: "2019-02-01"
 type: "project"
 img: ./foodsaver.png
+github: "https://github.com/paigewilliams/Food-Savor"
+app: "https://foodsavorapp-b49fd.firebaseapp.com/"
 tech: "Angular 5 / TypeScript / Firebase / Node.js"
 ---
 

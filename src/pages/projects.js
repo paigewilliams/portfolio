@@ -45,8 +45,6 @@ const Tech = styled.p`
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 1px;
-
-
 `
 
 export default ({ data }) => {
@@ -56,21 +54,18 @@ export default ({ data }) => {
         <ProjectBody>
           <Image
           fadeIn={false}
-          sizes={
-            node.frontmatter.img.childImageSharp.sizes
-          }/>
+          sizes={ node.frontmatter.img.childImageSharp.sizes}/>
           <Text>
             <h2>{node.frontmatter.title}</h2>
             <Tech>{node.frontmatter.tech}</Tech>
-            <div dangerouslySetInnerHTML={{ __html: node.html }} />
-            <Points><CodeLink href={node.frontmatter.github}>View code</CodeLink>  /  <CodeLink href={node.frontmatter.app}>View app</CodeLink></Points>
+            
+              <div dangerouslySetInnerHTML={{ __html: node.html }} />
+              <Points><CodeLink href={node.frontmatter.github}>View code</CodeLink>  /  <CodeLink href={node.frontmatter.app}>View app</CodeLink></Points>
+           
+            
           </Text>
           <Line></Line>
         </ProjectBody>
-
-
-
-
       ))}
     </Layout>
   )
@@ -78,7 +73,9 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC },
+      filter: {fileAbsolutePath: {regex: "/(pages)/(projects)/"}}) {
       edges {
         node {
           id
@@ -97,6 +94,7 @@ export const query = graphql`
             }
           }
           html
+          excerpt
         }
       }
     } 
