@@ -34,10 +34,21 @@ const Points = styled.p`
 `
 const CodeLink = styled.a`
   color: #7c7c7e;
+  text-transform: uppercase;
+  font-size: 12px;
   :hover {
     color: #A1C7B6;
   }
 `
+const Tech = styled.p`
+  color: #7c7c7e; 
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+
+
+`
+
 export default ({ data }) => {
   return (
     <Layout>
@@ -50,7 +61,7 @@ export default ({ data }) => {
           }/>
           <Text>
             <h2>{node.childMarkdownRemark.frontmatter.title}</h2>
-            <Points>{node.childMarkdownRemark.frontmatter.tech}</Points>
+            <Tech>{node.childMarkdownRemark.frontmatter.tech}</Tech>
             <div dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html }} />
             <Points><CodeLink href={node.childMarkdownRemark.frontmatter.github}>View code</CodeLink>  /  <CodeLink href={node.childMarkdownRemark.frontmatter.app}>View app</CodeLink></Points>
           </Text>
@@ -70,6 +81,7 @@ export const query = graphql`
     allFile(
       filter: {internal: {mediaType: {eq: "text/markdown"}},
         relativeDirectory: {regex: "/(pages)/(projects)/"}}
+        
     ) {
       edges {
         node {

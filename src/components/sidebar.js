@@ -71,10 +71,10 @@ const LinkLi = styled.li`
     z-index: 5;
     :after {
       background: none repeat scroll 0 0 transparent;
-      bottom: 7%;
+      bottom: 2%;
       content: "";
       display: block;
-      height: 10px;
+      height: 18px;
       left: 50%;
       position: absolute;
       background: #A1C7B6;
@@ -85,6 +85,7 @@ const LinkLi = styled.li`
     :hover:after {
       width: 100%;
       left: 0;
+      right: 0;
     }
   }
 
@@ -167,13 +168,14 @@ const BottomLine = styled.span`
               <ListLink to={link.link}>{link.name}</ListLink>
               </LinkLi>)
           }
-          <LinkLi><a href="mailto:paige@paigewilliams.dev">contact</a></LinkLi>
+          
           <LinkLi>
             <a href={withPrefix('/paigewilliamsresume.pdf')}
             rel="noopener noreferrer"
             targer="_blank"
             >resume</a>
           </LinkLi>
+          <LinkLi><a href="mailto:paige@paigewilliams.dev">contact</a></LinkLi>
         </PageList>
 
           </Nav>
