@@ -52,18 +52,18 @@ const Tech = styled.p`
 export default ({ data }) => {
   return (
     <Layout>
-      {data.allFile.edges.map(({ node }) => (
+      {data.allMarkdownRemark.edges.map(({ node }) => (
         <ProjectBody>
           <Image
           fadeIn={false}
           sizes={
-            node.childMarkdownRemark.frontmatter.img.childImageSharp.sizes
+            node.frontmatter.img.childImageSharp.sizes
           }/>
           <Text>
-            <h2>{node.childMarkdownRemark.frontmatter.title}</h2>
-            <Tech>{node.childMarkdownRemark.frontmatter.tech}</Tech>
-            <div dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html }} />
-            <Points><CodeLink href={node.childMarkdownRemark.frontmatter.github}>View code</CodeLink>  /  <CodeLink href={node.childMarkdownRemark.frontmatter.app}>View app</CodeLink></Points>
+            <h2>{node.frontmatter.title}</h2>
+            <Tech>{node.frontmatter.tech}</Tech>
+            <div dangerouslySetInnerHTML={{ __html: node.html }} />
+            <Points><CodeLink href={node.frontmatter.github}>View code</CodeLink>  /  <CodeLink href={node.frontmatter.app}>View app</CodeLink></Points>
           </Text>
           <Line></Line>
         </ProjectBody>
@@ -78,34 +78,27 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allFile(
-      filter: {internal: {mediaType: {eq: "text/markdown"}},
-        relativeDirectory: {regex: "/(pages)/(projects)/"}}
-        
-    ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id
-          relativeDirectory
-          childMarkdownRemark {
-            frontmatter {
-              title
-              date
-              tech
-              github
-              app
-              img {
-                childImageSharp {
-                  sizes(maxWidth: 600){
-                    ...GatsbyImageSharpSizes_withWebp_noBase64
+          frontmatter {
+            title
+            date
+            tech
+            github
+            app
+            img {
+             childImageSharp {
+                    sizes(maxWidth: 600){
+                      ...GatsbyImageSharpSizes_withWebp_noBase64
+                    }
                   }
-                }
-              }
             }
-            html
           }
+          html
         }
       }
-    }
+    } 
   }
 `
