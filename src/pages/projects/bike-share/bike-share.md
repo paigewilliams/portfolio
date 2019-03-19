@@ -1,6 +1,6 @@
 ---
 title: "Mock Bikeshare"
-date: "2017-08-21"
+date: "2018-11-05"
 type: "project"
 img: ./bikeshare.png
 tech: "JavaScript / JQuery / Leaflet / HTML / CSS"

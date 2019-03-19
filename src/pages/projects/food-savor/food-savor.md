@@ -1,6 +1,6 @@
 ---
 title: "Food Savor"
-date: "2017-08-10"
+date: "2019-02-01"
 type: "project"
 img: ./foodsaver.png
 tech: "Angular 5 / TypeScript / Firebase / Node.js"
