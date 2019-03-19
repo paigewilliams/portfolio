@@ -27,7 +27,7 @@ We use [dotenv-webpack](https://www.npmjs.com/package/dotenv-webpack) to protect
 
 After attempting to implement Google’s example in our webpack application by adding the Google Maps script into our map.js file, we received the following error:
 
-![alt-text]('./errormessage.png')
+![alt-text](./errormessage.png)
 
 We needed to find a way to load the Google Maps API without the global callback in the HTML while still keeping out API keys hidden. Our search led us to the handy NPM package [load-google-maps-api](https://www.npmjs.com/package/load-google-maps-api).
 
