@@ -1,9 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { Link, graphql } from 'gatsby'
-import github from './../../static/github.svg'
-import twitter from './../../static/twitter.svg'
-import linkedin from './../../static/linkedin.svg'
+import Github from '../../static/github.js'
+import Twitter from '../../static/twitter.js'
+import Linkedin from '../../static/linkedin.js'
 
 const Footer = styled.div`
   position: relative;
@@ -24,16 +23,18 @@ const Ul = styled.ul`
   list-style: none;
   align-items: center;
 `
-
-const Icon = styled.img`
+const Icon = styled.svg`
+  flex: none;
+  transition: fill 0.25s;
+  fill: #383839;
   height: 24px;
   width: 24px;
-  
+  :hover {
+    fill: #C7AEBB;
+  }
 `
-
 const A = styled.a`
-  padding: 0 1rem;
-  
+  padding: 0 1rem;  
 `
 const Email = styled.p`
   padding-bottom: 0.025rem;
@@ -49,17 +50,23 @@ export default () => (
        <Email>paige@paigewilliams.dev</Email>
          <li>
           <A href="https://github.com/paigewilliams" title="github">
-            <Icon src={github} alt="GitHub" />
+            <Icon viewBox="0 0 24 24" alt="github icon">
+              <Github />
+            </Icon>
           </A>
          </li>
          <li>
           <A href="https://www.linkedin.com/in/paige--williams/" title="linkedin">
-            <Icon src={linkedin} alt="LinkedIn" />
+            <Icon viewBox="0 0 24 24" alt="LinkedIn">
+              <Linkedin />
+            </Icon>
           </A>
          </li>
          <li>
           <A href="https://twitter.com/p___williams" title="twitter">
-            <Icon src={twitter} alt="Twitter" />
+            <Icon viewBox="0 0 24 24" alt="Twitter">
+              <Twitter />
+            </Icon>
           </A>
          </li>
          <li>

@@ -77,7 +77,7 @@ const LinkLi = styled.li`
       height: 10px;
       left: 50%;
       position: absolute;
-      background: #dbc013;
+      background: #C7AEBB;
       z-index: -1;
       transition: width 0.3s ease 0s, left 0.3s ease 0s;
       width: 0;
