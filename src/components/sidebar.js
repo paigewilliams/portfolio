@@ -33,8 +33,8 @@ const PageList = styled.ul`
 `
 const ListLink = styled(Link)`
   @media (max-width: 800){
-    :hover{
-      color: white !important;
+    :hover {
+      color: white;
     }
   }
 
@@ -98,7 +98,7 @@ const LinkLi = styled.li`
     text-align: center;
     width: 100%;
     height: 100%;
-    :hover{
+    ${ListLink}:hover {
       color: white;
     }
   }
@@ -135,6 +135,13 @@ const BottomLine = styled.span`
   border-radius: 2px;
   transform: ${props => props.toggle ? 'rotate(45deg)' : 'none'};
 `
+const ALink = styled.a`
+  @media (max-width: 800px) {
+    :hover {
+      color: white;
+    }
+  }
+`
 
  class Sidebar extends React.Component {
   constructor(props){
@@ -170,12 +177,12 @@ const BottomLine = styled.span`
           }
           
           <LinkLi>
-            <a href={withPrefix('/paigewilliamsresume.pdf')}
+            <ALink href={withPrefix('/paigewilliamsresume.pdf')}
             rel="noopener noreferrer"
             targer="_blank"
-            >resume</a>
+            >resume</ALink>
           </LinkLi>
-          <LinkLi><a href="mailto:paige@paigewilliams.dev">contact</a></LinkLi>
+          <LinkLi><ALink href="mailto:paige@paigewilliams.dev">contact</ALink></LinkLi>
         </PageList>
 
           </Nav>
