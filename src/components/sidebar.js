@@ -46,7 +46,7 @@ const LogoDiv = styled.div`
 const Nav = styled.nav`
   @media (max-width: 800px){
     z-index: 6;
-    background-color: #C7AEBB;
+    background-color: #A1C7B6;
     display: flex;
     position: fixed;
     top: 0;
