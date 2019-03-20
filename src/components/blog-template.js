@@ -7,6 +7,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 40rem;
+  
 `
 
 export default ({ data }) => {

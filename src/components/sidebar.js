@@ -146,9 +146,9 @@ const St0 = styled.path`
   fill: #A1C7B6;
 `
 const LogoSVG = styled.svg`
-  height: 100px;
-  width: 100px;
-  margin-top: 1rem;
+  height: 140px;
+  width: 140px;
+
 `
 
 const St1 = styled.path`
