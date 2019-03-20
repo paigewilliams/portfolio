@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import styled, { keyframes } from "styled-components"
+import { Link } from 'gatsby'
 
 const Body = styled.div`
   display: flex;
@@ -67,7 +68,7 @@ const Index = () => (
           <BodyText>
           <p>I am a student at Epicodus, learning Ruby, JavaScript and React. I am currently looking for work with a company that prioritizes growth and creativity. 
           I like working with React/Redux, GraphQL, and Mapbox.</p>
-          <h3><a href="https://medium.com/@paw145/using-the-google-maps-api-with-webpack-npm-and-a-handy-promise-returning-helper-19c9312971b0"><em>New!</em> My first tech blog post!</a></h3>
+          <h3><Link to="/blog/google-maps-npm/"><em>New!</em> My first tech blog post!</Link></h3>
           </BodyText>
       </Text>
     <Image /> 
