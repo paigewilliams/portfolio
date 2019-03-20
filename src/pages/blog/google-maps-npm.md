@@ -43,13 +43,13 @@ npm install --save load-google-maps-api
 ```
 In your HTML add a div where the map will reside.
 
-```
+```html
 <div id="map"></div>
 
 ```
 Give your map a size in your CSS file.
 
-```
+```css
 #map {
   width: 500px;
   height: 500px;
@@ -57,7 +57,7 @@ Give your map a size in your CSS file.
 
 ```
 Require the NPM package in map.js and write a function to load the Google Maps API. You supply the API key as an object literal.
-```
+```javascript
 const loadGoogleMapsApi = require('load-google-maps-api');
 class Map {
   
@@ -76,7 +76,7 @@ export { Map };
 We also added a function to create the map object. Which we will get to in our next snippet.
 
 In the main.js :
-```
+```javascript
 import { Map } from './map';
 import './styles.css';
 document.addEventListener("DOMContentLoaded", function() {
