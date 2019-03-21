@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import styled, { keyframes } from "styled-components"
+import Arrow from '../../static/arrow';
 import { Link } from 'gatsby'
 
 const Body = styled.div`
@@ -49,9 +50,24 @@ const Header = styled.h1`
 
 const BodyText = styled.div`
   margin-top: 10rem;
- @media (max-width: 1000px){
-   margin-top: 1rem;
- } 
+  @media (max-width: 1000px){
+    margin-top: 1rem;
+  } 
+`
+const ArrowSVG = styled.svg`
+ width: 30px;
+ height: 20px;
+ margin-left: 1rem;
+ margin-top: 1.35rem;
+`
+const GoToBlog = styled.div`
+ display: flex;
+ flex-direction: row;
+//  justify-content: flex-start;
+//  align-items: baseline;
+`
+const BlogLink = styled.h3`
+  color: #BA6055;
 `
 
 const Index = () => (
@@ -68,7 +84,14 @@ const Index = () => (
           <BodyText>
           <p>I am a student at Epicodus, learning Ruby, JavaScript and React. I am currently looking for work with a company that prioritizes growth and creativity. 
           I like working with React/Redux, GraphQL, and Mapbox.</p>
-          <h3><Link to="/blog/google-maps-npm/"><em>New!</em> My first tech blog post!</Link></h3>
+          <GoToBlog>
+            <Link to="/blog/google-maps-npm/"><BlogLink>New! My first tech blog post!</BlogLink></Link>
+            <ArrowSVG viewBox="0 0 42 17">
+              <Arrow />
+            </ArrowSVG>
+          
+          </GoToBlog>
+        
           </BodyText>
       </Text>
     <Image /> 

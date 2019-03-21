@@ -5,7 +5,7 @@ import { Link, withPrefix } from 'gatsby'
 const OuterSidebar = styled.div`
   margin-bottom: 6rem;
   width: 100%;
-
+  margin-top: 0;
 `
 const InnerSidebar = styled.div`
   display: flex;
@@ -71,13 +71,13 @@ const LinkLi = styled.li`
     z-index: 5;
     :after {
       background: none repeat scroll 0 0 transparent;
-      bottom: 2%;
+      bottom: -5px;
       content: "";
       display: block;
-      height: 18px;
+      height: 3px;
       left: 50%;
       position: absolute;
-      background: #A1C7B6;
+      background: #BA6055;
       z-index: -1;
       transition: width 0.3s ease 0s, left 0.3s ease 0s;
       width: 0;
@@ -148,9 +148,7 @@ const St0 = styled.path`
 const LogoSVG = styled.svg`
   height: 140px;
   width: 140px;
-
 `
-
 const St1 = styled.path`
   fill: none;
   stroke: #A1C7B6;
@@ -184,6 +182,7 @@ stroke: #A1C7B6;
       <OuterSidebar>
       <InnerSidebar>
         <LogoDiv>
+          <Link to="/">
         <LogoSVG viewBox="0 0 100 100">
         <St0 d="M18,44.3v-8.2h3.9c0.3,0,0.7,0.1,1,   0.2c0.3,0.1,0.6,0.3,0.8,0.5c0.2,0.2,0.4,0.5,0.5,0.8c0.2,0.7,0.2,1.5,0,2.2
 	        c-0.1,0.3-0.3,0.6-0.5,0.8c-0.2,0.2-0.5,0.4-0.8,0.5c-0.3,0.1-0.7,0.2-1,0.2h-2.1v3L18,44.3z M19.8,39.8h1.9c0.2,0,0.5-0.1,0.6-0.2
@@ -212,6 +211,7 @@ stroke: #A1C7B6;
           </g>
           
           </LogoSVG>
+          </Link>
         </LogoDiv>
         <LogoDiv links>
           <Nav showMenu={this.state.showSideMenu}>
