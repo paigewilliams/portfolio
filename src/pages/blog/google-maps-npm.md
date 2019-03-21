@@ -6,7 +6,9 @@ img: "./google-maps.png"
 tech: "JavaScript / Google Maps API / Webpack / NPM"
 ---
 
-By Ben Kirby, Paige Williams, Phil Mass, and Tanvi Garg
+### By Ben Kirby, Paige Williams, Phil Mass, and Tanvi Garg
+
+#### [View post on Medium](https://medium.com/@paw145/using-the-google-maps-api-with-webpack-npm-and-a-handy-promise-returning-helper-19c9312971b0)
 
 We are students at [Epicodus](https://www.epicodus.com/), a code school in Portland, Or.
 
@@ -102,3 +104,4 @@ Clone to a local directory
 We liked this package specifically because of how clean it was and how simple it was to implement within our existing code. Additionally, it allowed us to utilize the rest of the Google Maps features alongside the package seamlessly.
 
 Happy coding!
+

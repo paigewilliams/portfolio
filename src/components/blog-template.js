@@ -8,7 +8,11 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   max-width: 40rem;
-  
+`
+const PostBody = styled.div`
+  a {
+    color: #BA6055;
+  }
 `
 
 export default ({ data }) => {
@@ -17,7 +21,7 @@ export default ({ data }) => {
     <Layout>
       <Container>
         <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <PostBody dangerouslySetInnerHTML={{ __html: post.html }} />
       </Container>
     </Layout>
   )
