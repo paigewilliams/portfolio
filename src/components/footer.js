@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import Github from '../../static/github.js'
-import Twitter from '../../static/twitter.js'
-import Linkedin from '../../static/linkedin.js'
+import Github from './github.js/index.js'
+import Twitter from './twitter.js/index.js'
+import Linkedin from './linkedin.js'
 
 const Footer = styled.div`
   position: relative;

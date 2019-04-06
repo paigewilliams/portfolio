@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import styled, { keyframes } from "styled-components"
-import Arrow from '../../static/arrow';
+import Arrow from '../components/arrow';
 import { Link } from 'gatsby'
 
 const Body = styled.div`
