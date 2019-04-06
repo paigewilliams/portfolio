@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import Img from 'gatsby-image'
@@ -58,11 +58,11 @@ export default ({ data }) => {
           <Text>
             <h2>{node.frontmatter.title}</h2>
             <Tech>{node.frontmatter.tech}</Tech>
-            
               <div dangerouslySetInnerHTML={{ __html: node.html }} />
-              <Points><CodeLink href={node.frontmatter.github}>View code</CodeLink>  /  <CodeLink href={node.frontmatter.app}>View app</CodeLink></Points>
-           
-            
+              <Points>
+                <CodeLink title="view code" href={node.frontmatter.github}>View code</CodeLink>  /  
+                <CodeLink title="view app" href={node.frontmatter.app}> View app</CodeLink>
+              </Points>
           </Text>
           <Line></Line>
         </ProjectBody>
