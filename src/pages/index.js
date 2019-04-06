@@ -63,8 +63,6 @@ const ArrowSVG = styled.svg`
 const GoToBlog = styled.div`
  display: flex;
  flex-direction: row;
-//  justify-content: flex-start;
-//  align-items: baseline;
 `
 const BlogLink = styled.h3`
   color: #BA6055;

@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
-import Github from './github.js/index.js'
-import Twitter from './twitter.js/index.js'
+import React from 'react'
+import styled from 'styled-components'
+import Github from './github.js'
+import Twitter from './twitter.js'
 import Linkedin from './linkedin.js'
 
 const Footer = styled.div`
@@ -69,11 +69,7 @@ export default () => (
             </Icon>
           </A>
          </li>
-         <li>
-           
-         </li>
        </Ul>
-       
       </Container>
     </Footer>
   </footer>

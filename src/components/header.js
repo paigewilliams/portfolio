@@ -155,8 +155,7 @@ const St1 = styled.path`
   stroke-linecap: round;
   stroke-linejoin: round;
 `
- 
-class Sidebar extends React.Component {
+ class Sidebar extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -172,7 +171,7 @@ class Sidebar extends React.Component {
   }
 
   render(){
-    const {pageLinks} = this.props;
+    const { pageLinks } = this.props;
     return (
       <OuterSidebar>
       <InnerSidebar>
@@ -209,16 +208,15 @@ class Sidebar extends React.Component {
           </Link>
         </LogoDiv>
         <LogoDiv links>
-          <Nav showMenu={this.state.showSideMenu}>
+          <Nav showMenu={ this.state.showSideMenu }>
             <PageList>{
             pageLinks.map(link =>
-              <LinkLi key={link.name}>
-              <ListLink to={link.link} title={link.name}>{link.name}</ListLink>
+              <LinkLi key={ link.name }>
+              <ListLink to={ link.link } title={ link.name }>{ link.name }</ListLink>
               </LinkLi>)
           }
-          
           <LinkLi>
-            <ALink href={withPrefix('/paigewilliamsresume.pdf')}
+            <ALink href={ withPrefix('/paigewilliamsresume.pdf') }
             rel="noopener noreferrer"
             target="_blank"
             title="resume"
@@ -226,11 +224,10 @@ class Sidebar extends React.Component {
           </LinkLi>
           <LinkLi><ALink href="mailto:paige@paigewilliams.dev">contact</ALink></LinkLi>
         </PageList>
-
           </Nav>
-          <BurgerMenu onClick={this.handleSideMenuToggle}>
-            <TopLine toggle={this.state.showSideMenu}></TopLine>
-            <BottomLine toggle={this.state.showSideMenu}></BottomLine>
+          <BurgerMenu onClick={ this.handleSideMenuToggle }>
+            <TopLine toggle={ this.state.showSideMenu }></TopLine>
+            <BottomLine toggle={ this.state.showSideMenu }></BottomLine>
           </BurgerMenu>
         </LogoDiv>
       </InnerSidebar>

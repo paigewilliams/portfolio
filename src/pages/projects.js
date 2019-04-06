@@ -51,17 +51,17 @@ export default ({ data }) => {
   return (
     <Layout>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <ProjectBody>
+        <ProjectBody key={ node.id }>
           <Image
-          fadeIn={false}
+          fadeIn={ false }
           sizes={ node.frontmatter.img.childImageSharp.sizes}/>
           <Text>
-            <h2>{node.frontmatter.title}</h2>
-            <Tech>{node.frontmatter.tech}</Tech>
+            <h2>{ node.frontmatter.title }</h2>
+            <Tech>{ node.frontmatter.tech }</Tech>
               <div dangerouslySetInnerHTML={{ __html: node.html }} />
               <Points>
-                <CodeLink title="view code" href={node.frontmatter.github}>View code</CodeLink>  /  
-                <CodeLink title="view app" href={node.frontmatter.app}> View app</CodeLink>
+                <CodeLink title="view code" href={ node.frontmatter.github }>View code</CodeLink>  /  
+                <CodeLink title="view app" href={ node.frontmatter.app }> View app</CodeLink>
               </Points>
           </Text>
           <Line></Line>
