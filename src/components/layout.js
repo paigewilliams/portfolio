@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 import { GlobalStyle } from '../theme/globalStyle'
-import Sidebar from "./sidebar"
+import Header from "./header"
 import Footer from "./footer"
 import Helmet from 'react-helmet'
 import PropTypes from "prop-types"
@@ -44,7 +44,7 @@ const Layout = ({ children }) => (
         <html lang="en" />
       </Helmet>
       <Container>
-        <Sidebar pageLinks={data.site.siteMetadata.pageLinks} siteTitle={data.site.siteMetadata.title}
+        <Header pageLinks={data.site.siteMetadata.pageLinks} 
            />
         <Inner>
         {children}

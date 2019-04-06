@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: `/paigewilliamsresume`,
   siteMetadata: {
-    title: `P__W.`,
+    title: `Paige Williams`,
     pageLinks: [
       {
         name:'about',
