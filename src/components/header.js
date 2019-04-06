@@ -155,12 +155,8 @@ const St1 = styled.path`
   stroke-linecap: round;
   stroke-linejoin: round;
 `
-
-const St1Polyline = styled.polyline`
-fill: none;
-stroke: #A1C7B6;
-`
- class Sidebar extends React.Component {
+ 
+class Sidebar extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -176,13 +172,12 @@ stroke: #A1C7B6;
   }
 
   render(){
-    const {pageLinks, siteTitle, resume} = this.props;
-    console.log(resume);
+    const {pageLinks} = this.props;
     return (
       <OuterSidebar>
       <InnerSidebar>
         <LogoDiv>
-          <Link to="/">
+          <Link to="/" title="homepage">
         <LogoSVG viewBox="0 0 100 100">
         <St0 d="M18,44.3v-8.2h3.9c0.3,0,0.7,0.1,1,   0.2c0.3,0.1,0.6,0.3,0.8,0.5c0.2,0.2,0.4,0.5,0.5,0.8c0.2,0.7,0.2,1.5,0,2.2
 	        c-0.1,0.3-0.3,0.6-0.5,0.8c-0.2,0.2-0.5,0.4-0.8,0.5c-0.3,0.1-0.7,0.2-1,0.2h-2.1v3L18,44.3z M19.8,39.8h1.9c0.2,0,0.5-0.1,0.6-0.2
@@ -218,14 +213,15 @@ stroke: #A1C7B6;
             <PageList>{
             pageLinks.map(link =>
               <LinkLi key={link.name}>
-              <ListLink to={link.link}>{link.name}</ListLink>
+              <ListLink to={link.link} title={link.name}>{link.name}</ListLink>
               </LinkLi>)
           }
           
           <LinkLi>
             <ALink href={withPrefix('/paigewilliamsresume.pdf')}
             rel="noopener noreferrer"
-            targer="_blank"
+            target="_blank"
+            title="resume"
             >resume</ALink>
           </LinkLi>
           <LinkLi><ALink href="mailto:paige@paigewilliams.dev">contact</ALink></LinkLi>
