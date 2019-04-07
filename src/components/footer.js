@@ -47,7 +47,9 @@ export default () => (
     <Footer>
       <Container>
        <Ul>
-       <Email>paige@paigewilliams.dev</Email>
+         <li>
+           <Email>paige@paigewilliams.dev</Email>
+         </li>
          <li>
           <A href="https://github.com/paigewilliams" title="github">
             <Icon viewBox="0 0 24 24" alt="github icon">

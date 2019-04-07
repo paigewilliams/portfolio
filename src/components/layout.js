@@ -42,6 +42,7 @@ const Layout = ({ children }) => (
       <Helmet
         title={data.site.siteMetadata.title}>
         <html lang="en" />
+        <meta name="description" content="Paige Williams web developer portfolio" />
       </Helmet>
       <Container>
         <Header pageLinks={data.site.siteMetadata.pageLinks} 
