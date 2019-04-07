@@ -53,6 +53,7 @@ export default ({ data }) => {
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <ProjectBody key={ node.id }>
           <Image
+          alt={`A screenshot of my project titled ${ node.frontmatter.title }`}
           fadeIn={ false }
           sizes={ node.frontmatter.img.childImageSharp.sizes}/>
           <Text>
