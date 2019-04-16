@@ -73,26 +73,23 @@ const Index = () => (
     <Body>
       <Text>
         <Header>
-          Hi, I'm Paige. 
-          I am a front-end
-          web developer
-          and cartographer 
-          in Portland, OR.
-          </Header>
-          <BodyText>
-          <p>I am a student at Epicodus, learning Ruby, JavaScript and React. I am currently looking for work with a company that prioritizes growth and creativity. 
-          I like working with React/Redux, GraphQL, and Mapbox.</p>
+          Hi, I'm Paige. I am a full stack web developer and cartographer in Portland, OR.
+        </Header>
+        <BodyText>
+          <p>
+            I am a code school graduate with experience in Ruby and JavaScript. I am currently looking for work with a company that prioritizes growth and creativity. I like working with React/Redux, GraphQL, and Mapbox.
+          </p>
           <GoToBlog>
-            <Link to="/blog/google-maps-npm/"><BlogLink>New! My first tech blog post!</BlogLink></Link>
+            <Link to="/blog/google-maps-npm/">
+              <BlogLink>New! My first tech blog post!</BlogLink>
+            </Link>
             <ArrowSVG viewBox="0 0 42 17">
               <Arrow />
             </ArrowSVG>
-          
           </GoToBlog>
-        
-          </BodyText>
+        </BodyText>
       </Text>
-    <Image /> 
+      <Image /> 
     </Body>   
   </Layout>
 );
