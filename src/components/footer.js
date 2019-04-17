@@ -30,7 +30,7 @@ const Icon = styled.svg`
   height: 24px;
   width: 24px;
   :hover {
-    fill: #A1C7B6;
+    fill: #7c7c7e;
   }
 `
 const A = styled.a`
@@ -48,7 +48,7 @@ export default () => (
       <Container>
        <Ul>
          <li>
-           <Email>paige@paigewilliams.dev</Email>
+           <Email>paw145@humboldt.edu</Email>
          </li>
          <li>
           <A href="https://github.com/paigewilliams" title="github">
