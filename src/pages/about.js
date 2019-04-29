@@ -56,7 +56,7 @@ export default () => (
      <Text>
      <h1>About</h1>
       <p>I am passionate about using technology to serve people and the planet. I have a degree in Environmental Studies from Humboldt State University and a minor in Geographic Information Studies (GIS).</p> 
-      <p>I became interested in GIS because I saw maps as a way to convey environmental injustice. As I became more involved in the field and wanted to create more powerful visualizations, I needed to build web maps. I decided to take up coding enroll in Epicodus, a coding bootcamp in Portland, OR. After coding for 40+ hours a week for six months I am <em>somewhat</em> well versed in Ruby, JavaScript, and React.</p>
+      <p>I became interested in GIS because I saw maps as a way to convey environmental injustice. As I became more involved in the field and wanted to create more powerful visualizations, I needed to build web maps. I decided to take up coding and enroll in Epicodus, a coding bootcamp in Portland, OR. After coding for 40+ hours a week for six months I am <em>somewhat</em> well versed in Ruby, JavaScript, and React.</p>
     </Text> 
     <Lists>
     <h3>When I am not coding I am:</h3>

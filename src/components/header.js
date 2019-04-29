@@ -189,7 +189,7 @@ const LogoSVG = styled.svg`
             title="resume"
             >resume</ALink>
           </LinkLi>
-          <LinkLi><ALink href="mailto:paige@paigewilliams.dev">contact</ALink></LinkLi>
+          <LinkLi><ALink href="mailto:paw145@humboldt.edu">contact</ALink></LinkLi>
         </PageList>
           </Nav>
           <BurgerMenu onClick={ this.handleSideMenuToggle }>
