@@ -4,7 +4,7 @@ import Github from './github.js'
 import Twitter from './twitter.js'
 import Linkedin from './linkedin.js'
 
-const Footer = styled.div`
+const footer = styled.div`
   position: relative;
   left: 0;
   bottom: 0;
@@ -40,40 +40,39 @@ const Email = styled.p`
   padding-bottom: 0.025rem;
   margin-right: 1rem;
 `
-
-export default () => (
+const Footer = () => (
   <div>
   <footer>
-    <Footer>
-      <Container>
-       <Ul>
-         <li>
-           <Email>paw145@humboldt.edu</Email>
-         </li>
-         <li>
-          <A href="https://github.com/paigewilliams" title="github">
-            <Icon viewBox="0 0 24 24" alt="github icon">
-              <Github />
-            </Icon>
-          </A>
-         </li>
-         <li>
-          <A href="https://www.linkedin.com/in/paige--williams/" title="linkedin">
-            <Icon viewBox="0 0 24 24" alt="LinkedIn">
-              <Linkedin />
-            </Icon>
-          </A>
-         </li>
-         <li>
-          <A href="https://twitter.com/p___williams" title="twitter">
-            <Icon viewBox="0 0 24 24" alt="Twitter">
-              <Twitter />
-            </Icon>
-          </A>
-         </li>
-       </Ul>
-      </Container>
-    </Footer>
+    <Container>
+      <Ul>
+        <li>
+          <Email>paw145@humboldt.edu</Email>
+        </li>
+        <li>
+        <A href="https://github.com/paigewilliams" title="github">
+          <Icon viewBox="0 0 24 24" alt="github icon">
+            <Github />
+          </Icon>
+        </A>
+        </li>
+        <li>
+        <A href="https://www.linkedin.com/in/paige--williams/" title="linkedin">
+          <Icon viewBox="0 0 24 24" alt="LinkedIn">
+            <Linkedin />
+          </Icon>
+        </A>
+        </li>
+        <li>
+        <A href="https://twitter.com/p___williams" title="twitter">
+          <Icon viewBox="0 0 24 24" alt="Twitter">
+            <Twitter />
+          </Icon>
+        </A>
+        </li>
+      </Ul>
+    </Container>
   </footer>
   </div>
 );
+
+export default Footer;

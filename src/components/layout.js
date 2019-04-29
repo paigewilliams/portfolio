@@ -5,13 +5,9 @@ import { GlobalStyle } from '../theme/globalStyle'
 import Header from "./header"
 import Footer from "./footer"
 import Helmet from 'react-helmet'
-import PropTypes from "prop-types"
 
 const Inner = styled.div`
   flex-direction: column;
-  // justify-content: center;
-  // margin: 1rem auto;
-
 `
 const Container = styled.div`
   max-width: 1140px;

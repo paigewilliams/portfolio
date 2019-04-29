@@ -37,7 +37,7 @@ const CodeLink = styled.a`
   text-transform: uppercase;
   font-size: 12px;
   :hover {
-    color: #A1C7B6;
+    color: #BA6055;
   }
 `
 const Tech = styled.p`
