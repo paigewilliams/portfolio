@@ -3,7 +3,7 @@
   Paige Williams Portfolio
 </h1>
 
-View the live site [here](https://vigilant-kirch-6f65f0.netlify.com/)
+View the live site [here](https://www.paigewilliams.dev/)
 
 ## Description 
 
@@ -21,26 +21,19 @@ This is my porfolio built with Gatsby and deployed with Netlify.
 
 - [x] Add images of projects
 
-- [x] Create skill bars 
-
-- [ ] Add interactivity to skill bars
-
 - [x] Add content to About and Contact page
 
-- [ ] Organize projects by date
+- [x] Organize projects by date
 
-- [ ] Animate links with CSS
+- [x] Animate links with CSS
 
 - [x] Increase responsiveness
 
-- [ ] Link to blogposts
+- [x] Link to blogposts
 
-- [ ] Link to Social (twitter, linkedIn, github, code pen)
+- [x] Link to Social (twitter, linkedIn, github, code pen)
 
-- [ ] Design personal logo
-
-- [ ] Convert resume text to markdown
-
+- [x] Design personal logo
 
 ## 🚀 Quick start
 
