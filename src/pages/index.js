@@ -73,11 +73,11 @@ const Index = () => (
     <Body>
       <Text>
         <Header>
-          Hi, I'm Paige. I am a full stack web developer and cartographer in Portland, OR.
+          Hi, I'm Paige. I am a software engineer and cartographer in Portland, OR.
         </Header>
         <BodyText>
           <p>
-            I am a code school graduate with experience in Ruby and JavaScript. I am currently looking for work with a company that prioritizes growth and creativity. I like working with React/Redux, GraphQL, and Mapbox.
+            I am a code school graduate with experience in Ruby and JavaScript. I am currently working at moovel, primarely with React and Redux. I am passionate about how tech can increase multimodal transportation and make cities more resiliant.
           </p>
           <GoToBlog>
             <Link to="/blog/google-maps-npm/">
@@ -89,8 +89,8 @@ const Index = () => (
           </GoToBlog>
         </BodyText>
       </Text>
-      <Image /> 
-    </Body>   
+      <Image />
+    </Body>
   </Layout>
 );
 
