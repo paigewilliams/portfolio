@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import styled from 'styled-components'
+import { useSpring, animated } from 'react-spring'
+import useResizeObserver from 'use-resize-observer'
 import { Link, withPrefix } from 'gatsby'
 import Logo from './logo'
 
@@ -147,12 +149,22 @@ const LogoSVG = styled.svg`
 `
 const Header = ({ pageLinks }) => {
   const [showSideMenu, setShowSideMenu] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [ref, width, height] = useResizeObserver()
+
+  const handleClick = () => setMenuOpen(!menuOpen)
+
+  const props = useSpring({
+    height: menuOpen ? height : 0,
+  })
 
   const handleSideMenuToggle = () => {
     if (window.innerWidth <= 800) {
       setShowSideMenu({ showSideMenu: !showSideMenu })
     }
   }
+
+  const dropDownItems = ['code', 'cartograpy']
   return (
     <OuterSidebar>
       <InnerSidebar>
@@ -166,13 +178,34 @@ const Header = ({ pageLinks }) => {
         <LogoDiv links>
           <Nav showMenu={showSideMenu}>
             <PageList>
-              {pageLinks.map(link => (
-                <LinkLi key={link.name}>
-                  <ListLink to={link.link} title={link.name}>
-                    {link.name}
-                  </ListLink>
-                </LinkLi>
-              ))}
+              {pageLinks.map(link => {
+                return link.name === 'projects' ? (
+                  <Fragment>
+                    <LinkLi onClick={handleClick} key={link.name}>
+                      {link.name}
+                      <animated.div
+                        style={{
+                          ...props,
+                          overflow: 'hidden',
+                          position: 'relative',
+                        }}
+                      >
+                        <div ref={ref}>
+                          {dropDownItems.map(item => (
+                            <div key={item}>{item}</div>
+                          ))}
+                        </div>
+                      </animated.div>
+                    </LinkLi>
+                  </Fragment>
+                ) : (
+                  <LinkLi key={link.name}>
+                    <ListLink to={link.link} title={link.name}>
+                      {link.name}
+                    </ListLink>
+                  </LinkLi>
+                )
+              })}
               <LinkLi>
                 <ALink
                   href={withPrefix('/paigewilliamsresume.pdf')}
