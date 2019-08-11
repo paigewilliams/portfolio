@@ -145,7 +145,7 @@ const LogoSVG = styled.svg`
   width: 80px;
   fill: #ba6055;
 `
-const Sidebar = ({ pageLinks }) => {
+const Header = ({ pageLinks }) => {
   const [showSideMenu, setShowSideMenu] = useState(false)
 
   const handleSideMenuToggle = () => {
@@ -198,4 +198,4 @@ const Sidebar = ({ pageLinks }) => {
   )
 }
 
-export default Sidebar
+export default Header

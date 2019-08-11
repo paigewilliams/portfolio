@@ -1,8 +1,8 @@
-import React from "react"
-import Layout from "../components/layout"
-import Image from "../components/image"
-import styled, { keyframes } from "styled-components"
-import Arrow from '../components/arrow';
+import React from 'react'
+import Layout from '../components/layout'
+import Image from '../components/image'
+import styled, { keyframes } from 'styled-components'
+import Arrow from '../components/arrow'
 import { Link } from 'gatsby'
 
 const Body = styled.div`
@@ -10,9 +10,9 @@ const Body = styled.div`
   flex-direction: row;
   justify-content: space-between;
   @media (max-width: 800px) {
-    flex-direction: column; 
-  } 
-`;
+    flex-direction: column;
+  }
+`
 
 const fadeInUp = keyframes`
 from {
@@ -35,37 +35,37 @@ const Text = styled.div`
   animation-fill-mode: both;
   -webkit-animation-duration: 1s;
   -webkit-animation-fill-mode: both;
-  @media (max-width: 800px){
+  @media (max-width: 800px) {
     padding-right: 1rem;
     width: 100%;
   }
-`;
+`
 
 const Header = styled.h1`
   font-size: 32px;
   margin-bottom: -0.5rem;
   line-height: 40px;
   margin-top: 0;
-`;
+`
 
 const BodyText = styled.div`
   margin-top: 10rem;
-  @media (max-width: 1000px){
+  @media (max-width: 1000px) {
     margin-top: 1rem;
-  } 
+  }
 `
 const ArrowSVG = styled.svg`
- width: 30px;
- height: 20px;
- margin-left: 1rem;
- margin-top: 1.35rem;
+  width: 30px;
+  height: 20px;
+  margin-left: 1rem;
+  margin-top: 1.35rem;
 `
 const GoToBlog = styled.div`
- display: flex;
- flex-direction: row;
+  display: flex;
+  flex-direction: row;
 `
 const BlogLink = styled.h3`
-  color: #BA6055;
+  color: #ba6055;
 `
 
 const Index = () => (
@@ -73,11 +73,15 @@ const Index = () => (
     <Body>
       <Text>
         <Header>
-          Hi, I'm Paige. I am a software engineer and cartographer in Portland, OR.
+          Hi, I'm Paige. I am a software engineer and cartographer in Portland,
+          OR.
         </Header>
         <BodyText>
           <p>
-            I am a code school graduate with experience in Ruby and JavaScript. I am currently working at moovel, primarely with React and Redux. I am passionate about how tech can increase multimodal transportation and make cities more resiliant.
+            I am a code school graduate with experience in Ruby and JavaScript.
+            I am currently working at moovel, primarely with React and Redux. I
+            am passionate about how tech can increase multimodal transportation
+            and make cities more resiliant.
           </p>
           <GoToBlog>
             <Link to="/blog/google-maps-npm/">
@@ -92,6 +96,6 @@ const Index = () => (
       <Image />
     </Body>
   </Layout>
-);
+)
 
 export default Index

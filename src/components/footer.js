@@ -4,7 +4,7 @@ import Github from './github.js'
 import Twitter from './twitter.js'
 import Linkedin from './linkedin.js'
 
-const footer = styled.div`
+const InnerFooter = styled.div`
   position: relative;
   left: 0;
   bottom: 0;
@@ -34,7 +34,7 @@ const Icon = styled.svg`
   }
 `
 const A = styled.a`
-  padding: 0 1rem;  
+  padding: 0 1rem;
 `
 const Email = styled.p`
   padding-bottom: 0.025rem;
@@ -42,37 +42,40 @@ const Email = styled.p`
 `
 const Footer = () => (
   <div>
-  <footer>
-    <Container>
-      <Ul>
-        <li>
-          <Email>paw145@humboldt.edu</Email>
-        </li>
-        <li>
-        <A href="https://github.com/paigewilliams" title="github">
-          <Icon viewBox="0 0 24 24" alt="github icon">
-            <Github />
-          </Icon>
-        </A>
-        </li>
-        <li>
-        <A href="https://www.linkedin.com/in/paige--williams/" title="linkedin">
-          <Icon viewBox="0 0 24 24" alt="LinkedIn">
-            <Linkedin />
-          </Icon>
-        </A>
-        </li>
-        <li>
-        <A href="https://twitter.com/p___williams" title="twitter">
-          <Icon viewBox="0 0 24 24" alt="Twitter">
-            <Twitter />
-          </Icon>
-        </A>
-        </li>
-      </Ul>
-    </Container>
-  </footer>
+    <InnerFooter>
+      <Container>
+        <Ul>
+          <li>
+            <Email>paw145@humboldt.edu</Email>
+          </li>
+          <li>
+            <A href="https://github.com/paigewilliams" title="github">
+              <Icon viewBox="0 0 24 24" alt="github icon">
+                <Github />
+              </Icon>
+            </A>
+          </li>
+          <li>
+            <A
+              href="https://www.linkedin.com/in/paige--williams/"
+              title="linkedin"
+            >
+              <Icon viewBox="0 0 24 24" alt="LinkedIn">
+                <Linkedin />
+              </Icon>
+            </A>
+          </li>
+          <li>
+            <A href="https://twitter.com/p___williams" title="twitter">
+              <Icon viewBox="0 0 24 24" alt="Twitter">
+                <Twitter />
+              </Icon>
+            </A>
+          </li>
+        </Ul>
+      </Container>
+    </InnerFooter>
   </div>
-);
+)
 
-export default Footer;
+export default Footer
