@@ -1,7 +1,5 @@
 import React, { Fragment, useState } from 'react'
 import styled from 'styled-components'
-import { useSpring, animated } from 'react-spring'
-import useResizeObserver from 'use-resize-observer'
 import { Link, withPrefix } from 'gatsby'
 import Logo from './logo'
 
@@ -20,10 +18,12 @@ const InnerSidebar = styled.div`
   margin: 0 auto;
 `
 const PageList = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  @media (max-width: 800px) {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  list-style: none inside none;
+  @media only screen(max-width: 800px) {
     margin-top: 2rem;
     display: flex;
     align-items: center;
@@ -31,8 +31,32 @@ const PageList = styled.ul`
     text-align: center;
     width: 100%;
     height: 100%;
+    display: block;
+    width: 100%;
   }
 `
+const Dropdown = styled.ul`
+  position: absolute;
+  right: 10000px;
+  opacity: 0;
+  display: block;
+  padding: 0.5rem 0;
+  z-index: 1010;
+`
+
+const DropdownLi = styled.li`
+  display: block;
+  padding-top: 0.5rem;
+  text-align: right;
+  a:hover {
+    color: #ce8d85;
+  }
+
+  @media only screen and (min-width: 0px) and (max-width: 768px;) {
+    text-align: left;
+  }
+`
+
 const ListLink = styled(Link)`
   @media (max-width: 800) {
     :hover {
@@ -46,6 +70,7 @@ const LogoDiv = styled.div`
   margin-top: 1rem;
 `
 const Nav = styled.nav`
+  display: flex;
   @media (max-width: 800px) {
     z-index: 6;
     background-color: #ce8d85;
@@ -70,6 +95,19 @@ const LinkLi = styled.li`
     text-decoration: none;
     position: relative;
     z-index: 5;
+    :hover,
+    :focus,
+    :focus-within {
+      ${Dropdown} {
+        right: 0;
+        opacity: 1;
+        transition: opacity 0.75s ease;
+      }
+      :last-child {
+        padding-right: 0;
+      }
+    }
+
     :after {
       background: none repeat scroll 0 0 transparent;
       bottom: -5px;
@@ -92,13 +130,22 @@ const LinkLi = styled.li`
 
   @media (max-width: 800px) {
     font-size: 40px;
-    margin-left: 0;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
     width: 100%;
     height: 100%;
+    :hover,
+    :focus,
+    :focus-within {
+      ${Dropdown} {
+        right: 0;
+        opacity: 1;
+        transition: opacity 0.75s ease;
+      }
+      
     ${ListLink}:hover {
       color: white;
     }
@@ -149,14 +196,6 @@ const LogoSVG = styled.svg`
 `
 const Header = ({ pageLinks }) => {
   const [showSideMenu, setShowSideMenu] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [ref, width, height] = useResizeObserver()
-
-  const handleClick = () => setMenuOpen(!menuOpen)
-
-  const props = useSpring({
-    height: menuOpen ? height : 0,
-  })
 
   const handleSideMenuToggle = () => {
     if (window.innerWidth <= 800) {
@@ -181,21 +220,15 @@ const Header = ({ pageLinks }) => {
               {pageLinks.map(link => {
                 return link.name === 'projects' ? (
                   <Fragment>
-                    <LinkLi onClick={handleClick} key={link.name}>
-                      {link.name}
-                      <animated.div
-                        style={{
-                          ...props,
-                          overflow: 'hidden',
-                          position: 'relative',
-                        }}
-                      >
-                        <div ref={ref}>
-                          {dropDownItems.map(item => (
-                            <div key={item}>{item}</div>
-                          ))}
-                        </div>
-                      </animated.div>
+                    <LinkLi key={link.name}>
+                      <ALink aria-haspopup="true">{link.name}</ALink>
+                      <Dropdown>
+                        {dropDownItems.map(item => (
+                          <DropdownLi key={item}>
+                            <ALink href={`/${item}`}>{item}</ALink>
+                          </DropdownLi>
+                        ))}
+                      </Dropdown>
                     </LinkLi>
                   </Fragment>
                 ) : (
