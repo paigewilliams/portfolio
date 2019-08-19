@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import { Link, withPrefix } from 'gatsby'
 import Logo from './logo'
 
-const OuterSidebar = styled.div`
+const OuterHeader = styled.div`
   margin-bottom: 6rem;
   width: 100%;
   margin-top: 0;
 `
-const InnerSidebar = styled.div`
+const InnerHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,23 +17,52 @@ const InnerSidebar = styled.div`
   position: relative;
   margin: 0 auto;
 `
-const PageList = styled.ul`
-  margin-left: auto;
+const LogoDiv = styled.div`
+  // display: flex;
+  // flex-direction: row;
+  margin-top: 1rem;
+`
+const Nav = styled.nav`
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  list-style: none inside none;
-  @media only screen(max-width: 800px) {
-    margin-top: 2rem;
+  // @media (max-width: 800px) {
+  //   z-index: 6;
+  //   background-color: #ce8d85;
+  //   display: flex;
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   align-items: center;
+  //   width: 100%;
+  //   height: 100%;
+  //   // display: flex;
+  //   justify-content: space-evenly;
+  //   align-items: self-end;
+  //   display: ${props => (props.showMenu ? 'flex' : 'none')};
+  // }
+  // @media (min-width: 800px) {
+  //   display: block;
+  // }
+`
+
+const PageList = styled.ul`
+  @media only screen(min-width: 800px) {
+    margin-left: auto;
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    display: block;
-    width: 100%;
+    flex-wrap: wrap;
+    align-items: baseline;
+    list-style: none inside none;
   }
+
+  // @media only screen(max-width: 800px) {
+  //   margin-top: 2rem;
+  //   // display: flex;
+  //   // align-items: center;
+  //   // flex-direction: column;
+  //   // text-align: center;
+  //   width: 100%;
+  //   height: 100%;
+  //   display: block;
+  // }
 `
 const Dropdown = styled.ul`
   position: absolute;
@@ -64,34 +93,12 @@ const ListLink = styled(Link)`
     }
   }
 `
-const LogoDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-top: 1rem;
-`
-const Nav = styled.nav`
-  display: flex;
-  @media (max-width: 800px) {
-    z-index: 6;
-    background-color: #ce8d85;
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    display: ${props => (props.showMenu ? 'block' : 'none')};
-  }
-  @media (min-width: 800px) {
-    display: block;
-  }
-`
+
 const LinkLi = styled.li`
   @media (min-width: 800px) {
     display: inline-block;
     position: relative;
-    margin-left: 3.8rem;
+    margin-left: 4rem;
     text-decoration: none;
     position: relative;
     z-index: 5;
@@ -128,28 +135,29 @@ const LinkLi = styled.li`
     }
   }
 
-  @media (max-width: 800px) {
-    font-size: 40px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    :hover,
-    :focus,
-    :focus-within {
-      ${Dropdown} {
-        right: 0;
-        opacity: 1;
-        transition: opacity 0.75s ease;
-      }
+  // @media (max-width: 800px) {
+  //   font-size: 40px;
+  //   margin: 0 auto;
+  //   display: flex;
+  //   align-items: right;
+  //   justify-content: space-between;
+  //   flex-direction: column;
+  //   text-align: right;
+  //   width: 100%;
+  //   height: 100%;
+  //   :hover,
+  //   :focus,
+  //   :focus-within {
+  //     ${Dropdown} {
+  //       right: 0;
+  //       opacity: 1;
+  //       transition: opacity 0.75s ease;
+  //     }
       
-    ${ListLink}:hover {
-      color: white;
-    }
-  }
+  //   ${ListLink}:hover {
+  //     color: white;
+  //   }
+  // }
 `
 const BurgerMenu = styled.div`
   display: none;
@@ -161,12 +169,12 @@ const BurgerMenu = styled.div`
   position: relative;
   z-index: 8;
   @media (max-width: 800px) {
-    display: flex;
+    // display: flex;
   }
 `
 const TopLine = styled.span`
   position: relative;
-  display: block;
+  // display: block;
   width: 21px;
   height: 1px;
   border-radius: 2px;
@@ -175,7 +183,7 @@ const TopLine = styled.span`
 `
 const BottomLine = styled.span`
   position: relative;
-  display: block;
+  // display: block;
   width: 21px;
   height: 1px;
   background-color: black;
@@ -203,10 +211,10 @@ const Header = ({ pageLinks }) => {
     }
   }
 
-  const dropDownItems = ['code', 'cartograpy']
+  const dropDownItems = ['code', 'cartography']
   return (
-    <OuterSidebar>
-      <InnerSidebar>
+    <OuterHeader>
+      <InnerHeader>
         <LogoDiv>
           <Link to="/" title="homepage">
             <LogoSVG viewBox="0 0 100 100">
@@ -219,13 +227,13 @@ const Header = ({ pageLinks }) => {
             <PageList>
               {pageLinks.map(link => {
                 return link.name === 'projects' ? (
-                  <Fragment>
-                    <LinkLi key={link.name}>
+                  <Fragment key={link.name}>
+                    <LinkLi>
                       <ALink aria-haspopup="true">{link.name}</ALink>
                       <Dropdown>
                         {dropDownItems.map(item => (
                           <DropdownLi key={item}>
-                            <ALink href={`/${item}`}>{item}</ALink>
+                            <ListLink to={`/${item}`}>{item}</ListLink>
                           </DropdownLi>
                         ))}
                       </Dropdown>
@@ -259,8 +267,8 @@ const Header = ({ pageLinks }) => {
             <BottomLine toggle={showSideMenu}></BottomLine>
           </BurgerMenu>
         </LogoDiv>
-      </InnerSidebar>
-    </OuterSidebar>
+      </InnerHeader>
+    </OuterHeader>
   )
 }
 
