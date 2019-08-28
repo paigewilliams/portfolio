@@ -12,7 +12,9 @@ const Inner = styled.div`
 const Container = styled.div`
   max-width: 1140px;
   padding: 0 6rem;
-  position: relative;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
   margin: 0 auto;
 `
 const Layout = ({ children }) => (

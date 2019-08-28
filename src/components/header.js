@@ -13,35 +13,32 @@ const InnerHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  max-width: 1300px;
   position: relative;
   margin: 0 auto;
 `
 const LogoDiv = styled.div`
-  // display: flex;
-  // flex-direction: row;
   margin-top: 1rem;
 `
 const Nav = styled.nav`
   display: flex;
-  // @media (max-width: 800px) {
-  //   z-index: 6;
-  //   background-color: #ce8d85;
-  //   display: flex;
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   align-items: center;
-  //   width: 100%;
-  //   height: 100%;
-  //   // display: flex;
-  //   justify-content: space-evenly;
-  //   align-items: self-end;
-  //   display: ${props => (props.showMenu ? 'flex' : 'none')};
-  // }
-  // @media (min-width: 800px) {
-  //   display: block;
-  // }
+  @media (max-width: 800px) {
+    z-index: 6;
+    background-color: #ce8d85;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    // display: flex;
+    justify-content: space-evenly;
+    align-items: self-end;
+    display: ${props => (props.showMenu ? 'flex' : 'none')};
+  }
+  @media (min-width: 800px) {
+    display: block;
+  }
 `
 
 const PageList = styled.ul`
@@ -53,20 +50,19 @@ const PageList = styled.ul`
     list-style: none inside none;
   }
 
-  // @media only screen(max-width: 800px) {
-  //   margin-top: 2rem;
-  //   // display: flex;
-  //   // align-items: center;
-  //   // flex-direction: column;
-  //   // text-align: center;
-  //   width: 100%;
-  //   height: 100%;
-  //   display: block;
-  // }
+  @media only screen(max-width: 800px) {
+    margin-top: 2rem;
+    // display: flex;
+    // align-items: center;
+    // flex-direction: column;
+    // text-align: center;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
 `
 const Dropdown = styled.ul`
   position: absolute;
-  right: 10000px;
   opacity: 0;
   display: block;
   padding: 0.5rem 0;
@@ -77,6 +73,7 @@ const DropdownLi = styled.li`
   display: block;
   padding-top: 0.5rem;
   text-align: right;
+  background: white;
   a:hover {
     color: #ce8d85;
   }
@@ -101,11 +98,11 @@ const LinkLi = styled.li`
     margin-left: 4rem;
     text-decoration: none;
     position: relative;
-    z-index: 5;
     :hover,
     :focus,
     :focus-within {
       ${Dropdown} {
+        z-index: 2;
         right: 0;
         opacity: 1;
         transition: opacity 0.75s ease;
@@ -122,9 +119,8 @@ const LinkLi = styled.li`
       display: block;
       height: 3px;
       left: 50%;
-      position: absolute;
       background: #ba6055;
-      z-index: -1;
+      z-index: 4;
       transition: width 0.3s ease 0s, left 0.3s ease 0s;
       width: 0;
     }
@@ -135,29 +131,29 @@ const LinkLi = styled.li`
     }
   }
 
-  // @media (max-width: 800px) {
-  //   font-size: 40px;
-  //   margin: 0 auto;
-  //   display: flex;
-  //   align-items: right;
-  //   justify-content: space-between;
-  //   flex-direction: column;
-  //   text-align: right;
-  //   width: 100%;
-  //   height: 100%;
-  //   :hover,
-  //   :focus,
-  //   :focus-within {
-  //     ${Dropdown} {
-  //       right: 0;
-  //       opacity: 1;
-  //       transition: opacity 0.75s ease;
-  //     }
+  @media (max-width: 800px) {
+    font-size: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: right;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: right;
+    width: 100%;
+    height: 100%;
+    :hover,
+    :focus,
+    :focus-within {
+      ${Dropdown} {
+        position: relative;
+        opacity: 1;
+        transition: opacity 0.75s ease;
+      }
       
-  //   ${ListLink}:hover {
-  //     color: white;
-  //   }
-  // }
+    ${ListLink}:hover {
+      color: white;
+    }
+  }
 `
 const BurgerMenu = styled.div`
   display: none;
@@ -169,12 +165,12 @@ const BurgerMenu = styled.div`
   position: relative;
   z-index: 8;
   @media (max-width: 800px) {
-    // display: flex;
+    display: flex;
   }
 `
 const TopLine = styled.span`
   position: relative;
-  // display: block;
+  display: block;
   width: 21px;
   height: 1px;
   border-radius: 2px;
@@ -183,7 +179,7 @@ const TopLine = styled.span`
 `
 const BottomLine = styled.span`
   position: relative;
-  // display: block;
+  display: block;
   width: 21px;
   height: 1px;
   background-color: black;
@@ -227,18 +223,16 @@ const Header = ({ pageLinks }) => {
             <PageList>
               {pageLinks.map(link => {
                 return link.name === 'projects' ? (
-                  <Fragment key={link.name}>
-                    <LinkLi>
-                      <ALink aria-haspopup="true">{link.name}</ALink>
-                      <Dropdown>
-                        {dropDownItems.map(item => (
-                          <DropdownLi key={item}>
-                            <ListLink to={`/${item}`}>{item}</ListLink>
-                          </DropdownLi>
-                        ))}
-                      </Dropdown>
-                    </LinkLi>
-                  </Fragment>
+                  <LinkLi key={link.name}>
+                    <ALink aria-haspopup="true">{link.name}</ALink>
+                    <Dropdown>
+                      {dropDownItems.map(item => (
+                        <DropdownLi key={item}>
+                          <ListLink to={`/${item}`}>{item}</ListLink>
+                        </DropdownLi>
+                      ))}
+                    </Dropdown>
+                  </LinkLi>
                 ) : (
                   <LinkLi key={link.name}>
                     <ListLink to={link.link} title={link.name}>

@@ -41,41 +41,39 @@ const Email = styled.p`
   margin-right: 1rem;
 `
 const Footer = () => (
-  <div>
-    <InnerFooter>
-      <Container>
-        <Ul>
-          <li>
-            <Email>paw145@humboldt.edu</Email>
-          </li>
-          <li>
-            <A href="https://github.com/paigewilliams" title="github">
-              <Icon viewBox="0 0 24 24" alt="github icon">
-                <Github />
-              </Icon>
-            </A>
-          </li>
-          <li>
-            <A
-              href="https://www.linkedin.com/in/paige--williams/"
-              title="linkedin"
-            >
-              <Icon viewBox="0 0 24 24" alt="LinkedIn">
-                <Linkedin />
-              </Icon>
-            </A>
-          </li>
-          <li>
-            <A href="https://twitter.com/p___williams" title="twitter">
-              <Icon viewBox="0 0 24 24" alt="Twitter">
-                <Twitter />
-              </Icon>
-            </A>
-          </li>
-        </Ul>
-      </Container>
-    </InnerFooter>
-  </div>
+  <InnerFooter>
+    <Container>
+      <Ul>
+        <li>
+          <Email>paw145@humboldt.edu</Email>
+        </li>
+        <li>
+          <A href="https://github.com/paigewilliams" title="github">
+            <Icon viewBox="0 0 24 24" alt="github icon">
+              <Github />
+            </Icon>
+          </A>
+        </li>
+        <li>
+          <A
+            href="https://www.linkedin.com/in/paige--williams/"
+            title="linkedin"
+          >
+            <Icon viewBox="0 0 24 24" alt="LinkedIn">
+              <Linkedin />
+            </Icon>
+          </A>
+        </li>
+        <li>
+          <A href="https://twitter.com/p___williams" title="twitter">
+            <Icon viewBox="0 0 24 24" alt="Twitter">
+              <Twitter />
+            </Icon>
+          </A>
+        </li>
+      </Ul>
+    </Container>
+  </InnerFooter>
 )
 
 export default Footer
