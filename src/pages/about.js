@@ -36,6 +36,7 @@ const Text = styled.div`
   }
 `
 const Lists = styled.div`
+  max-width: 32rem;
   @media (max-width: 800px) {
     margin-right: 0;
     margin-top: 1rem;
