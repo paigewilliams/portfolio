@@ -6,11 +6,11 @@ import Arrow from '../components/arrow'
 import { Link } from 'gatsby'
 
 const Body = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 50% 35%;
+  grid-column-gap: 15%;
   @media (max-width: 800px) {
-    flex-direction: column;
+    grid-template-columns: 100%;
   }
 `
 
@@ -26,9 +26,6 @@ to {
 `
 
 const Text = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-right: 8.3rem;
   max-width: 32rem;
   animation: ${fadeInUp};
   animation-duration: 1s;
@@ -36,7 +33,6 @@ const Text = styled.div`
   -webkit-animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   @media (max-width: 800px) {
-    padding-right: 1rem;
     width: 100%;
   }
 `

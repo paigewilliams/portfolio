@@ -6,17 +6,20 @@ import Header from './header'
 import Footer from './footer'
 import Helmet from 'react-helmet'
 
-const Inner = styled.div`
-  flex-direction: column;
-`
 const Container = styled.div`
-  max-width: 1140px;
-  padding: 0 6rem;
+  // padding: 0 6rem;
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;
+  max-width: 1140px;
+  padding: 0 1rem;
   margin: 0 auto;
 `
+
+const Inner = styled.div`
+  flex-direction: column;
+`
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
