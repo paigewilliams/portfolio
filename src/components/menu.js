@@ -4,11 +4,26 @@ import PropTypes from 'prop-types'
 
 const SmallMenu = styled.div`
   display: none;
-  text-align: center;
   @media (max-width: ${props => props.size}) {
-    display: block;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 6rem;
   }
 `
+
+const InnerSmall = styled.div`
+  position: fixed;
+  height: 100vh;
+  z-index: 4;
+  right: -2rem;
+  width: 15rem;
+  background-color: #ce8d85;
+  transform-origin: 0% 0%;
+  transform: ${props =>
+    props.showMenu ? 'translateX(0)' : 'translateX(100%)'};
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+`
+
 const LargeMenu = styled.div`
   display: block;
   text-align: center;
@@ -18,7 +33,11 @@ const LargeMenu = styled.div`
 `
 
 const MenuIcon = ({ onClick, icon }) => (
-  <div role="button" onClick={onClick}>
+  <div
+    role="button"
+    onClick={onClick}
+    style={{ zIndex: 5, marginTop: '1rem', position: 'fixed' }}
+  >
     {icon}
   </div>
 )
@@ -39,13 +58,25 @@ const Menu = ({
       <LargeMenu className={largeMenuClassName} size={changeMenuOn}>
         {menu}
       </LargeMenu>
-      <SmallMenu className={smallMenuClassName} size={changeMenuOn}>
+      <SmallMenu
+        className={smallMenuClassName}
+        size={changeMenuOn}
+        showMenu={showMenu}
+      >
         {!showMenu ? (
-          <MenuIcon onClick={handleClick} icon={menuOpenButton} />
+          <MenuIcon
+            onClick={handleClick}
+            icon={menuOpenButton}
+            showMenu={showMenu}
+          />
         ) : (
-          <MenuIcon onClick={handleClick} icon={menuCloseButton} />
+          <MenuIcon
+            onClick={handleClick}
+            icon={menuCloseButton}
+            showMenu={showMenu}
+          />
         )}
-        {showMenu ? <div>{menu}</div> : null}
+        {<InnerSmall showMenu={showMenu}>{menu}</InnerSmall>}
       </SmallMenu>
     </div>
   )

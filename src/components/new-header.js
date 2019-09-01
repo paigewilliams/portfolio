@@ -16,12 +16,18 @@ const InnerMenu = styled.div`
     margin-left: 30px;
   }
 
-  @media (max-width: 500px) {
-    padding: 10px 0;
+  @media (max-width: 800px) {
+    ul {
+      margin-top: 3rem;
+      padding: 0px;
+      color: black;
+      list-style-type: none;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+    }
     li {
-      padding: 10px 0;
-      display: block;
-      margin-left: 0;
+      font-size: 1.5em;
     }
   }
 `
@@ -30,10 +36,8 @@ const NewHeader = ({ pageLinks }) => {
   return (
     <Menu
       menuOpenButton={<FaBars size={30} color="black" />}
-      menuCloseButton={<FaWindowClose size={30} color="tomato" />}
+      menuCloseButton={<FaWindowClose size={30} color="black" />}
       changeMenuOn="800px"
-      largeMenuClassName="large"
-      smallMenuClassName="small"
       menu={
         <InnerMenu>
           <ul>
