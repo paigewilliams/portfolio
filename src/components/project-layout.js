@@ -5,10 +5,10 @@ import Img from 'gatsby-image'
 
 const ProjectBody = styled.div`
   display: grid;
-  grid-template-columns: 50% 30%;
-  grid-column-gap: 13%;
+  grid-template-columns: 50% 35%;
+  grid-column-gap: 15%;
   margin-bottom: 3rem;
-  @media (max-width: 1200px) {
+  @media (max-width: 1040px) {
     grid-template-columns: 100%;
   }
 `

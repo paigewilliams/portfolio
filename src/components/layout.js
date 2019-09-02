@@ -2,18 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import { GlobalStyle } from '../theme/globalStyle'
-// import Header from './header'
-import NewHeader from './new-header'
+import Header from './header'
 import Footer from './footer'
 import Helmet from 'react-helmet'
 
 const Container = styled.div`
   height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+`
+const InnerContainer = styled.div`
   display: grid;
   grid-template-rows: auto 1fr;
   max-width: 1140px;
   padding: 0 1rem;
   margin: 0 auto;
+  box-sizing: content-box;
 `
 
 const Layout = ({ children }) => (
@@ -42,9 +46,11 @@ const Layout = ({ children }) => (
           />
         </Helmet>
         <Container>
-          <NewHeader pageLinks={data.site.siteMetadata.pageLinks} />
-          <div>{children}</div>
-          <Footer />
+          <InnerContainer>
+            <Header pageLinks={data.site.siteMetadata.pageLinks} />
+            <div>{children}</div>
+            <Footer />
+          </InnerContainer>
         </Container>
       </>
     )}

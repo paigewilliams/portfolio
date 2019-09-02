@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
@@ -7,7 +7,6 @@ const SmallMenu = styled.div`
   @media (max-width: ${props => props.size}) {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 6rem;
   }
 `
 
@@ -16,6 +15,7 @@ const InnerSmall = styled.div`
   height: 100vh;
   z-index: 4;
   right: -2rem;
+  top: 0;
   width: 15rem;
   background-color: #ce8d85;
   transform-origin: 0% 0%;
@@ -25,19 +25,15 @@ const InnerSmall = styled.div`
 `
 
 const LargeMenu = styled.div`
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
   @media (max-width: ${props => props.size}) {
     display: none;
   }
 `
 
 const MenuIcon = ({ onClick, icon }) => (
-  <div
-    role="button"
-    onClick={onClick}
-    style={{ zIndex: 5, marginTop: '1rem', position: 'fixed' }}
-  >
+  <div role="button" onClick={onClick} style={{ zIndex: 5, marginTop: '2rem' }}>
     {icon}
   </div>
 )
@@ -54,7 +50,7 @@ const Menu = ({
   const handleClick = () => setShowMenu(!showMenu)
 
   return (
-    <div>
+    <Fragment>
       <LargeMenu className={largeMenuClassName} size={changeMenuOn}>
         {menu}
       </LargeMenu>
@@ -78,22 +74,15 @@ const Menu = ({
         )}
         {<InnerSmall showMenu={showMenu}>{menu}</InnerSmall>}
       </SmallMenu>
-    </div>
+    </Fragment>
   )
 }
 
 Menu.propTypes = {
   menu: PropTypes.node.isRequired,
-  largeMenuClassName: PropTypes.string,
-  smallMenuClassName: PropTypes.string,
   changeMenuOn: PropTypes.string.isRequired,
   menuOpenButton: PropTypes.node.isRequired,
   menuCloseButton: PropTypes.node.isRequired,
-}
-
-Menu.defaultProps = {
-  largeMenuClassName: '',
-  smallMenuClassName: '',
 }
 
 export default Menu
