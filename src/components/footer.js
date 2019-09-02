@@ -5,11 +5,10 @@ import Twitter from './twitter.js'
 import Linkedin from './linkedin.js'
 
 const InnerFooter = styled.div`
-  position: relative;
-  left: 0;
-  bottom: 0;
+  grid-row-start: 3;
+  grid-row-end: 4;
   width: 100%;
-  padding: 4rem 0;
+  padding: 4rem 0 2rem 0;
 `
 const Container = styled.div`
   display: flex;

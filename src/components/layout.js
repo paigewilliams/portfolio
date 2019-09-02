@@ -18,6 +18,7 @@ const InnerContainer = styled.div`
   padding: 0 1rem;
   margin: 0 auto;
   box-sizing: content-box;
+  height: 100vh;
 `
 
 const Layout = ({ children }) => (
