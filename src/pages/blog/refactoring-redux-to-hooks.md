@@ -53,101 +53,101 @@ One of the things I really like about Redux is the use of middleware, which are 
 
 One last piece that I learned during this refactor was using partial application to pass functions via context. For example, I have a function that fetches data when the user submits a form. I want this function to live in my provider because that is where I am storing all of my data fetching logic. This function needs to know about dispatch, a value in my global state, and the form input value. In my `AppContext.Provider` I pass the function via the value like:
 ```javascript
-        <AppContext.Provider value={{ state, dispatch, fetchData: fetchData(dispatch, state.data) >
+<AppContext.Provider value={{ state, dispatch, fetchData: fetchData(dispatch, state.data) >
 ```
 Then, in my component I am able to import my AppContext, and only provide the final argument. 
 
 In the end my Context provider looked like this: 
 ```javascript
-    import React, { createContext, useReducer, useEffect, useMemo, useRef } from 'react';
-    
-    const REQUEST_DATA_SUCCESS = 'REQUEST_DATA_SUCCESS';
-    const FILTER_DATA_SUCCESS = 'FILTER_DATA_SUCCESS';
-    
-    export const fetchData = data => ({ type: REQUEST_DATA_SUCCESS, data });
-    export const filterData = data => ({ type: FILTER_DATA_SUCCESS, data });
-    
-    const reducer = (state = {}, action) => {
-      switch (action.type) {
-        case REQUEST_DATA_SUCCESS:
-          return { ...state, data: action.data };
-        case FILTER_DATA_SUCCESS:
-          return { ...state, filteredData: action.data };
-        default:
-          return state;
-      }
-    };
-    
-    const initialState = {
-    	data: {},
-      filteredData: {},
+import React, { createContext, useReducer, useEffect, useMemo, useRef } from 'react';
+
+const REQUEST_DATA_SUCCESS = 'REQUEST_DATA_SUCCESS';
+const FILTER_DATA_SUCCESS = 'FILTER_DATA_SUCCESS';
+
+export const fetchData = data => ({ type: REQUEST_DATA_SUCCESS, data });
+export const filterData = data => ({ type: FILTER_DATA_SUCCESS, data });
+
+const reducer = (state = {}, action) => {
+  switch (action.type) {
+    case REQUEST_DATA_SUCCESS:
+      return { ...state, data: action.data };
+    case FILTER_DATA_SUCCESS:
+      return { ...state, filteredData: action.data };
+    default:
+      return state;
+  }
+};
+
+const initialState = {
+  data: {},
+  filteredData: {},
+}
+
+const logger = dispatch => action => {
+  console.groupCollapsed('type:', action.type);
+  return dispatch(action);
+}
+
+const useReducerWithLogger = (...args) => {
+  let prevState = useRef(initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const dispatchWithLogger = useMemo(() => logger(dispatch), [dispatch]);
+
+  useEffect(() => {
+    if (state !== initialState) {
+      console.log("Previous state: ", prevState.current);
+      console.log("Next State: ", state);
+      console.groupEnd();
     }
-    
-    const logger = dispatch => action => {
-      console.groupCollapsed('type:', action.type);
-      return dispatch(action);
+    prevState.current = state;
+  }, [state]);
+  return [state, dispatchWithLogger];
+}
+
+const fetchData = async dispatch => {
+  try {
+    const response = await fetch('url');
+    const json = await response.json();
+    dispatch(fetchData(json));
+  }
+  catch (error) {
+    console.log('An error occured', error);
+  }
+};
+
+const fetchCoords = (dispatch, treeData) => {
+  return async address => {
+    try {
+      const response = await fetch('url' + address);
+      const json = await response.json();
+      dispatch(filterData(json));
     }
-    
-    const useReducerWithLogger = (...args) => {
-      let prevState = useRef(initialState);
-      const [state, dispatch] = useReducer(reducer, initialState);
-    
-      const dispatchWithLogger = useMemo(() => logger(dispatch), [dispatch]);
-    
-      useEffect(() => {
-        if (state !== initialState) {
-          console.log("Previous state: ", prevState.current);
-          console.log("Next State: ", state);
-          console.groupEnd();
-        }
-        prevState.current = state;
-      }, [state]);
-      return [state, dispatchWithLogger];
+    catch (error) {
+      console.log('An error occorred', error);
     }
-    
-    const fetchData = async dispatch => {
-      try {
-        const response = await fetch('url');
-        const json = await response.json();
-        dispatch(fetchData(json));
-      }
-      catch (error) {
-        console.log('An error occured', error);
-      }
-    };
-    
-    const fetchCoords = (dispatch, treeData) => {
-      return async address => {
-        try {
-          const response = await fetch('url');
-          const json = await response.json();
-          dispatch(filterData(json));
-        }
-        catch (error) {
-          console.log('An error occorred', error);
-        }
-      }
-    };
-    
-    export const AppContext = createContext(initialState);
-    
-    const AppContextProvider = ({ children }) => {
-      const [state, dispatch] = useReducerWithLogger(reducer, initialState);
-    
-      useEffect(() => {
-        fetchData(dispatch);
-      }, []);
-    
-      return (
-        <AppContext.Provider
-          value={{ state, dispatch, fetchCoords: fetchCoords(dispatch, state.data) }}
-        >
-          {children}
-        </AppContext.Provider >
-      );
-    };
-    
-    export default AppContextProvider;
+  }
+};
+
+export const AppContext = createContext(initialState);
+
+const AppContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducerWithLogger(reducer, initialState);
+
+  useEffect(() => {
+    fetchData(dispatch);
+  }, []);
+
+  return (
+    <AppContext.Provider
+      value={{ state, dispatch, fetchCoords: fetchCoords(dispatch, state.data) }}
+    >
+      {children}
+    </AppContext.Provider >
+  );
+};
+
+export default AppContextProvider;
 ```
 
 The benefit of using these two hooks together is that you can avoid passing callbacks though nested components and can keep a minimal state management system. I would not recommend this if your app because overly complex, or if you needed more advanced middleware. There is a rich ecosystem of Redux tooling that is extremely valuable. However, if you have a lightweight app that needs to manage state and want to get some React Hooks practice, I felt that this was a worthy exercise.
