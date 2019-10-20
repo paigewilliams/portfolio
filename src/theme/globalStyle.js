@@ -2,20 +2,20 @@ import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'IBM Plex Serif', serif;
+    font-family: 'Lora', serif;
     font-display: auto;
     margin: 0;
     color: #383839;
   };
 
   p {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     line-height: 22px;
     font-size: 16px;
   };
 
   li {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
   }
 

@@ -4,13 +4,13 @@ module.exports = {
     title: `Paige Williams`,
     pageLinks: [
       {
-        name:'about',
-        link:'/about'
+        name: 'about',
+        link: '/about'
       },
       {
-        name:'projects',
-        link:'/projects'
-      }     
+        name: 'projects',
+        link: '/projects'
+      }
     ],
     description: `My portfolio built with the Gatsby starter.`,
     author: `@paigewilliams`,
@@ -20,7 +20,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['IBM Plex Serif','IBM Plex Sans']
+          families: ['Lora', 'Open Sans']
         }
       }
     },
@@ -59,7 +59,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     {
-      resolve:`gatsby-plugin-sharp`,
+      resolve: `gatsby-plugin-sharp`,
       options: {
         useMozJpeg: false,
         stripMetadata: true,

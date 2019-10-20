@@ -130,8 +130,8 @@ const Header = ({ pageLinks }) => {
         </LogoSVG>
       </Link>
       <Menu
-        menuOpenButton={<FaBars size={30} color="black" />}
-        menuCloseButton={<FaWindowClose size={30} color="black" />}
+        menuOpenButton={<FaBars size={30} color="#383839" />}
+        menuCloseButton={<FaWindowClose size={30} color="#383839" />}
         changeMenuOn="600px"
         menu={
           <InnerMenu>
@@ -149,10 +149,10 @@ const Header = ({ pageLinks }) => {
                     </Dropdown>
                   </li>
                 ) : (
-                  <li key={link.name}>
-                    <Link to={link.link}>{link.name}</Link>
-                  </li>
-                )
+                    <li key={link.name}>
+                      <Link to={link.link}>{link.name}</Link>
+                    </li>
+                  )
               })}
               <li>
                 <a

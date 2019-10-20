@@ -41,6 +41,7 @@ const Header = styled.h1`
   font-size: 32px;
   margin-bottom: -0.5rem;
   line-height: 40px;
+  letter-spacing: 0.75px;
   margin-top: 0;
 `
 
