@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import ProjectLayout from '../components/project-layout'
+import CartographyLayout from '../components/cartography-layout'
 
-export default ({ data }) => <ProjectLayout data={data} />
+export default ({ data }) => <CartographyLayout data={data} />
 
 export const query = graphql`
   query {
