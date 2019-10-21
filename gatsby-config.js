@@ -10,7 +10,11 @@ module.exports = {
       {
         name: 'projects',
         link: '/projects'
-      }
+      },
+      {
+        name: 'blog',
+        link: '/blog'
+      },
     ],
     description: `My portfolio built with the Gatsby starter.`,
     author: `@paigewilliams`,

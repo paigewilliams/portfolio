@@ -1,28 +1,12 @@
 import React from 'react'
 import Layout from '../components/layout'
-import styled, { keyframes } from 'styled-components'
-
-const fadeInUp = keyframes`
-from {
-  transform: translate3d(0,25px,0)
-}
-
-to {
-  transform: translate3d(0,0,0);
-  opacity: 1
-}
-`
+import styled from 'styled-components'
 
 const Body = styled.div`
   display: grid;
   grid-template-rows: 47% 50%;
   grid-template-columns: 50% 35%;
   grid-column-gap: 15%;
-  animation: ${fadeInUp};
-  animation-duration: 1s;
-  animation-fill-mode: both;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
   @media (max-width: 800px) {
     grid-template-columns: 100%;
     grid-row-gap: 2rem;

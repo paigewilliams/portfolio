@@ -50,20 +50,6 @@ const BodyText = styled.div`
     margin-top: 1rem;
   }
 `
-const ArrowSVG = styled.svg`
-  width: 30px;
-  height: 20px;
-  margin-left: 1rem;
-  margin-top: 1.35rem;
-`
-const GoToBlog = styled.div`
-  display: flex;
-  flex-direction: row;
-`
-const BlogLink = styled.h3`
-  color: #ba6055;
-`
-
 const Index = () => (
   <Layout>
     <Body>
@@ -80,14 +66,6 @@ const Index = () => (
             am passionate about how tech can increase multimodal transportation
             and make cities more resiliant.
           </p>
-          <GoToBlog>
-            <Link to="/blog/google-maps-npm/">
-              <BlogLink>New! My first tech blog post!</BlogLink>
-            </Link>
-            <ArrowSVG viewBox="0 0 42 17">
-              <Arrow />
-            </ArrowSVG>
-          </GoToBlog>
         </BodyText>
       </Text>
       <Image />
