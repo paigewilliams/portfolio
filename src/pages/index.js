@@ -41,7 +41,6 @@ const Header = styled.h1`
   font-size: 32px;
   margin-bottom: -0.5rem;
   line-height: 40px;
-  letter-spacing: 0.75px;
   margin-top: 0;
 `
 
@@ -70,7 +69,8 @@ const Index = () => (
     <Body>
       <Text>
         <Header>
-          Hi, I'm Paige. I am a software engineer and cartographer in Portland,
+          Hi, I'm Paige. <br></br>
+          I am a software engineer and cartographer in Portland,
           OR.
         </Header>
         <BodyText>

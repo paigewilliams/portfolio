@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Lora', serif;
+    font-family: 'Roboto Mono', monospace;
     font-display: auto;
     margin: 0;
     color: #383839;
