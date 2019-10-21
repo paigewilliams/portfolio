@@ -164,9 +164,6 @@ const Header = ({ pageLinks }) => {
                   resume
                 </a>
               </li>
-              <li>
-                <a href="mailto:paw145@humboldt.edu">contact</a>
-              </li>
             </ul>
           </InnerMenu>
         }
