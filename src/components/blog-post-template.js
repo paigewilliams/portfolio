@@ -1,19 +1,19 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "./layout"
-import styled from "styled-components"
+import React from 'react'
+import { graphql } from 'gatsby'
+import Layout from './layout'
+import styled from 'styled-components'
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 40rem;
-  @media(max-width: 800px) {
+  @media (max-width: 800px) {
     width: 93vw;
   }
 `
 const PostBody = styled.div`
   a {
-    color: #BA6055;
+    color: #ba6055;
   }
 `
 

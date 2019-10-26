@@ -3,9 +3,11 @@ import React from 'react'
 import Layout from '../components/layout'
 
 const CartographyLayout = () => {
-  return <Layout>
-    <h1>This is page is under construction!</h1>
-  </Layout>
+  return (
+    <Layout>
+      <h1>This is page is under construction!</h1>
+    </Layout>
+  )
 }
 
 export default CartographyLayout

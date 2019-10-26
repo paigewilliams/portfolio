@@ -13,7 +13,7 @@ const InnerFooter = styled.div`
 const Container = styled.div`
   display: flex;
   align-items: center;
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     justify-content: space-between;
   }
 `

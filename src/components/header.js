@@ -149,10 +149,10 @@ const Header = ({ pageLinks }) => {
                     </Dropdown>
                   </li>
                 ) : (
-                    <li key={link.name}>
-                      <Link to={link.link}>{link.name}</Link>
-                    </li>
-                  )
+                  <li key={link.name}>
+                    <Link to={link.link}>{link.name}</Link>
+                  </li>
+                )
               })}
               <li>
                 <a

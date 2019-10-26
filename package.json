@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-default",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A portfolio for Paige Williams",
   "version": "0.1.0",
   "author": "Paige Williams <paw145@humboldt.edu>",
   "dependencies": {
@@ -29,7 +29,6 @@
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.7.0",
-    "react-responsive-navbar": "^1.0.11",
     "react-typography": "^0.16.18",
     "styled-components": "^4.1.3",
     "typography": "^0.16.18"
@@ -47,6 +46,7 @@
   },
   "devDependencies": {
     "eslint-config-react-app": "^5.0.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "prettier": "^1.15.2"
   },
   "repository": {

@@ -55,9 +55,8 @@ const Index = () => (
     <Body>
       <Text>
         <Header>
-          Hi, I'm Paige. <br></br>
-          I am a software engineer and cartographer in Portland,
-          OR.
+          Hi, I'm Paige. <br></br>I am a software engineer and cartographer in
+          Portland, OR.
         </Header>
         <BodyText>
           <p>
