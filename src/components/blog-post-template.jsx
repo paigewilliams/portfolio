@@ -1,7 +1,8 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from './layout'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
+import Layout from './layout';
 
 const Container = styled.div`
   display: flex;
@@ -10,15 +11,15 @@ const Container = styled.div`
   @media (max-width: 800px) {
     width: 93vw;
   }
-`
+`;
 const PostBody = styled.div`
   a {
     color: #ba6055;
   }
-`
+`;
 
-export default ({ data }) => {
-  const post = data.markdownRemark
+const BlogPostTemplate = ({ data }) => {
+  const post = data.markdownRemark;
   return (
     <Layout>
       <Container>
@@ -26,8 +27,19 @@ export default ({ data }) => {
         <PostBody dangerouslySetInnerHTML={{ __html: post.html }} />
       </Container>
     </Layout>
-  )
-}
+  );
+};
+
+BlogPostTemplate.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+      }),
+      html: PropTypes.string,
+    }),
+  }).isRequired,
+};
 
 export const query = graphql`
   query($slug: String!) {
@@ -38,4 +50,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
+
+export default BlogPostTemplate;
