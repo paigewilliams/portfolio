@@ -12,8 +12,10 @@ const InnerFooter = styled.div`
 `
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  @media(max-width: 600px) {
+    justify-content: space-between;
+  }
 `
 const Ul = styled.ul`
   display: flex;
@@ -33,19 +35,16 @@ const Icon = styled.svg`
   }
 `
 const A = styled.a`
-  padding: 0 1rem;
+  padding-left: 1rem;
 `
 const Email = styled.p`
   padding-bottom: 0.025rem;
-  margin-right: 1rem;
 `
 const Footer = () => (
   <InnerFooter>
     <Container>
+      <Email>paw145@humboldt.edu</Email>
       <Ul>
-        <li>
-          <Email>paw145@humboldt.edu</Email>
-        </li>
         <li>
           <A href="https://github.com/paigewilliams" title="github">
             <Icon viewBox="0 0 24 24" alt="github icon">

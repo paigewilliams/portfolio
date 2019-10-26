@@ -64,7 +64,7 @@ const Index = () => (
             I am a code school graduate with experience in Ruby and JavaScript.
             I am currently working at moovel, primarely with React and Redux. I
             am passionate about how tech can increase multimodal transportation
-            and make cities more resiliant.
+            and make cities more resilient.
           </p>
         </BodyText>
       </Text>

@@ -7,7 +7,8 @@ const Body = styled.div`
   grid-template-rows: 47% 50%;
   grid-template-columns: 50% 35%;
   grid-column-gap: 15%;
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
+    display: block;
     grid-template-columns: 100%;
     grid-row-gap: 2rem;
   }
