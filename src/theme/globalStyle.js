@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto Mono', monospace;
     font-display: auto;
@@ -25,11 +25,18 @@ export const GlobalStyle = createGlobalStyle`
     padding-left: 0;
   }
 
-
   a {
     text-decoration: none;
     color:  #383839;
-  };
+  }
 
+  button {
+    border: none;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    background: none;
+    color: #383839;
+  }
+`;
 
-`
+export default GlobalStyle;

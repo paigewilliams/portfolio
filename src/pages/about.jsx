@@ -1,6 +1,6 @@
-import React from 'react'
-import Layout from '../components/layout'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import Layout from '../components/layout';
 
 const Body = styled.div`
   display: grid;
@@ -12,21 +12,21 @@ const Body = styled.div`
     grid-template-columns: 100%;
     grid-row-gap: 2rem;
   }
-`
+`;
 
 const Text = styled.div`
   @media (max-width: 800px) {
     padding-right: 1rem;
     width: 100%;
   }
-`
+`;
 const Lists = styled.div`
   max-width: 32rem;
   @media (max-width: 800px) {
     margin-right: 0;
     margin-top: 1rem;
   }
-`
+`;
 const Dashed = styled.ul`
   list-style-type: none;
   margin: 0;
@@ -34,9 +34,9 @@ const Dashed = styled.ul`
   li:before {
     content: '-  ';
   }
-`
+`;
 
-export default () => (
+const About = () => (
   <Layout>
     <Body>
       <Text>
@@ -52,8 +52,12 @@ export default () => (
           wanted to create more powerful visualizations, I needed to build web
           maps. I decided to take up coding and enroll in Epicodus, a coding
           bootcamp in Portland, OR. After coding for 40+ hours a week for six
-          months I am <em>somewhat</em> well versed in Ruby, JavaScript, and
-          React.
+          months I am
+          {' '}
+          <em>somewhat</em>
+          {' '}
+          well versed in Ruby, JavaScript, and
+                    React.
         </p>
       </Text>
       <Lists>
@@ -73,4 +77,6 @@ export default () => (
       </Lists>
     </Body>
   </Layout>
-)
+);
+
+export default About;

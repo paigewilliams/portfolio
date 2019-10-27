@@ -1,9 +1,7 @@
-import React from 'react'
-import Layout from '../components/layout'
-import Image from '../components/image'
-import styled, { keyframes } from 'styled-components'
-import Arrow from '../components/arrow'
-import { Link } from 'gatsby'
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
+import Layout from '../components/layout';
+import Image from '../components/image';
 
 const Body = styled.div`
   display: grid;
@@ -12,7 +10,7 @@ const Body = styled.div`
   @media (max-width: 800px) {
     grid-template-columns: 100%;
   }
-`
+`;
 
 const fadeInUp = keyframes`
 from {
@@ -23,7 +21,7 @@ to {
   transform: translate3d(0,0,0);
   opacity: 1
 }
-`
+`;
 
 const Text = styled.div`
   max-width: 32rem;
@@ -35,28 +33,31 @@ const Text = styled.div`
   @media (max-width: 800px) {
     width: 100%;
   }
-`
+`;
 
 const Header = styled.h1`
   font-size: 32px;
   margin-bottom: -0.5rem;
   line-height: 40px;
   margin-top: 0;
-`
+`;
 
 const BodyText = styled.div`
   margin-top: 10rem;
   @media (max-width: 1000px) {
     margin-top: 1rem;
   }
-`
+`;
 const Index = () => (
   <Layout>
     <Body>
       <Text>
         <Header>
-          Hi, I'm Paige. <br></br>I am a software engineer and cartographer in
-          Portland, OR.
+          Hi, I&apos;m Paige.
+          {' '}
+          <br />
+          I am a software engineer and cartographer in
+                    Portland, OR.
         </Header>
         <BodyText>
           <p>
@@ -70,6 +71,6 @@ const Index = () => (
       <Image />
     </Body>
   </Layout>
-)
+);
 
-export default Index
+export default Index;

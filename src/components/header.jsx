@@ -20,6 +20,7 @@ const InnerMenu = styled.div`
     display: inline-block;
     list-style-type: none;
   }
+
   @media (min-width: 600px) {
     li {
       margin-left: 4rem;
@@ -61,6 +62,10 @@ const InnerMenu = styled.div`
       text-align: left;
       display: flex;
       flex-direction: column;
+    }
+    button {
+      font-size: .95em;
+      padding: 0;
     }
     li {
       font-size: 1.5em;
@@ -141,6 +146,7 @@ const Header = ({ pageLinks }) => {
                 // eslint-disable-next-line react/prop-types
                 pageLinks.map((link) => (link.name === 'projects' ? (
                   <li key={link.name}>
+                    <button aria-haspopup="true" type="button">{link.name}</button>
                     <Dropdown>
                       {dropDownItems.map((item) => (
                         <li key={item}>
@@ -174,9 +180,7 @@ const Header = ({ pageLinks }) => {
 };
 
 Header.propTypes = {
-  pageLinks: PropTypes.shape({
-    name: PropTypes.string,
-  }).isRequired,
+  pageLinks: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string })).isRequired,
 };
 
 export default Header;

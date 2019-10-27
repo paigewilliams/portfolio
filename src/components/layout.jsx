@@ -1,16 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
-import { GlobalStyle } from '../theme/globalStyle'
-import Header from './header'
-import Footer from './footer'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
+import GlobalStyle from '../theme/globalStyle';
+import Header from './header';
+import Footer from './footer';
 
 const Container = styled.div`
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-`
+`;
 const InnerContainer = styled.div`
   display: grid;
   grid-template-rows: auto 1fr;
@@ -19,7 +20,7 @@ const InnerContainer = styled.div`
   margin: 0 auto;
   box-sizing: content-box;
   height: 100vh;
-`
+`;
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -36,7 +37,7 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <>
         <GlobalStyle />
         <Helmet title={data.site.siteMetadata.title}>
@@ -56,5 +57,10 @@ const Layout = ({ children }) => (
       </>
     )}
   />
-)
-export default Layout
+);
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default Layout;

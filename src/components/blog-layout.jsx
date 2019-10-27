@@ -53,7 +53,7 @@ const BlogLayout = ({ data }) => (
 BlogLayout.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.shape({
+      edges: PropTypes.arrayOf(PropTypes.shape({
         node: PropTypes.shape({
           id: PropTypes.string,
           fields: PropTypes.shape({
@@ -63,7 +63,7 @@ BlogLayout.propTypes = {
             title: PropTypes.string,
           }),
         }),
-      }),
+      })),
     }),
   }).isRequired,
 };
