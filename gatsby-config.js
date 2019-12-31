@@ -1,23 +1,23 @@
 module.exports = {
-  pathPrefix: `/paigewilliamsresume`,
+  pathPrefix: '/paige-williams-resume',
   siteMetadata: {
-    title: `Paige Williams`,
+    title: 'Paige Williams',
     pageLinks: [
       {
         name: 'about',
-        link: '/about'
+        link: '/about',
       },
       {
         name: 'projects',
-        link: '/projects'
+        link: '/projects',
       },
       {
         name: 'blog',
-        link: '/blog'
+        link: '/blog',
       },
     ],
-    description: `My portfolio built with the Gatsby starter.`,
-    author: `@paigewilliams`,
+    description: 'My portfolio built with the Gatsby starter.',
+    author: '@paigewilliams',
   },
   plugins: [
     {
@@ -28,22 +28,22 @@ module.exports = {
         stages: ['develop'],
         options: {
           emitWarning: true,
-          failOnError: false
-        }
-      }
+          failOnError: false,
+        },
+      },
     },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Roboto Mono', 'Open Sans']
-        }
-      }
+          families: ['Roboto Mono', 'Open Sans'],
+        },
+      },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `src`,
+        name: 'src',
         path: `${__dirname}/src/`,
       },
     },
@@ -52,49 +52,49 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 1000,
               linkImagesToOriginal: false,
-            }
+            },
           },
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: 'gatsby-remark-prismjs',
             options: {
-              classPrefix: "language-js",
+              classPrefix: 'language-js',
               inlineCodeMarker: null,
               aliases: {},
               showLineNumbers: false,
-              noInlineHighlight: false
-            }
-          }
-        ]
-      }
+              noInlineHighlight: false,
+            },
+          },
+        ],
+      },
     },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-    `gatsby-transformer-sharp`,
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
+    'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-plugin-sharp`,
+      resolve: 'gatsby-plugin-sharp',
       options: {
         useMozJpeg: false,
         stripMetadata: true,
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#FDCDBF`,
-        theme_color: `#FDCDBF`,
-        display: `minimal-ui`,
-        icon: `src/images/egg.png`,
+        name: 'gatsby-starter-default',
+        short_name: 'starter',
+        start_url: '/',
+        background_color: '#FDCDBF',
+        theme_color: '#FDCDBF',
+        display: 'minimal-ui',
+        icon: 'src/images/egg.png',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};

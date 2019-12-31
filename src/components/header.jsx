@@ -163,7 +163,7 @@ const Header = ({ pageLinks }) => {
               }
               <li>
                 <a
-                  href={withPrefix('/paigewilliamsresume.pdf')}
+                  href={withPrefix('/paige-williams-resume.pdf')}
                   rel="noopener noreferrer"
                   target="_blank"
                   title="resume"
