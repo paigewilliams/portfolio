@@ -50,11 +50,13 @@ const ProjectLayout = ({ data }) => (
   <Layout>
     {data.allMarkdownRemark.edges.map(({ node }) => (
       <ProjectBody key={node.id}>
-        <Image
-          alt={`A screenshot of my project titled ${node.frontmatter.title}`}
-          fadeIn={false}
-          sizes={node.frontmatter.img.childImageSharp.sizes}
-        />
+        {node.frontmatter.img && (
+          <Image
+            alt={`A screenshot of my project titled ${node.frontmatter.title}`}
+            fadeIn={false}
+            sizes={node.frontmatter.img.childImageSharp.sizes}
+          />
+        )}
         <Text>
           <h2>{node.frontmatter.title}</h2>
           <Tech>{node.frontmatter.tech}</Tech>
@@ -71,7 +73,7 @@ const ProjectLayout = ({ data }) => (
             </CodeLink>
           </Points>
         </Text>
-        <Line />
+        {/* <Line /> */}
       </ProjectBody>
     ))}
   </Layout>
