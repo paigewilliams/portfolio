@@ -1,5 +1,5 @@
 ---
-title: "Transit abnd Bike Trip Planner"
+title: "Transit and Bike Trip Planner"
 date: "2019-03-01"
 type: "project"
 img: ./bikeplanner3.png
