@@ -79,6 +79,7 @@ module.exports = {
       options: {
         useMozJpeg: false,
         stripMetadata: true,
+        quality: 100,
       },
     },
     {

@@ -14,12 +14,9 @@ Cartography.propTypes = {
           frontmatter: PropTypes.shape({
             title: PropTypes.string,
             date: PropTypes.string,
-            tech: PropTypes.string,
-            github: PropTypes.string,
-            app: PropTypes.string,
+            img: PropTypes.object,
           }),
           html: PropTypes.string,
-          excerpt: PropTypes.string,
         }),
       })),
     }),
@@ -40,13 +37,15 @@ export const query = graphql`
           frontmatter {
             title
             date
-            tech
-            github
-            app
-            
+            img {
+              childImageSharp {
+                fluid(quality: 100, maxWidth: 1140) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
           }
           html
-          excerpt
         }
       }
     }

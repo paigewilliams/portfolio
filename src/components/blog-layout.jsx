@@ -30,7 +30,6 @@ const BlogLayout = ({ data }) => (
     <Container>
       <h1>Blog Posts</h1>
       {
-        // eslint-disable-next-line react/prop-types
         data.allMarkdownRemark.edges.map(({ node }) => (
           <BlogTitle key={node.id}>
             <Link to={node.fields.slug}>
