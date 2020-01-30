@@ -61,10 +61,7 @@ const Index = () => (
         </Header>
         <BodyText>
           <p>
-            I am a code school graduate with experience in Ruby and JavaScript.
-            I am currently working at moovel, primarely with React and Redux. I
-            am passionate about how tech can increase multimodal transportation
-            and make cities more resilient.
+            I am passionate about the intersection of environmental justice and tech, and how we can use tech to make cities more resilient. I am interested in urbanism, climate justice, transportation, and maps. My tech stack is primary React, Node.js, GraphQL, all the good stuff.
           </p>
         </BodyText>
       </Text>
