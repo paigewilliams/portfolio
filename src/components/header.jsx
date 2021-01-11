@@ -1,16 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link, withPrefix } from 'gatsby';
-import { FaBars, FaWindowClose } from 'react-icons/fa';
-import styled from 'styled-components';
-import Menu from './menu';
-import Logo from './logo';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link, withPrefix } from 'gatsby'
+import { FaBars, FaWindowClose } from 'react-icons/fa'
+import styled from 'styled-components'
+import Menu from './menu'
+import Logo from './logo'
 
 const OuterHeader = styled.header`
   display: flex;
   justify-content: space-between;
   margin: 1rem 0 6rem;
-`;
+`
 
 const InnerMenu = styled.div`
   ul {
@@ -64,7 +64,7 @@ const InnerMenu = styled.div`
       flex-direction: column;
     }
     button {
-      font-size: .95em;
+      font-size: 0.95em;
       padding: 0;
     }
     li {
@@ -85,7 +85,7 @@ const InnerMenu = styled.div`
       }
     }
   }
-`;
+`
 const Dropdown = styled.ul`
   position: absolute;
   opacity: 0;
@@ -117,17 +117,17 @@ const Dropdown = styled.ul`
       }
     }
   }
-`;
+`
 
 const LogoSVG = styled.svg`
   height: 80px;
   width: 80px;
   fill: #ba6055;
   margin-top: 1rem;
-`;
+`
 
 const Header = ({ pageLinks }) => {
-  const dropDownItems = ['code', 'cartography'];
+  const dropDownItems = ['code', 'cartography']
   return (
     <OuterHeader>
       <Link to="/" title="homepage">
@@ -139,16 +139,18 @@ const Header = ({ pageLinks }) => {
         menuOpenButton={<FaBars size={30} color="#383839" />}
         menuCloseButton={<FaWindowClose size={30} color="#383839" />}
         changeMenuOn="600px"
-        menu={(
+        menu={
           <InnerMenu>
             <ul>
-              {
-                // eslint-disable-next-line react/prop-types
-                pageLinks.map((link) => (link.name === 'projects' ? (
+              {// eslint-disable-next-line react/prop-types
+              pageLinks.map(link =>
+                link.name === 'projects' ? (
                   <li key={link.name}>
-                    <button aria-haspopup="true" type="button">{link.name}</button>
+                    <button aria-haspopup="true" type="button">
+                      {link.name}
+                    </button>
                     <Dropdown>
-                      {dropDownItems.map((item) => (
+                      {dropDownItems.map(item => (
                         <li key={item}>
                           <Link to={`/${item}`}>{item}</Link>
                         </li>
@@ -157,10 +159,10 @@ const Header = ({ pageLinks }) => {
                   </li>
                 ) : (
                   <li key={link.name}>
-                      <Link to={link.link}>{link.name}</Link>
-                    </li>
-                )))
-              }
+                    <Link to={link.link}>{link.name}</Link>
+                  </li>
+                )
+              )}
               <li>
                 <a
                   href={withPrefix('/paige-williams-resume.pdf')}
@@ -173,14 +175,15 @@ const Header = ({ pageLinks }) => {
               </li>
             </ul>
           </InnerMenu>
-        )}
+        }
       />
     </OuterHeader>
-  );
-};
+  )
+}
 
 Header.propTypes = {
-  pageLinks: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string })).isRequired,
-};
+  pageLinks: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string }))
+    .isRequired,
+}
 
-export default Header;
+export default Header
