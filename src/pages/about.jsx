@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import Layout from '../components/layout';
+import React from 'react'
+import styled from 'styled-components'
+import Layout from '../components/layout'
 
 const Body = styled.div`
   display: grid;
@@ -12,21 +12,25 @@ const Body = styled.div`
     grid-template-columns: 100%;
     grid-row-gap: 2rem;
   }
-`;
+`
 
 const Text = styled.div`
+  a {
+    color: #ba6055;
+  }
   @media (max-width: 800px) {
     padding-right: 1rem;
     width: 100%;
   }
-`;
+`
 const Lists = styled.div`
   max-width: 32rem;
+  margin-top: 4rem;
   @media (max-width: 800px) {
     margin-right: 0;
     margin-top: 1rem;
   }
-`;
+`
 const Dashed = styled.ul`
   list-style-type: none;
   margin: 0;
@@ -34,7 +38,7 @@ const Dashed = styled.ul`
   li:before {
     content: '-  ';
   }
-`;
+`
 
 const About = () => (
   <Layout>
@@ -42,22 +46,19 @@ const About = () => (
       <Text>
         <h1>About</h1>
         <p>
-          I am passionate about using technology to serve people and the planet.
-          I have a degree in Environmental Studies from Humboldt State
-          University and a minor in Geographic Information Studies (GIS).
+          I work to build technology that serves people and the planet. I have a
+          degree in Environmental Studies from Humboldt State University and a
+          minor in Geographic Information Studies (GIS).
         </p>
         <p>
           I became interested in GIS because I saw maps as a way to convey
           environmental injustice. As I became more involved in the field and
           wanted to create more powerful visualizations, I needed to build web
           maps. I decided to take up coding and enroll in Epicodus, a coding
-          bootcamp in Portland, OR. After coding for 40+ hours a week for six
-          months I am
-          {' '}
-          <em>somewhat</em>
-          {' '}
-          well versed in Ruby, JavaScript, and
-                    React.
+          bootcamp in Portland, Oregon. After coding for 40+ hours a week for
+          six months I am <em>somewhat</em> well versed in Ruby, JavaScript, and
+          React. I now work at <a href="https://www.aclima.io/">Aclima </a>
+          as a UI Engineer, building tools for air quality analysis.
         </p>
       </Text>
       <Lists>
@@ -65,18 +66,13 @@ const About = () => (
         <Dashed>
           <li>Listening to podcasts</li>
           <li>Hiking in Forest Park</li>
-          <li>Making pasta</li>
-        </Dashed>
-        <h3>Favorite Podcasts:</h3>
-        <Dashed>
-          <li>99% Invisible</li>
-          <li>Reply All</li>
-          <li>Hey! Cool Job</li>
-          <li>Still Processing</li>
+          <li>Making pizza</li>
+          <li>Brewing kombucha</li>
+          <li>Riding my bike around town</li>
         </Dashed>
       </Lists>
     </Body>
   </Layout>
-);
+)
 
-export default About;
+export default About
